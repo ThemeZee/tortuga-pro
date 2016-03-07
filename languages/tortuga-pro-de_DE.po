@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tortuga Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-01-29 12:19+0100\n"
-"PO-Revision-Date: 2016-01-29 12:22+0100\n"
+"POT-Creation-Date: 2016-03-07 17:00+0100\n"
+"PO-Revision-Date: 2016-03-07 17:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -153,95 +153,91 @@ msgstr "Standard"
 msgid "Update Fonts"
 msgstr "Schriftarten aktualisieren"
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:325
+#: includes/modules/class-tortuga-pro-custom-colors.php:315
 msgid "Theme Colors"
 msgstr "Theme Farben"
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:344
+#: includes/modules/class-tortuga-pro-custom-colors.php:334
 msgctxt "color setting"
 msgid "Top Navigation"
 msgstr "Obere Navigation"
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:361
+#: includes/modules/class-tortuga-pro-custom-colors.php:351
+msgctxt "color setting"
+msgid "Header"
+msgstr "Header"
+
+#: includes/modules/class-tortuga-pro-custom-colors.php:368
+msgctxt "color setting"
+msgid "Navigation"
+msgstr "Navigation"
+
+#: includes/modules/class-tortuga-pro-custom-colors.php:385
+msgctxt "color setting"
+msgid "Post Titles"
+msgstr "Beitrags-Titel"
+
+#: includes/modules/class-tortuga-pro-custom-colors.php:402
 msgctxt "color setting"
 msgid "Links and Buttons"
 msgstr "Links und Buttons"
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:378
-msgctxt "color setting"
-msgid "Navigation (primary)"
-msgstr "Navigation (primär)"
-
-#: includes/modules/class-tortuga-pro-custom-colors.php:395
-msgctxt "color setting"
-msgid "Navigation (secondary)"
-msgstr "Navigation (sekundär)"
-
-#: includes/modules/class-tortuga-pro-custom-colors.php:412
-msgctxt "color setting"
-msgid "Post Titles (primary)"
-msgstr "Beitragsüberschriften (primär)"
-
-#: includes/modules/class-tortuga-pro-custom-colors.php:429
-msgctxt "color setting"
-msgid "Post Titles (secondary)"
-msgstr "Beitragsüberschriften (sekundär)"
-
-#: includes/modules/class-tortuga-pro-custom-colors.php:446
+#: includes/modules/class-tortuga-pro-custom-colors.php:419
 msgctxt "color setting"
 msgid "Widget Titles"
 msgstr "Widget Titel"
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:463
+#: includes/modules/class-tortuga-pro-custom-colors.php:436
 msgctxt "color setting"
 msgid "Widget Links"
 msgstr "Widget Links"
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:480
+#: includes/modules/class-tortuga-pro-custom-colors.php:453
+#: includes/modules/class-tortuga-pro-custom-colors.php:470
 msgctxt "color setting"
 msgid "Footer Widgets"
 msgstr "Footer Widgets"
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:213
+#: includes/modules/class-tortuga-pro-custom-fonts.php:205
 msgid "Theme Fonts"
 msgstr "Theme Schriftarten"
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:232
+#: includes/modules/class-tortuga-pro-custom-fonts.php:224
 msgid "Base Font"
 msgstr "Basis Schriftart"
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:248
+#: includes/modules/class-tortuga-pro-custom-fonts.php:240
 msgctxt "font setting"
 msgid "Headings"
 msgstr "Überschriften"
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:264
+#: includes/modules/class-tortuga-pro-custom-fonts.php:256
 msgctxt "font setting"
 msgid "Navigation"
 msgstr "Navigation"
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:280
+#: includes/modules/class-tortuga-pro-custom-fonts.php:272
 msgctxt "font setting"
 msgid "Widget Titles"
 msgstr "Widget Titel"
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:297
+#: includes/modules/class-tortuga-pro-custom-fonts.php:289
 msgid "Choose available Fonts"
 msgstr "Verfügbare Schriftarten wählen"
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:301
+#: includes/modules/class-tortuga-pro-custom-fonts.php:293
 msgid "Default Browser Fonts (12)"
 msgstr "Standard Browser Schriftarten (12)"
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:302
+#: includes/modules/class-tortuga-pro-custom-fonts.php:294
 msgid "ThemeZee Favorite Fonts (35)"
 msgstr "Favoriten von ThemeZee (35)"
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:303
+#: includes/modules/class-tortuga-pro-custom-fonts.php:295
 msgid "Most Popular Google Fonts (100)"
 msgstr "Beliebteste Google Schriftarten (100)"
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:304
+#: includes/modules/class-tortuga-pro-custom-fonts.php:296
 msgid "All Google Fonts (650)"
 msgstr "Alle Google Schriftarten (650)"
 
@@ -301,21 +297,40 @@ msgstr "Obere Navigation"
 msgid "Social Icons"
 msgstr "Social Icons"
 
-#: includes/modules/class-tortuga-pro-site-logo.php:136
+#: includes/modules/class-tortuga-pro-site-logo.php:130
 msgid "Site Logo"
 msgstr "Logo Bild"
 
-#: includes/modules/class-tortuga-pro-site-logo.php:152
+#: includes/modules/class-tortuga-pro-site-logo.php:146
 msgid "Logo Image (replaces Site Title)"
 msgstr "Logo Bild (ersetzt Titel der Website)"
 
-#: includes/modules/class-tortuga-pro-site-logo.php:169
-msgid "Logo Spacing (default: 10)"
-msgstr "Logo Abstand (Standard: 10)"
+#: includes/modules/class-tortuga-pro-site-logo.php:163
+msgid "Logo Spacing (default: 0)"
+msgstr "Logo Abstand (Standard: 0)"
 
-#: includes/modules/class-tortuga-pro-site-logo.php:186
-msgid "Navigation Spacing (default: 10)"
-msgstr "Navigation Abstand (Standard: 10)"
+#: includes/modules/class-tortuga-pro-site-logo.php:180
+msgid "Header Spacing (default: 20)"
+msgstr "Header Abstand (Standard: 20)"
+
+#~ msgctxt "color setting"
+#~ msgid "Navigation (primary)"
+#~ msgstr "Navigation (primär)"
+
+#~ msgctxt "color setting"
+#~ msgid "Navigation (secondary)"
+#~ msgstr "Navigation (sekundär)"
+
+#~ msgctxt "color setting"
+#~ msgid "Post Titles (primary)"
+#~ msgstr "Beitragsüberschriften (primär)"
+
+#~ msgctxt "color setting"
+#~ msgid "Post Titles (secondary)"
+#~ msgstr "Beitragsüberschriften (sekundär)"
+
+#~ msgid "Navigation Spacing (default: 10)"
+#~ msgstr "Navigation Abstand (Standard: 10)"
 
 #~ msgid "404: Page not found"
 #~ msgstr "404: Seite nicht gefunden"
@@ -1145,14 +1160,6 @@ msgstr "Navigation Abstand (Standard: 10)"
 #~ msgid "Active"
 #~ msgstr "Aktiv"
 
-#~ msgctxt "color setting"
-#~ msgid "Navigation"
-#~ msgstr "Navigation"
-
-#~ msgctxt "color setting"
-#~ msgid "Post Titles"
-#~ msgstr "Beitrags-Titel"
-
 #~ msgid "Display Credit Link to ThemeZee on footer line."
 #~ msgstr "Zeige Link zu ThemeZee im Footer"
 
@@ -1182,10 +1189,6 @@ msgstr "Navigation Abstand (Standard: 10)"
 
 #~ msgid "Remove spacing on header area for fullwidth logo images."
 #~ msgstr "Entferne Abstände im Header für Fullwidth Logo Bilder."
-
-#~ msgctxt "color setting"
-#~ msgid "Header"
-#~ msgstr "Header"
 
 #~ msgctxt "color setting"
 #~ msgid "Footer Border"

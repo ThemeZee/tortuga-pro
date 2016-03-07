@@ -68,7 +68,7 @@ class Tortuga_Pro {
 		define( 'TORTUGA_PRO_VERSION', '1.0' );
 		
 		// Define Plugin Name
-		define( 'TORTUGA_PRO_PRODUCT_ID', 53694 );
+		define( 'TORTUGA_PRO_PRODUCT_ID', 56518 );
 
 		// Define Update API URL
 		define( 'TORTUGA_PRO_STORE_API_URL', 'https://themezee.com' ); 

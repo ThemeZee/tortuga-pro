@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tortuga Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-01-29 12:19+0100\n"
-"PO-Revision-Date: 2016-01-29 12:20+0100\n"
+"POT-Creation-Date: 2016-03-07 17:00+0100\n"
+"PO-Revision-Date: 2016-03-07 17:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -139,95 +139,91 @@ msgstr ""
 msgid "Update Fonts"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:325
+#: includes/modules/class-tortuga-pro-custom-colors.php:315
 msgid "Theme Colors"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:344
+#: includes/modules/class-tortuga-pro-custom-colors.php:334
 msgctxt "color setting"
 msgid "Top Navigation"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:361
+#: includes/modules/class-tortuga-pro-custom-colors.php:351
+msgctxt "color setting"
+msgid "Header"
+msgstr ""
+
+#: includes/modules/class-tortuga-pro-custom-colors.php:368
+msgctxt "color setting"
+msgid "Navigation"
+msgstr ""
+
+#: includes/modules/class-tortuga-pro-custom-colors.php:385
+msgctxt "color setting"
+msgid "Post Titles"
+msgstr ""
+
+#: includes/modules/class-tortuga-pro-custom-colors.php:402
 msgctxt "color setting"
 msgid "Links and Buttons"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:378
-msgctxt "color setting"
-msgid "Navigation (primary)"
-msgstr ""
-
-#: includes/modules/class-tortuga-pro-custom-colors.php:395
-msgctxt "color setting"
-msgid "Navigation (secondary)"
-msgstr ""
-
-#: includes/modules/class-tortuga-pro-custom-colors.php:412
-msgctxt "color setting"
-msgid "Post Titles (primary)"
-msgstr ""
-
-#: includes/modules/class-tortuga-pro-custom-colors.php:429
-msgctxt "color setting"
-msgid "Post Titles (secondary)"
-msgstr ""
-
-#: includes/modules/class-tortuga-pro-custom-colors.php:446
+#: includes/modules/class-tortuga-pro-custom-colors.php:419
 msgctxt "color setting"
 msgid "Widget Titles"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:463
+#: includes/modules/class-tortuga-pro-custom-colors.php:436
 msgctxt "color setting"
 msgid "Widget Links"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:480
+#: includes/modules/class-tortuga-pro-custom-colors.php:453
+#: includes/modules/class-tortuga-pro-custom-colors.php:470
 msgctxt "color setting"
 msgid "Footer Widgets"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:213
+#: includes/modules/class-tortuga-pro-custom-fonts.php:205
 msgid "Theme Fonts"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:232
+#: includes/modules/class-tortuga-pro-custom-fonts.php:224
 msgid "Base Font"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:248
+#: includes/modules/class-tortuga-pro-custom-fonts.php:240
 msgctxt "font setting"
 msgid "Headings"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:264
+#: includes/modules/class-tortuga-pro-custom-fonts.php:256
 msgctxt "font setting"
 msgid "Navigation"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:280
+#: includes/modules/class-tortuga-pro-custom-fonts.php:272
 msgctxt "font setting"
 msgid "Widget Titles"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:297
+#: includes/modules/class-tortuga-pro-custom-fonts.php:289
 msgid "Choose available Fonts"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:301
+#: includes/modules/class-tortuga-pro-custom-fonts.php:293
 msgid "Default Browser Fonts (12)"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:302
+#: includes/modules/class-tortuga-pro-custom-fonts.php:294
 msgid "ThemeZee Favorite Fonts (35)"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:303
+#: includes/modules/class-tortuga-pro-custom-fonts.php:295
 msgid "Most Popular Google Fonts (100)"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:304
+#: includes/modules/class-tortuga-pro-custom-fonts.php:296
 msgid "All Google Fonts (650)"
 msgstr ""
 
@@ -287,18 +283,18 @@ msgstr ""
 msgid "Social Icons"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-site-logo.php:136
+#: includes/modules/class-tortuga-pro-site-logo.php:130
 msgid "Site Logo"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-site-logo.php:152
+#: includes/modules/class-tortuga-pro-site-logo.php:146
 msgid "Logo Image (replaces Site Title)"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-site-logo.php:169
-msgid "Logo Spacing (default: 10)"
+#: includes/modules/class-tortuga-pro-site-logo.php:163
+msgid "Logo Spacing (default: 0)"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-site-logo.php:186
-msgid "Navigation Spacing (default: 10)"
+#: includes/modules/class-tortuga-pro-site-logo.php:180
+msgid "Header Spacing (default: 20)"
 msgstr ""

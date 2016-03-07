@@ -69,8 +69,8 @@ class Tortuga_Pro_Customizer {
 
 		$default_options = array(
 			'header_logo' 						=> '',
-			'logo_spacing'						=> 0,
-			'header_spacing'					=> 20,
+			'logo_spacing'						=> 10,
+			'header_spacing'					=> 10,
 			'footer_text'						=> '',
 			'credit_link' 						=> true,
 			'top_navi_color'					=> '#383838',

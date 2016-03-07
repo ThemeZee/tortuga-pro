@@ -81,7 +81,7 @@ class Tortuga_Pro_Site_Logo {
 		$spacing_css = '';
 		
 		// Set Logo Spacing
-		if ( $theme_options['logo_spacing'] <> 0 ) { 
+		if ( $theme_options['logo_spacing'] <> 10 ) { 
 		
 			$margin = $theme_options['logo_spacing'] / 10;
 		
@@ -94,7 +94,7 @@ class Tortuga_Pro_Site_Logo {
 		}
 		
 		// Set Navigation Spacing
-		if ( $theme_options['header_spacing'] <> 20 ) { 
+		if ( $theme_options['header_spacing'] <> 10 ) { 
 		
 			$margin = $theme_options['header_spacing'] / 10;
 		
@@ -153,14 +153,14 @@ class Tortuga_Pro_Site_Logo {
 		
 		// Add Logo Spacing setting
 		$wp_customize->add_setting( 'tortuga_theme_options[logo_spacing]', array(
-			'default'           => 0,
+			'default'           => 10,
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'absint'
 			)
 		);
 		$wp_customize->add_control( 'tortuga_theme_options[logo_spacing]', array(
-			'label'    => __( 'Logo Spacing (default: 0)', 'tortuga-pro' ),
+			'label'    => __( 'Logo Spacing (default: 10)', 'tortuga-pro' ),
 			'section'  => 'tortuga_pro_section_logo',
 			'settings' => 'tortuga_theme_options[logo_spacing]',
 			'type'     => 'text',
@@ -170,14 +170,14 @@ class Tortuga_Pro_Site_Logo {
 		
 		// Add Header Spacing setting
 		$wp_customize->add_setting( 'tortuga_theme_options[header_spacing]', array(
-			'default'           => 20,
+			'default'           => 10,
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'absint'
 			)
 		);
 		$wp_customize->add_control( 'tortuga_theme_options[header_spacing]', array(
-			'label'    => __( 'Header Spacing (default: 20)', 'tortuga-pro' ),
+			'label'    => __( 'Header Spacing (default: 10)', 'tortuga-pro' ),
 			'section'  => 'tortuga_pro_section_logo',
 			'settings' => 'tortuga_theme_options[header_spacing]',
 			'type'     => 'text',
