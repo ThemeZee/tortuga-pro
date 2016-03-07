@@ -11,21 +11,21 @@
 	/* Link & Button Color Option */
 	wp.customize( 'tortuga_theme_options[link_color]', function( value ) {
 		value.bind( function( newval ) {
-			$('.entry-content a, .entry-content a:link, .entry-content a:visited, .post-navigation a:link, .post-navigation a:visited, .comments-area a:link, .comments-area a:visited, .more-link:link, .more-link:visited, .breadcrumbs a:link, .breadcrumbs a:visited')
+			$('.entry-content a, .entry-content a:link, .entry-content a:visited, .comments-area a:link, .comments-area a:visited, .breadcrumbs a:link, .breadcrumbs a:visited')
 				.css('color', newval );
-			$('.entry-content a, .post-navigation a, .more-link, .comments-area a, .breadcrumbs a')
-				.hover( function() { $( this ).css('color', '#404040' ); },
-						function() { $( this ).css('color', newval ); }
+			$('.entry-content a, .comments-area a, .breadcrumbs a')
+				.hover( function() { $( this ).css( 'color', '#303030' ); },
+						function() { $( this ).css( 'color', newval ); }
 				);
-			$('button, input[type="button"], input[type="reset"], input[type="submit"]')
-				.css('background', newval );
-			$('button, input[type="button"], input[type="reset"], input[type="submit"]')
-				.hover( function() { $( this ).css('background', '#404040' ); },
-						function() { $( this ).css('background', newval ); }
+			$('button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .post-navigation .nav-links a, .post-pagination .current, .post-slider-controls .zeeflex-direction-nav a, .tzwb-social-icons .social-icons-menu li a')
+				.css( 'background', newval );
+			$('button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .post-navigation .nav-links a, .post-pagination .current, .post-slider-controls .zeeflex-direction-nav a, .tzwb-social-icons .social-icons-menu li a')
+				.hover( function() { $( this ).css( 'background', '#303030' ); },
+						function() { $( this ).css( 'background', newval ); }
 				);
-			$('.entry-tags .meta-tags a')
-				.hover( function() { $( this ).css('background', newval ); },
-						function() { $( this ).css('background', '#eeeeee' ); }
+			$('.entry-tags .meta-tags a, .post-pagination a')
+				.hover( function() { $( this ).css( 'background', newval ); },
+						function() { $( this ).css( 'background', '#303030' ); }
 				);
 		} );
 	} );
@@ -34,21 +34,46 @@
 	wp.customize( 'tortuga_theme_options[top_navi_color]', function( value ) {
 		value.bind( function( newval ) {
 			$('.header-bar-wrap, .top-navigation-menu ul')
-				.css('background', newval );
+				.css( 'background', newval );
+		} );
+	} );
+	
+	/* Header Color Option */
+	wp.customize( 'tortuga_theme_options[header_color]', function( value ) {
+		value.bind( function( newval ) {
+			$('.site-header, .main-navigation-menu ul')
+				.css( 'background', newval );
+		} );
+	} );
+	
+	/* Title Color Option */
+	wp.customize( 'tortuga_theme_options[title_color]', function( value ) {
+		value.bind( function( newval ) {
+			$('.archive-title, .page-title, .entry-title, .entry-title a:link, .entry-title a:visited, .comments-header .comments-title, .comment-reply-title span')
+				.css('color', newval );
+			$('.archive-title, .page-title, .entry-title, .entry-title a:link, .entry-title a:visited, .comments-header .comments-title, .comment-reply-title span')
+				.hover( function() { $( this ).css( 'color', '#303030' ); },
+						function() { $( this ).css( 'color', newval ); }
+				);
+			$('.page-header, .type-post, .type-page, .type-attachment, .comments-area')
+				.css( 'border-color', newval );
 		} );
 	} );
 	
 	/* Widget Title Color Option */
 	wp.customize( 'tortuga_theme_options[widget_title_color]', function( value ) {
 		value.bind( function( newval ) {
-			$('.widget-title, .widget-title a:link, .widget-title a:visited, .page-header .archive-title, .comments-header .comments-title, .comment-reply-title span, .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab')
+			$('.widget-title, .widget-title a:link, .widget-title a:visited')
 				.not( $('.footer-widgets .widget-title') )
 				.css('color', newval );
 			$('.tzwb-tabbed-content .tzwb-tabnavi li a')
-				.hover( function() { $( this ).css('color', newval ); },
-						function() { $( this ).css('color', '#404040' ); }
-				)
-				
+				.hover( function() { $( this ).css('background', newval ); },
+						function() { $( this ).css('background', '#303030' ); }
+				);
+			$('.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab')
+				.css( 'background', newval );
+			$('.widget, .widget-magazine-posts-columns .magazine-posts-columns .magazine-posts-columns-content')
+				.css( 'border-color', newval );		
 		} );
 	} );
 	
@@ -60,17 +85,17 @@
 				.css('color', newval );
 			$('.sidebar .widget a')
 				.not( $('.sidebar .widget_tag_cloud .tagcloud a, .sidebar .widget .entry-meta a, .tzwb-tabbed-content .tzwb-tabnavi li a, .tzwb-social-icons .social-icons-menu li a, .footer-widgets .widget a') )
-				.hover( function() { $( this ).css('color', '#404040' ); },
+				.hover( function() { $( this ).css('color', '#303030' ); },
 						function() { $( this ).css('color', newval ); }
 				);
 			$('.sidebar .widget_tag_cloud .tagcloud a')
 				.hover( function() { $( this ).css('background', newval ); },
-						function() { $( this ).css('background', '#eeeeee' ); }
+						function() { $( this ).css('background', '#303030' ); }
 				);
 			$('.tzwb-social-icons .social-icons-menu li a')
 				.css('background', newval );
 			$('.tzwb-social-icons .social-icons-menu li a')
-				.hover( function() { $( this ).css('background', '#404040' ); },
+				.hover( function() { $( this ).css('background', '#303030' ); },
 						function() { $( this ).css('background', newval ); }
 				);
 				
@@ -78,9 +103,17 @@
 	} );
 	
 	/* Footer Widgets Color Option */
-	wp.customize( 'tortuga_theme_options[footer_color]', function( value ) {
+	wp.customize( 'tortuga_theme_options[footer_widgets_color]', function( value ) {
 		value.bind( function( newval ) {
 			$('.footer-widgets-background')
+				.css('background', newval );
+		} );
+	} );
+	
+	/* Footer Line Color Option */
+	wp.customize( 'tortuga_theme_options[footer_color]', function( value ) {
+		value.bind( function( newval ) {
+			$('.footer-wrap')
 				.css('background', newval );
 		} );
 	} );
