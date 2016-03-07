@@ -409,7 +409,7 @@ class Tortuga_Pro_Settings {
 			$html .= '<input type="submit" class="button" name="tortuga_pro_deactivate_license" value="' . esc_attr__( 'Deactivate License', 'tortuga-pro' ) . '"/>';
 			$html .= '<span style="display: inline-block; padding: 5px; color: green;">&nbsp;' . esc_html__( 'Your license is valid!', 'tortuga-pro' ) . '</span>';
 		} elseif( 'expired' === $license_status && ! empty( $license_key ) ) {
-			$renewal_url = esc_url( add_query_arg( array( 'edd_license_key' => $license_key, 'download_id' => POSEIDON_PRO_PRODUCT_ID ), 'https://themezee.com/checkout' ) );
+			$renewal_url = esc_url( add_query_arg( array( 'edd_license_key' => $license_key, 'download_id' => TORTUGA_PRO_PRODUCT_ID ), 'https://themezee.com/checkout' ) );
 			$html .= '<a href="' . esc_url( $renewal_url ) . '" class="button-primary">' . esc_html__( 'Renew Your License', 'tortuga-pro' ) . '</a>';
 			$html .= '<br/><span style="display: inline-block; padding: 5px; color: red;">&nbsp;' . esc_html__( 'Your license has expired, renew today to continue getting updates and support!', 'tortuga-pro' ) . '</span>';
 		} elseif( 'invalid' === $license_status && ! empty( $license_key ) ) {
@@ -570,13 +570,13 @@ class Tortuga_Pro_Settings {
 		$api_params = array(
 			'edd_action'=> 'activate_license',
 			'license' 	=> $license,
-			'item_name' => urlencode( POSEIDON_PRO_NAME ),
-			'item_id'   => POSEIDON_PRO_PRODUCT_ID,
+			'item_name' => urlencode( TORTUGA_PRO_NAME ),
+			'item_id'   => TORTUGA_PRO_PRODUCT_ID,
 			'url'       => home_url()
 		);
 		
 		// Call the custom API.
-		$response = wp_remote_post( POSEIDON_PRO_STORE_API_URL, array( 'timeout' => 35, 'sslverify' => true, 'body' => $api_params ) );
+		$response = wp_remote_post( TORTUGA_PRO_STORE_API_URL, array( 'timeout' => 35, 'sslverify' => true, 'body' => $api_params ) );
 
 		// make sure the response came back okay
 		if ( is_wp_error( $response ) )
@@ -618,12 +618,12 @@ class Tortuga_Pro_Settings {
 		$api_params = array(
 			'edd_action'=> 'deactivate_license',
 			'license' 	=> $license,
-			'item_name' => urlencode( POSEIDON_PRO_NAME ),
+			'item_name' => urlencode( TORTUGA_PRO_NAME ),
 			'url'       => home_url()
 		);
 		
 		// Call the custom API.
-		$response = wp_remote_post( POSEIDON_PRO_STORE_API_URL, array( 'timeout' => 35, 'sslverify' => true, 'body' => $api_params ) );
+		$response = wp_remote_post( TORTUGA_PRO_STORE_API_URL, array( 'timeout' => 35, 'sslverify' => true, 'body' => $api_params ) );
 
 		// make sure the response came back okay
 		if ( is_wp_error( $response ) )
@@ -659,12 +659,12 @@ class Tortuga_Pro_Settings {
 			$api_params = array(
 				'edd_action'=> 'check_license',
 				'license' 	=> $this->get( 'license_key' ),
-				'item_name' => urlencode( POSEIDON_PRO_NAME ),
+				'item_name' => urlencode( TORTUGA_PRO_NAME ),
 				'url'       => home_url()
 			);
 			
 			// Call the custom API.
-			$response = wp_remote_post( POSEIDON_PRO_STORE_API_URL, array( 'timeout' => 25, 'sslverify' => true, 'body' => $api_params ) );
+			$response = wp_remote_post( TORTUGA_PRO_STORE_API_URL, array( 'timeout' => 25, 'sslverify' => true, 'body' => $api_params ) );
 
 			// make sure the response came back okay
 			if ( is_wp_error( $response ) )

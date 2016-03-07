@@ -100,7 +100,7 @@ class Tortuga_Pro_Customizer {
 	 */
 	static function customize_preview_js() {
 		
-		wp_enqueue_script( 'tortuga-pro-customizer-js', POSEIDON_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), POSEIDON_PRO_VERSION, true );
+		wp_enqueue_script( 'tortuga-pro-customizer-js', TORTUGA_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), TORTUGA_PRO_VERSION, true );
 	
 	}
 
@@ -111,7 +111,7 @@ class Tortuga_Pro_Customizer {
 	 */
 	static function customize_preview_css() {
 		
-		wp_enqueue_style( 'tortuga-pro-customizer-css', POSEIDON_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), POSEIDON_PRO_VERSION );
+		wp_enqueue_style( 'tortuga-pro-customizer-css', TORTUGA_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), TORTUGA_PRO_VERSION );
 	
 	}
 

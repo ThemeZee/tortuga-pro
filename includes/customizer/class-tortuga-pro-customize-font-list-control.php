@@ -36,7 +36,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 		public function enqueue() {
 
 			// Register and Enqueue Custom Font JS Constructor
-			wp_enqueue_script( 'tortuga-pro-custom-font-control', POSEIDON_PRO_PLUGIN_URL . 'assets/js/custom-font-control.js', array( 'customize-controls' ), POSEIDON_PRO_VERSION, true );
+			wp_enqueue_script( 'tortuga-pro-custom-font-control', TORTUGA_PRO_PLUGIN_URL . 'assets/js/custom-font-control.js', array( 'customize-controls' ), TORTUGA_PRO_VERSION, true );
 		
 		}
 		
