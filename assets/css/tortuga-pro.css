@@ -223,6 +223,7 @@
 --------------------------------------------------------------*/
 .footer-navigation {
 	float: right;
+	padding: 2em 0;
 }
 
 .footer-navigation-toggle {
@@ -232,7 +233,6 @@
 .footer-navigation-menu {
 	display: inline;
 	margin: 0;
-	padding: 2em 0;
 	list-style-type: none;
 	list-style-position: outside;
 	position: relative;
@@ -503,6 +503,7 @@
 	.footer-navigation {
 		display: block;
 		width: 100%;
+		padding: 0;
 	}
 	
 	.footer-navigation-menu {
