@@ -82,8 +82,11 @@ class Tortuga_Pro_Custom_Fonts {
 			$font_css .= '
 				/* Headings Font Setting */
 				.site-title, 
+				.archive-title,
 				.page-title, 
-				.entry-title {
+				.entry-title,
+				.comments-header .comments-title,
+				.comment-reply-title span {
 					font-family: "'.esc_attr($theme_options['title_font']).'";
 				}
 				';
@@ -109,18 +112,7 @@ class Tortuga_Pro_Custom_Fonts {
 		
 			$font_css .= '
 				/* Widget Titles Font Setting */
-				button,
-				input[type="button"],
-				input[type="reset"],
-				input[type="submit"],
-				.more-link,
-				.widget-title,
-				.post-pagination a,
-				.post-pagination .current,
-				.page-header .archive-title,
-				.comments-header .comments-title,
-				.comment-reply-title span,
-				.tzwb-tabbed-content .tzwb-tabnavi li a {
+				.widget-title {
 					font-family: "'.esc_attr($theme_options['widget_title_font']).'";
 				}
 				';

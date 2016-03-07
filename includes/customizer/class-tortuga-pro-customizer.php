@@ -82,10 +82,10 @@ class Tortuga_Pro_Customizer {
 			'widget_title_color'				=> '#404040',
 			'widget_link_color'					=> '#22aadd',
 			'footer_color'						=> '#404040',
-			'text_font' 						=> 'Ubuntu',
-			'title_font' 						=> 'Raleway',
-			'navi_font' 						=> 'Raleway',
-			'widget_title_font' 				=> 'Raleway',
+			'text_font' 						=> 'Open Sans',
+			'title_font' 						=> 'Titillium Web',
+			'navi_font' 						=> 'Titillium Web',
+			'widget_title_font' 				=> 'Titillium Web',
 			'available_fonts'					=> 'favorites'
 		);
 		
