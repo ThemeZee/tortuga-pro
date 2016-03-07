@@ -1,17 +1,17 @@
 <?php
 /*
-Plugin Name: Poseidon Pro
-Plugin URI: http://themezee.com/addons/poseidon-pro/
-Description: Adds additional features like footer widgets, custom colors, fonts and logo upload to the Poseidon theme.
+Plugin Name: Tortuga Pro
+Plugin URI: http://themezee.com/addons/tortuga-pro/
+Description: Adds additional features like footer widgets, custom colors, fonts and logo upload to the Tortuga theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
 Version: 1.0
-Text Domain: poseidon-pro
+Text Domain: tortuga-pro
 Domain Path: /languages/
 License: GPL v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Poseidon Pro
+Tortuga Pro
 Copyright(C) 2015, ThemeZee.com - support@themezee.com
 
 */
@@ -20,22 +20,22 @@ Copyright(C) 2015, ThemeZee.com - support@themezee.com
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Poseidon_Pro' ) ) :
+if ( ! class_exists( 'Tortuga_Pro' ) ) :
 
 
 /**
- * Main Poseidon_Pro Class
+ * Main Tortuga_Pro Class
  *
- * @package Poseidon Pro
+ * @package Tortuga Pro
  */
-class Poseidon_Pro {
+class Tortuga_Pro {
 
 	/**
 	 * Call all Functions to setup the Plugin
 	 *
-	 * @uses Poseidon_Pro::constants() Setup the constants needed
-	 * @uses Poseidon_Pro::includes() Include the required files
-	 * @uses Poseidon_Pro::setup_actions() Setup the hooks and actions
+	 * @uses Tortuga_Pro::constants() Setup the constants needed
+	 * @uses Tortuga_Pro::includes() Include the required files
+	 * @uses Tortuga_Pro::setup_actions() Setup the hooks and actions
 	 * @return void
 	 */
 	static function setup() {
@@ -62,7 +62,7 @@ class Poseidon_Pro {
 	static function constants() {
 		
 		// Define Plugin Name
-		define( 'POSEIDON_PRO_NAME', 'Poseidon Pro' );
+		define( 'POSEIDON_PRO_NAME', 'Tortuga Pro' );
 
 		// Define Version Number
 		define( 'POSEIDON_PRO_VERSION', '1.0' );
@@ -91,7 +91,7 @@ class Poseidon_Pro {
 	 */
 	static function translation() {
 
-		load_plugin_textdomain( 'poseidon-pro', false, dirname( plugin_basename( POSEIDON_PRO_PLUGIN_FILE ) ) . '/languages/' );
+		load_plugin_textdomain( 'tortuga-pro', false, dirname( plugin_basename( POSEIDON_PRO_PLUGIN_FILE ) ) . '/languages/' );
 		
 	}
 	
@@ -103,23 +103,23 @@ class Poseidon_Pro {
 	static function includes() {
 	
 		// Include Admin Classes
-		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/admin/class-poseidon-pro-plugin-updater.php';
-		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/admin/class-poseidon-pro-settings.php';
-		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/admin/class-poseidon-pro-settings-page.php';
+		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/admin/class-tortuga-pro-plugin-updater.php';
+		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/admin/class-tortuga-pro-settings.php';
+		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/admin/class-tortuga-pro-settings-page.php';
 		
 		// Include Customizer Classes
-		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/customizer/class-poseidon-pro-customizer.php';
+		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/customizer/class-tortuga-pro-customizer.php';
 		
 		// Include Pro Features
-		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/modules/class-poseidon-pro-custom-colors.php';
-		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/modules/class-poseidon-pro-custom-fonts.php';
-		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/modules/class-poseidon-pro-footer-line.php';
-		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/modules/class-poseidon-pro-footer-widgets.php';
-		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/modules/class-poseidon-pro-header-bar.php';
-		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/modules/class-poseidon-pro-site-logo.php';
+		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/modules/class-tortuga-pro-custom-colors.php';
+		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/modules/class-tortuga-pro-custom-fonts.php';
+		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/modules/class-tortuga-pro-footer-line.php';
+		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/modules/class-tortuga-pro-footer-widgets.php';
+		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/modules/class-tortuga-pro-header-bar.php';
+		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/modules/class-tortuga-pro-site-logo.php';
 		
 		// Include Custom Stylesheet class
-		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/class-poseidon-pro-custom-stylesheet.php';
+		require_once POSEIDON_PRO_PLUGIN_DIR . '/includes/class-tortuga-pro-custom-stylesheet.php';
 
 	}
 	
@@ -152,13 +152,13 @@ class Poseidon_Pro {
 	 */
 	static function enqueue_styles() {
 
-		// Return early if Poseidon Theme is not active
-		if ( ! current_theme_supports( 'poseidon-pro'  ) ) {
+		// Return early if Tortuga Theme is not active
+		if ( ! current_theme_supports( 'tortuga-pro'  ) ) {
 			return;
 		}
 		
 		// Enqueue Plugin Stylesheet
-		wp_enqueue_style( 'poseidon-pro', POSEIDON_PRO_PLUGIN_URL . 'assets/css/poseidon-pro.css', array(), POSEIDON_PRO_VERSION );
+		wp_enqueue_style( 'tortuga-pro', POSEIDON_PRO_PLUGIN_URL . 'assets/css/tortuga-pro.css', array(), POSEIDON_PRO_VERSION );
 		
 	}
 	
@@ -169,7 +169,7 @@ class Poseidon_Pro {
 	 */
 	static function plugin_action_links( $actions ) {
 
-		$settings_link = array( 'settings' => sprintf( '<a href="%s">%s</a>', admin_url( 'themes.php?page=poseidon-pro' ), __( 'Settings', 'poseidon-pro' ) ) );
+		$settings_link = array( 'settings' => sprintf( '<a href="%s">%s</a>', admin_url( 'themes.php?page=tortuga-pro' ), __( 'Settings', 'tortuga-pro' ) ) );
 		
 		return array_merge( $settings_link, $actions );
 	}
@@ -186,14 +186,14 @@ class Poseidon_Pro {
 		// Display missing theme notice on themes and plugins page
 		if ( ( $pagenow == 'themes.php' && !isset( $_GET['page'] ) ) or $pagenow == 'plugins.php' ) :
 	
-			// Display notice if Poseidon theme is not active
-			if ( ! get_theme_support( 'poseidon-pro' ) ) : ?>
+			// Display notice if Tortuga theme is not active
+			if ( ! get_theme_support( 'tortuga-pro' ) ) : ?>
 			
 				<div class="notice notice-warning">
 					<p>
-						<?php printf( __( 'The %1$s add-on needs the %2$s theme activated in order to work. You should deactivate %1$s if you have switched to another theme permanently.', 'poseidon-pro' ),
+						<?php printf( __( 'The %1$s add-on needs the %2$s theme activated in order to work. You should deactivate %1$s if you have switched to another theme permanently.', 'tortuga-pro' ),
 							POSEIDON_PRO_NAME,
-							'Poseidon'
+							'Tortuga'
 						); ?>
 					</p>
 				</div>
@@ -207,15 +207,15 @@ class Poseidon_Pro {
 		if ( $pagenow == 'update-core.php' or $pagenow == 'plugins.php' ) :
 		
 			// Get Settings
-			$options = Poseidon_Pro_Settings::instance();
+			$options = Tortuga_Pro_Settings::instance();
 		
 			if( '' == $options->get( 'license_key' ) ) : ?>
 				
 				<div class="updated">
 					<p>
-						<?php printf( __( 'Please enter your license key for the %1$s add-on in order to receive updates and support. <a href="%2$s">Enter License Key</a>', 'poseidon-pro' ),
+						<?php printf( __( 'Please enter your license key for the %1$s add-on in order to receive updates and support. <a href="%2$s">Enter License Key</a>', 'tortuga-pro' ),
 							POSEIDON_PRO_NAME,
-							admin_url( 'themes.php?page=poseidon-pro' ) ); 
+							admin_url( 'themes.php?page=tortuga-pro' ) ); 
 						?>
 					</p>
 				</div>
@@ -238,14 +238,14 @@ class Poseidon_Pro {
 			return;
 		endif;
 		
-		$options = Poseidon_Pro_Settings::instance();
+		$options = Tortuga_Pro_Settings::instance();
 
 		if( $options->get( 'license_key' ) <> '' ) :
 			
 			$license_key = $options->get( 'license_key' );
 			
 			// setup the updater
-			$poseidon_pro_updater = new Poseidon_Pro_Plugin_Updater( POSEIDON_PRO_STORE_API_URL, __FILE__, array(
+			$tortuga_pro_updater = new Tortuga_Pro_Plugin_Updater( POSEIDON_PRO_STORE_API_URL, __FILE__, array(
 					'version' 	=> POSEIDON_PRO_VERSION,
 					'license' 	=> $license_key,
 					'item_name' => POSEIDON_PRO_NAME,
@@ -261,6 +261,6 @@ class Poseidon_Pro {
 }
 
 // Run Plugin
-Poseidon_Pro::setup();
+Tortuga_Pro::setup();
 
 endif;

@@ -2,7 +2,7 @@
 /**
  * Custom Font Control for the Customizer
  *
- * @package Poseidon Pro
+ * @package Tortuga Pro
  */
 
 /**
@@ -15,28 +15,28 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 	 * Displays a custom Font control. Allows to switch fonts for particular elements on the theme.
 	 *
 	 */
-	class Poseidon_Pro_Customize_Font_Control extends WP_Customize_Control {
+	class Tortuga_Pro_Customize_Font_Control extends WP_Customize_Control {
 	
 		private $fonts = false;
 		public $l10n = array();
 		
 		// critical for JS constructor
-		public $type = 'poseidon_pro_custom_font';
+		public $type = 'tortuga_pro_custom_font';
 		
 		public function __construct($manager, $id, $args = array(), $options = array()) {
 		
 			// Make Buttons translateable
 			$this->l10n = array(
-				'previous' =>	__( 'Previous Font', 'poseidon-pro' ),
-				'next' =>		__( 'Next Font', 'poseidon-pro' ),
-				'standard' =>	_x( 'Default', 'default font button', 'poseidon-pro' )
+				'previous' =>	__( 'Previous Font', 'tortuga-pro' ),
+				'next' =>		__( 'Next Font', 'tortuga-pro' ),
+				'standard' =>	_x( 'Default', 'default font button', 'tortuga-pro' )
 			);
 					
 			// Get Theme Options
-			$theme_options = Poseidon_Pro_Customizer::get_theme_options();
+			$theme_options = Tortuga_Pro_Customizer::get_theme_options();
 			
 			// Set Fonts
-			$this->fonts = Poseidon_Pro_Custom_Font_Lists::get_fonts($theme_options['available_fonts']);
+			$this->fonts = Tortuga_Pro_Custom_Font_Lists::get_fonts($theme_options['available_fonts']);
 	
 			parent::__construct( $manager, $id, $args );
 			
@@ -45,7 +45,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 		public function enqueue() {
 
 			// Register and Enqueue Custom Font JS Constructor
-			wp_enqueue_script( 'poseidon-pro-custom-font-control', POSEIDON_PRO_PLUGIN_URL . 'assets/js/custom-font-control.js', array( 'customize-controls' ), POSEIDON_PRO_VERSION, true );
+			wp_enqueue_script( 'tortuga-pro-custom-font-control', POSEIDON_PRO_PLUGIN_URL . 'assets/js/custom-font-control.js', array( 'customize-controls' ), POSEIDON_PRO_VERSION, true );
 		
 		}
 		

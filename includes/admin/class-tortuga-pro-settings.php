@@ -1,12 +1,12 @@
 <?php
 /***
- * Poseidon Pro Settings Class
+ * Tortuga Pro Settings Class
  *
  * Registers all plugin settings with the WordPress Settings API.
  * Handles license key activation with the ThemeZee Store API.
  *
  * @link https://codex.wordpress.org/Settings_API
- * @package Poseidon Pro
+ * @package Tortuga Pro
  */
 
 // Exit if accessed directly
@@ -14,13 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Poseidon_Pro_Settings' ) ) :
+if ( ! class_exists( 'Tortuga_Pro_Settings' ) ) :
 
-class Poseidon_Pro_Settings {
+class Tortuga_Pro_Settings {
 	/** Singleton *************************************************************/
 
 	/**
-	 * @var instance The one true Poseidon_Pro_Settings instance
+	 * @var instance The one true Tortuga_Pro_Settings instance
 	 */
 	private static $instance;
 	
@@ -32,7 +32,7 @@ class Poseidon_Pro_Settings {
 	/**
      * Creates or returns an instance of this class.
      *
-     * @return Poseidon_Pro_Settings A single instance of this class.
+     * @return Tortuga_Pro_Settings A single instance of this class.
      */
 	public static function instance() {
  
@@ -59,7 +59,7 @@ class Poseidon_Pro_Settings {
 		$this->options = wp_parse_args( 
 			
 			// Get saved theme options from WP database
-			get_option( 'poseidon_pro_settings' , array() ), 
+			get_option( 'tortuga_pro_settings' , array() ), 
 			
 			// Merge with Default Settings if setting was not saved yet
 			$this->default_settings()
@@ -124,12 +124,12 @@ class Poseidon_Pro_Settings {
 	function register_settings() {
 
 		// Make sure that options exist in database
-		if ( false == get_option( 'poseidon_pro_settings' ) ) {
-			add_option( 'poseidon_pro_settings' );
+		if ( false == get_option( 'tortuga_pro_settings' ) ) {
+			add_option( 'tortuga_pro_settings' );
 		}
 		
 		// Add Sections
-		add_settings_section( 'poseidon_pro_settings_license', esc_html__( 'License', 'poseidon-pro' ), array( $this, 'license_section_intro' ), 'poseidon_pro_settings' );
+		add_settings_section( 'tortuga_pro_settings_license', esc_html__( 'License', 'tortuga-pro' ), array( $this, 'license_section_intro' ), 'tortuga_pro_settings' );
 		
 		// Add Settings
 		foreach ( $this->get_registered_settings() as $key => $option ) :
@@ -138,11 +138,11 @@ class Poseidon_Pro_Settings {
 			$section = isset( $option['section'] ) ? $option['section'] : 'widgets';
 			
 			add_settings_field(
-				'poseidon_pro_settings[' . $key . ']',
+				'tortuga_pro_settings[' . $key . ']',
 				$name,
 				is_callable( array( $this, $option[ 'type' ] . '_callback' ) ) ? array( $this, $option[ 'type' ] . '_callback' ) : array( $this, 'missing_callback' ),
-				'poseidon_pro_settings',
-				'poseidon_pro_settings_' . $section,
+				'tortuga_pro_settings',
+				'tortuga_pro_settings_' . $section,
 				array(
 					'id'      => $key,
 					'name'    => isset( $option['name'] ) ? $option['name'] : null,
@@ -159,7 +159,7 @@ class Poseidon_Pro_Settings {
 		endforeach;
 
 		// Creates our settings in the options table
-		register_setting( 'poseidon_pro_settings', 'poseidon_pro_settings', array( $this, 'sanitize_settings' ) );
+		register_setting( 'tortuga_pro_settings', 'tortuga_pro_settings', array( $this, 'sanitize_settings' ) );
 	}
 
 	
@@ -169,7 +169,7 @@ class Poseidon_Pro_Settings {
 	 * @return void
 	*/
 	function general_section_intro() {
-		esc_html_e( 'Configure the Poseidon Pro Addon.', 'poseidon-pro');
+		esc_html_e( 'Configure the Tortuga Pro Addon.', 'tortuga-pro');
 	}
 	
 	
@@ -179,7 +179,7 @@ class Poseidon_Pro_Settings {
 	 * @return void
 	*/
 	function license_section_intro() {
-		printf( __( 'Please enter your license key. An active license key is needed for automatic plugin updates and <a href="%s" target="_blank">support</a>.', 'poseidon-pro' ), 'https://themezee.com/support/?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=poseidon-pro&utm_content=support' );
+		printf( __( 'Please enter your license key. An active license key is needed for automatic plugin updates and <a href="%s" target="_blank">support</a>.', 'tortuga-pro' ), 'https://themezee.com/support/?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=tortuga-pro&utm_content=support' );
 
 	}
 	
@@ -195,7 +195,7 @@ class Poseidon_Pro_Settings {
 			return $input;
 		}
 
-		$saved    = get_option( 'poseidon_pro_settings', array() );
+		$saved    = get_option( 'tortuga_pro_settings', array() );
 		if( ! is_array( $saved ) ) {
 			$saved = array();
 		}
@@ -280,14 +280,14 @@ class Poseidon_Pro_Settings {
 
 		$settings = array(
 			'license_key' => array(
-				'name' => esc_html__( 'License Key', 'poseidon-pro' ),
+				'name' => esc_html__( 'License Key', 'tortuga-pro' ),
 				'section' => 'license',
 				'type' => 'license',
 				'default' => ''
 			)
 		);
 
-		return apply_filters( 'poseidon_pro_settings', $settings );
+		return apply_filters( 'tortuga_pro_settings', $settings );
 	}
 
 	
@@ -297,14 +297,14 @@ class Poseidon_Pro_Settings {
 	 * Renders checkboxes.
 	 *
 	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Poseidon Pro Options
+	 * @global $this->options Array of all the Tortuga Pro Options
 	 * @return void
 	 */
 	function checkbox_callback( $args ) {
 
 		$checked = isset($this->options[$args['id']]) ? checked(1, $this->options[$args['id']], false) : '';
-		$html = '<input type="checkbox" id="poseidon_pro_settings[' . $args['id'] . ']" name="poseidon_pro_settings[' . $args['id'] . ']" value="1" ' . $checked . '/>';
-		$html .= '<label for="poseidon_pro_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+		$html = '<input type="checkbox" id="tortuga_pro_settings[' . $args['id'] . ']" name="tortuga_pro_settings[' . $args['id'] . ']" value="1" ' . $checked . '/>';
+		$html .= '<label for="tortuga_pro_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
 		echo $html;
 	}
@@ -316,7 +316,7 @@ class Poseidon_Pro_Settings {
 	 * Renders multiple checkboxes.
 	 *
 	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Poseidon Pro Options
+	 * @global $this->options Array of all the Tortuga Pro Options
 	 * @return void
 	 */
 	function multicheck_callback( $args ) {
@@ -324,8 +324,8 @@ class Poseidon_Pro_Settings {
 		if ( ! empty( $args['options'] ) ) :
 			foreach( $args['options'] as $key => $option ) {
 				$checked = isset($this->options[$args['id']][$key]) ? checked(1, $this->options[$args['id']][$key], false) : '';
-				echo '<input name="poseidon_pro_settings[' . $args['id'] . '][' . $key . ']" id="poseidon_pro_settings[' . $args['id'] . '][' . $key . ']" type="checkbox" value="1" ' . $checked . '/>&nbsp;';
-				echo '<label for="poseidon_pro_settings[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
+				echo '<input name="tortuga_pro_settings[' . $args['id'] . '][' . $key . ']" id="tortuga_pro_settings[' . $args['id'] . '][' . $key . ']" type="checkbox" value="1" ' . $checked . '/>&nbsp;';
+				echo '<label for="tortuga_pro_settings[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
 			}
 		endif;
 		echo '<p class="description">' . $args['desc'] . '</p>';
@@ -338,7 +338,7 @@ class Poseidon_Pro_Settings {
 	 * Renders text fields.
 	 *
 	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Poseidon Pro Options
+	 * @global $this->options Array of all the Tortuga Pro Options
 	 * @return void
 	 */
 	function text_callback( $args ) {
@@ -349,7 +349,7 @@ class Poseidon_Pro_Settings {
 			$value = isset( $args['default'] ) ? $args['default'] : '';
 
 		$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
-		$html = '<input type="text" class="' . $size . '-text" id="poseidon_pro_settings[' . $args['id'] . ']" name="poseidon_pro_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/>';
+		$html = '<input type="text" class="' . $size . '-text" id="tortuga_pro_settings[' . $args['id'] . ']" name="tortuga_pro_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/>';
 		$html .= '<p class="description">'  . $args['desc'] . '</p>';
 
 		echo $html;
@@ -362,7 +362,7 @@ class Poseidon_Pro_Settings {
 	 * Renders radio boxes.
 	 *
 	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Poseidon Pro Options
+	 * @global $this->options Array of all the Tortuga Pro Options
 	 * @return void
 	 */
 	function radio_callback( $args ) {
@@ -376,8 +376,8 @@ class Poseidon_Pro_Settings {
 				elseif( isset( $args['default'] ) && $args['default'] == $key && ! isset( $this->options[ $args['id'] ] ) )
 					$checked = true;
 
-				echo '<input name="poseidon_pro_settings[' . $args['id'] . ']"" id="poseidon_pro_settings[' . $args['id'] . '][' . $key . ']" type="radio" value="' . $key . '" ' . checked(true, $checked, false) . '/>&nbsp;';
-				echo '<label for="poseidon_pro_settings[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
+				echo '<input name="tortuga_pro_settings[' . $args['id'] . ']"" id="tortuga_pro_settings[' . $args['id'] . '][' . $key . ']" type="radio" value="' . $key . '" ' . checked(true, $checked, false) . '/>&nbsp;';
+				echo '<label for="tortuga_pro_settings[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
 			endforeach;
 		endif;
 		echo '<p class="description">' . $args['desc'] . '</p>';
@@ -390,7 +390,7 @@ class Poseidon_Pro_Settings {
 	 * Renders license key fields.
 	 *
 	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Poseidon Pro Options
+	 * @global $this->options Array of all the Tortuga Pro Options
 	 * @return void
 	 */
 	function license_callback( $args ) {
@@ -401,22 +401,22 @@ class Poseidon_Pro_Settings {
 			$value = isset( $args['default'] ) ? $args['default'] : '';
 
 		$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
-		$html = '<input type="text" class="' . $size . '-text" id="poseidon_pro_settings[' . $args['id'] . ']" name="poseidon_pro_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/><br/><br/>';
+		$html = '<input type="text" class="' . $size . '-text" id="tortuga_pro_settings[' . $args['id'] . ']" name="tortuga_pro_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/><br/><br/>';
 		$license_status = $this->get( 'license_status' );
 		$license_key = ! empty( $value ) ? $value : false;
 
 		if( 'valid' === $license_status && ! empty( $license_key ) ) {
-			$html .= '<input type="submit" class="button" name="poseidon_pro_deactivate_license" value="' . esc_attr__( 'Deactivate License', 'poseidon-pro' ) . '"/>';
-			$html .= '<span style="display: inline-block; padding: 5px; color: green;">&nbsp;' . esc_html__( 'Your license is valid!', 'poseidon-pro' ) . '</span>';
+			$html .= '<input type="submit" class="button" name="tortuga_pro_deactivate_license" value="' . esc_attr__( 'Deactivate License', 'tortuga-pro' ) . '"/>';
+			$html .= '<span style="display: inline-block; padding: 5px; color: green;">&nbsp;' . esc_html__( 'Your license is valid!', 'tortuga-pro' ) . '</span>';
 		} elseif( 'expired' === $license_status && ! empty( $license_key ) ) {
 			$renewal_url = esc_url( add_query_arg( array( 'edd_license_key' => $license_key, 'download_id' => POSEIDON_PRO_PRODUCT_ID ), 'https://themezee.com/checkout' ) );
-			$html .= '<a href="' . esc_url( $renewal_url ) . '" class="button-primary">' . esc_html__( 'Renew Your License', 'poseidon-pro' ) . '</a>';
-			$html .= '<br/><span style="display: inline-block; padding: 5px; color: red;">&nbsp;' . esc_html__( 'Your license has expired, renew today to continue getting updates and support!', 'poseidon-pro' ) . '</span>';
+			$html .= '<a href="' . esc_url( $renewal_url ) . '" class="button-primary">' . esc_html__( 'Renew Your License', 'tortuga-pro' ) . '</a>';
+			$html .= '<br/><span style="display: inline-block; padding: 5px; color: red;">&nbsp;' . esc_html__( 'Your license has expired, renew today to continue getting updates and support!', 'tortuga-pro' ) . '</span>';
 		} elseif( 'invalid' === $license_status && ! empty( $license_key ) ) {
-			$html .= '<input type="submit" class="button" name="poseidon_pro_activate_license" value="' . esc_attr__( 'Activate License', 'poseidon-pro' ) . '"/>';
-			$html .= '<span style="display: inline-block; padding: 5px; color: red;">&nbsp;' . esc_html__( 'Your license is invalid!', 'poseidon-pro' ) . '</span>';
+			$html .= '<input type="submit" class="button" name="tortuga_pro_activate_license" value="' . esc_attr__( 'Activate License', 'tortuga-pro' ) . '"/>';
+			$html .= '<span style="display: inline-block; padding: 5px; color: red;">&nbsp;' . esc_html__( 'Your license is invalid!', 'tortuga-pro' ) . '</span>';
 		} else {
-			$html .= '<input type="submit" class="button" name="poseidon_pro_activate_license" value="' . esc_attr__( 'Activate License', 'poseidon-pro' ) . '"/>';
+			$html .= '<input type="submit" class="button" name="tortuga_pro_activate_license" value="' . esc_attr__( 'Activate License', 'tortuga-pro' ) . '"/>';
 		}
 
 		$html .= '<p class="description">'  . $args['desc'] . '</p>';
@@ -431,7 +431,7 @@ class Poseidon_Pro_Settings {
 	 * Renders number fields.
 	 *
 	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Poseidon Pro Options
+	 * @global $this->options Array of all the Tortuga Pro Options
 	 * @return void
 	 */
 	function number_callback( $args ) {
@@ -446,7 +446,7 @@ class Poseidon_Pro_Settings {
 		$step = isset( $args['step'] ) ? $args['step'] : 1;
 
 		$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
-		$html = '<input type="number" step="' . esc_attr( $step ) . '" max="' . esc_attr( $max ) . '" min="' . esc_attr( $min ) . '" class="' . $size . '-text" id="poseidon_pro_settings[' . $args['id'] . ']" name="poseidon_pro_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/>';
+		$html = '<input type="number" step="' . esc_attr( $step ) . '" max="' . esc_attr( $max ) . '" min="' . esc_attr( $min ) . '" class="' . $size . '-text" id="tortuga_pro_settings[' . $args['id'] . ']" name="tortuga_pro_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/>';
 		$html .= '<p class="description">'  . $args['desc'] . '</p>';
 
 		echo $html;
@@ -459,7 +459,7 @@ class Poseidon_Pro_Settings {
 	 * Renders textarea fields.
 	 *
 	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Poseidon Pro Options
+	 * @global $this->options Array of all the Tortuga Pro Options
 	 * @return void
 	 */
 	function textarea_callback( $args ) {
@@ -470,7 +470,7 @@ class Poseidon_Pro_Settings {
 			$value = isset( $args['default'] ) ? $args['default'] : '';
 
 		$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
-		$html = '<textarea class="' . $size . '-text" cols="20" rows="5" id="poseidon_pro_settings_' . $args['id'] . '" name="poseidon_pro_settings[' . $args['id'] . ']">' . esc_textarea( stripslashes( $value ) ) . '</textarea>';
+		$html = '<textarea class="' . $size . '-text" cols="20" rows="5" id="tortuga_pro_settings_' . $args['id'] . '" name="tortuga_pro_settings[' . $args['id'] . ']">' . esc_textarea( stripslashes( $value ) ) . '</textarea>';
 		$html .= '<p class="description">'  . $args['desc'] . '</p>';
 
 		echo $html;
@@ -483,7 +483,7 @@ class Poseidon_Pro_Settings {
 	 * Renders textarea fields which allow HTML code.
 	 *
 	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Poseidon Pro Options
+	 * @global $this->options Array of all the Tortuga Pro Options
 	 * @return void
 	 */
 	function textarea_html_callback( $args ) {
@@ -494,7 +494,7 @@ class Poseidon_Pro_Settings {
 			$value = isset( $args['default'] ) ? $args['default'] : '';
 
 		$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
-		$html = '<textarea class="' . $size . '-text" cols="20" rows="5" id="poseidon_pro_settings_' . $args['id'] . '" name="poseidon_pro_settings[' . $args['id'] . ']">' . esc_textarea( stripslashes( $value ) ) . '</textarea>';
+		$html = '<textarea class="' . $size . '-text" cols="20" rows="5" id="tortuga_pro_settings_' . $args['id'] . '" name="tortuga_pro_settings[' . $args['id'] . ']">' . esc_textarea( stripslashes( $value ) ) . '</textarea>';
 		$html .= '<p class="description">'  . $args['desc'] . '</p>';
 
 		echo $html;
@@ -510,7 +510,7 @@ class Poseidon_Pro_Settings {
 	 * @return void
 	 */
 	function missing_callback($args) {
-		printf( __( 'The callback function used for the <strong>%s</strong> setting is missing.', 'poseidon-pro' ), $args['id'] );
+		printf( __( 'The callback function used for the <strong>%s</strong> setting is missing.', 'tortuga-pro' ), $args['id'] );
 	}
 
 	/**
@@ -519,7 +519,7 @@ class Poseidon_Pro_Settings {
 	 * Renders select fields.
 	 *
 	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Poseidon Pro Options
+	 * @global $this->options Array of all the Tortuga Pro Options
 	 * @return void
 	 */
 	function select_callback($args) {
@@ -529,7 +529,7 @@ class Poseidon_Pro_Settings {
 		else
 			$value = isset( $args['default'] ) ? $args['default'] : '';
 
-		$html = '<select id="poseidon_pro_settings[' . $args['id'] . ']" name="poseidon_pro_settings[' . $args['id'] . ']"/>';
+		$html = '<select id="tortuga_pro_settings[' . $args['id'] . ']" name="tortuga_pro_settings[' . $args['id'] . ']"/>';
 
 		foreach ( $args['options'] as $option => $name ) :
 			$selected = selected( $option, $value, false );
@@ -550,18 +550,18 @@ class Poseidon_Pro_Settings {
 	*/
 	public function activate_license() {
 		
-		if( ! isset( $_POST['poseidon_pro_settings'] ) )
+		if( ! isset( $_POST['tortuga_pro_settings'] ) )
 			return;
 
-		if( ! isset( $_POST['poseidon_pro_activate_license'] ) )
+		if( ! isset( $_POST['tortuga_pro_activate_license'] ) )
 			return;
 
-		if( ! isset( $_POST['poseidon_pro_settings']['license_key'] ) )
+		if( ! isset( $_POST['tortuga_pro_settings']['license_key'] ) )
 			return;
 
 		// retrieve the license from the database
 		$status  = $this->get( 'license_status' );
-		$license = trim( $_POST['poseidon_pro_settings']['license_key'] );
+		$license = trim( $_POST['tortuga_pro_settings']['license_key'] );
 
 		if( 'valid' == $status )
 			return; // license already activated and valid
@@ -589,9 +589,9 @@ class Poseidon_Pro_Settings {
 
 		$options['license_status'] = $license_data->license;
 
-		update_option( 'poseidon_pro_settings', $options );
+		update_option( 'tortuga_pro_settings', $options );
 
-		delete_transient( 'poseidon_pro_license_check' );
+		delete_transient( 'tortuga_pro_license_check' );
 
 	}
 	
@@ -602,17 +602,17 @@ class Poseidon_Pro_Settings {
 	*/
 	public function deactivate_license() {
 
-		if( ! isset( $_POST['poseidon_pro_settings'] ) )
+		if( ! isset( $_POST['tortuga_pro_settings'] ) )
 			return;
 
-		if( ! isset( $_POST['poseidon_pro_deactivate_license'] ) )
+		if( ! isset( $_POST['tortuga_pro_deactivate_license'] ) )
 			return;
 
-		if( ! isset( $_POST['poseidon_pro_settings']['license_key'] ) )
+		if( ! isset( $_POST['tortuga_pro_settings']['license_key'] ) )
 			return;
 
 		// retrieve the license from the database
-		$license = trim( $_POST['poseidon_pro_settings']['license_key'] );
+		$license = trim( $_POST['tortuga_pro_settings']['license_key'] );
 
 		// data to send in our API request
 		$api_params = array(
@@ -633,9 +633,9 @@ class Poseidon_Pro_Settings {
 
 		$options['license_status'] = 0;
 
-		update_option( 'poseidon_pro_settings', $options );
+		update_option( 'tortuga_pro_settings', $options );
 
-		delete_transient( 'poseidon_pro_license_check' );
+		delete_transient( 'tortuga_pro_license_check' );
 
 	}
 
@@ -646,11 +646,11 @@ class Poseidon_Pro_Settings {
 	*/
 	public function check_license() {
 
-		if( ! empty( $_POST['poseidon_pro_settings'] ) ) {
+		if( ! empty( $_POST['tortuga_pro_settings'] ) ) {
 			return; // Don't fire when saving settings
 		}
 
-		$status = get_transient( 'poseidon_pro_license_check' );
+		$status = get_transient( 'tortuga_pro_license_check' );
 
 		// Run the license check a maximum of once per day
 		if( false === $status ) {
@@ -676,9 +676,9 @@ class Poseidon_Pro_Settings {
 
 			$options['license_status'] = $license_data->license;
 
-			update_option( 'poseidon_pro_settings', $options );
+			update_option( 'tortuga_pro_settings', $options );
 
-			set_transient( 'poseidon_pro_license_check', $license_data->license, DAY_IN_SECONDS );
+			set_transient( 'tortuga_pro_license_check', $license_data->license, DAY_IN_SECONDS );
 
 			$status = $license_data->license;
 
@@ -700,6 +700,6 @@ class Poseidon_Pro_Settings {
 }
 
 // Run Setting Class
-Poseidon_Pro_Settings::instance();
+Tortuga_Pro_Settings::instance();
 
 endif;

@@ -4,7 +4,7 @@
  *
  * Adds logo and spacing settings, replaces site title with logo image and adds spacing CSS
  *
- * @package Poseidon Pro
+ * @package Tortuga Pro
  */
 
 // Exit if accessed directly
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Poseidon_Pro_Site_Logo' ) ) :
+if ( ! class_exists( 'Tortuga_Pro_Site_Logo' ) ) :
 
-class Poseidon_Pro_Site_Logo {
+class Tortuga_Pro_Site_Logo {
 
 	/**
 	 * Site Logo Setup
@@ -23,17 +23,17 @@ class Poseidon_Pro_Site_Logo {
 	*/
 	static function setup() {
 		
-		// Return early if Poseidon Theme is not active
-		if ( ! current_theme_supports( 'poseidon-pro'  ) ) {
+		// Return early if Tortuga Theme is not active
+		if ( ! current_theme_supports( 'tortuga-pro'  ) ) {
 			return;
 		}
 		
 		// Replace default site title function with new site logo function
-		remove_action( 'poseidon_site_title', 'poseidon_site_title' );
-		add_action( 'poseidon_site_title', array( __CLASS__, 'display_site_logo' ) );
+		remove_action( 'tortuga_site_title', 'tortuga_site_title' );
+		add_action( 'tortuga_site_title', array( __CLASS__, 'display_site_logo' ) );
 		
 		// Add Custom Spacing CSS code to custom stylesheet output
-		add_filter( 'poseidon_pro_custom_css_stylesheet', array( __CLASS__, 'custom_spacing_css' ) ); 
+		add_filter( 'tortuga_pro_custom_css_stylesheet', array( __CLASS__, 'custom_spacing_css' ) ); 
 		
 		// Add Site Logo Settings
 		add_action( 'customize_register', array( __CLASS__, 'site_logo_settings' ) );
@@ -41,13 +41,13 @@ class Poseidon_Pro_Site_Logo {
 	
 	/**
 	 * Display Site Logo if user uploaded a logo image or shows Site Title as default if not
-	 * Hooks into the poseidon_site_title action hook in the on header area.
+	 * Hooks into the tortuga_site_title action hook in the on header area.
 	 *
 	 */
 	static function display_site_logo() { 
 
 		// Get Theme Options from Database
-		$theme_options = Poseidon_Pro_Customizer::get_theme_options();
+		$theme_options = Tortuga_Pro_Customizer::get_theme_options();
 		?>
 
 		<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
@@ -75,7 +75,7 @@ class Poseidon_Pro_Site_Logo {
 	static function custom_spacing_css( $custom_css ) { 
 		
 		// Get Theme Options from Database
-		$theme_options = Poseidon_Pro_Customizer::get_theme_options();
+		$theme_options = Tortuga_Pro_Customizer::get_theme_options();
 
 		// Set CSS Variable
 		$spacing_css = '';
@@ -132,15 +132,15 @@ class Poseidon_Pro_Site_Logo {
 	static function site_logo_settings( $wp_customize ) {
 
 		// Add Sections for Site Logo
-		$wp_customize->add_section( 'poseidon_pro_section_logo', array(
-			'title'    => __( 'Site Logo', 'poseidon-pro' ),
+		$wp_customize->add_section( 'tortuga_pro_section_logo', array(
+			'title'    => __( 'Site Logo', 'tortuga-pro' ),
 			'priority' => 20,
-			'panel' => 'poseidon_options_panel' 
+			'panel' => 'tortuga_options_panel' 
 			)
 		);
 		
 		// Add Upload logo image setting
-		$wp_customize->add_setting( 'poseidon_theme_options[header_logo]', array(
+		$wp_customize->add_setting( 'tortuga_theme_options[header_logo]', array(
 			'default'           => '',
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
@@ -148,44 +148,44 @@ class Poseidon_Pro_Site_Logo {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Image_Control(
-			$wp_customize, 'poseidon_theme_options[header_logo]', array(
-				'label'    => __( 'Logo Image (replaces Site Title)', 'poseidon-pro' ),
-				'section'  => 'poseidon_pro_section_logo',
-				'settings' => 'poseidon_theme_options[header_logo]',
+			$wp_customize, 'tortuga_theme_options[header_logo]', array(
+				'label'    => __( 'Logo Image (replaces Site Title)', 'tortuga-pro' ),
+				'section'  => 'tortuga_pro_section_logo',
+				'settings' => 'tortuga_theme_options[header_logo]',
 				'priority' => 1,
 				)
 			)
 		);
 		
 		// Add Logo Spacing setting
-		$wp_customize->add_setting( 'poseidon_theme_options[logo_spacing]', array(
+		$wp_customize->add_setting( 'tortuga_theme_options[logo_spacing]', array(
 			'default'           => 10,
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'absint'
 			)
 		);
-		$wp_customize->add_control( 'poseidon_theme_options[logo_spacing]', array(
-			'label'    => __( 'Logo Spacing (default: 10)', 'poseidon-pro' ),
-			'section'  => 'poseidon_pro_section_logo',
-			'settings' => 'poseidon_theme_options[logo_spacing]',
+		$wp_customize->add_control( 'tortuga_theme_options[logo_spacing]', array(
+			'label'    => __( 'Logo Spacing (default: 10)', 'tortuga-pro' ),
+			'section'  => 'tortuga_pro_section_logo',
+			'settings' => 'tortuga_theme_options[logo_spacing]',
 			'type'     => 'text',
 			'priority' => 2
 			)
 		);
 		
 		// Add Navigation Spacing setting
-		$wp_customize->add_setting( 'poseidon_theme_options[navi_spacing]', array(
+		$wp_customize->add_setting( 'tortuga_theme_options[navi_spacing]', array(
 			'default'           => 10,
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'absint'
 			)
 		);
-		$wp_customize->add_control( 'poseidon_theme_options[navi_spacing]', array(
-			'label'    => __( 'Navigation Spacing (default: 10)', 'poseidon-pro' ),
-			'section'  => 'poseidon_pro_section_logo',
-			'settings' => 'poseidon_theme_options[navi_spacing]',
+		$wp_customize->add_control( 'tortuga_theme_options[navi_spacing]', array(
+			'label'    => __( 'Navigation Spacing (default: 10)', 'tortuga-pro' ),
+			'section'  => 'tortuga_pro_section_logo',
+			'settings' => 'tortuga_theme_options[navi_spacing]',
 			'type'     => 'text',
 			'priority' => 3
 			)
@@ -196,6 +196,6 @@ class Poseidon_Pro_Site_Logo {
 }
 
 // Run Class
-add_action( 'init', array( 'Poseidon_Pro_Site_Logo', 'setup' ) );
+add_action( 'init', array( 'Tortuga_Pro_Site_Logo', 'setup' ) );
 
 endif;

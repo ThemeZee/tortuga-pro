@@ -3,7 +3,7 @@
  *
  * Adds Javascript for the Custom Font Control in the Customizer. Ensures that Prev/Next/Default Font buttons work.
  *
- * @package Poseidon Pro
+ * @package Tortuga Pro
  */
  
 ( function( wp, $ ) {
@@ -11,7 +11,7 @@
 	 * The Customizer looks for wp.customizer.controlConstructor[type] functions
 	 * where type == the type member of a WP_Customize_Control
 	 */
-	wp.customize.controlConstructor.poseidon_pro_custom_font = wp.customize.Control.extend({
+	wp.customize.controlConstructor.tortuga_pro_custom_font = wp.customize.Control.extend({
 		/**
 		 * This method is called when the control is ready to run.
 		 * Do all of your setup and event binding here.
@@ -104,7 +104,7 @@
 	/**
 	 * Custom Control JS for Available Fonts Setting
 	 */
-	wp.customize.controlConstructor.poseidon_pro_custom_font_list = wp.customize.Control.extend({
+	wp.customize.controlConstructor.tortuga_pro_custom_font_list = wp.customize.Control.extend({
 		/**
 		 * This method is called when the control is ready to run.
 		 * Do all of your setup and event binding here.

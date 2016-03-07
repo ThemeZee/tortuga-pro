@@ -4,7 +4,7 @@
  *
  * Setup the Customizer and theme options for the Pro plugin
  *
- * @package Poseidon Pro
+ * @package Tortuga Pro
  */
 
 // Exit if accessed directly
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Poseidon_Pro_Customizer' ) ) :
+if ( ! class_exists( 'Tortuga_Pro_Customizer' ) ) :
 
-class Poseidon_Pro_Customizer {
+class Tortuga_Pro_Customizer {
 
 	/**
 	 * Customizer Setup
@@ -23,8 +23,8 @@ class Poseidon_Pro_Customizer {
 	*/
 	static function setup() {
 		
-		// Return early if Poseidon Theme is not active
-		if ( ! current_theme_supports( 'poseidon-pro'  ) ) {
+		// Return early if Tortuga Theme is not active
+		if ( ! current_theme_supports( 'tortuga-pro'  ) ) {
 			return;
 		}
 		
@@ -33,7 +33,7 @@ class Poseidon_Pro_Customizer {
 		add_action( 'customize_controls_print_styles', array( __CLASS__, 'customize_preview_css' ) );
 		
 		// Remove Upgrade section
-		remove_action( 'customize_register', 'poseidon_customize_register_upgrade_settings' );
+		remove_action( 'customize_register', 'tortuga_customize_register_upgrade_settings' );
 	}
 	
 	/**
@@ -47,7 +47,7 @@ class Poseidon_Pro_Customizer {
 		$theme_options = wp_parse_args( 
 			
 			// Get saved theme options from WP database
-			get_option( 'poseidon_theme_options', array() ), 
+			get_option( 'tortuga_theme_options', array() ), 
 			
 			// Merge with Default Options if setting was not saved yet
 			self::get_default_options() 
@@ -100,7 +100,7 @@ class Poseidon_Pro_Customizer {
 	 */
 	static function customize_preview_js() {
 		
-		wp_enqueue_script( 'poseidon-pro-customizer-js', POSEIDON_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), POSEIDON_PRO_VERSION, true );
+		wp_enqueue_script( 'tortuga-pro-customizer-js', POSEIDON_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), POSEIDON_PRO_VERSION, true );
 	
 	}
 
@@ -111,13 +111,13 @@ class Poseidon_Pro_Customizer {
 	 */
 	static function customize_preview_css() {
 		
-		wp_enqueue_style( 'poseidon-pro-customizer-css', POSEIDON_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), POSEIDON_PRO_VERSION );
+		wp_enqueue_style( 'tortuga-pro-customizer-css', POSEIDON_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), POSEIDON_PRO_VERSION );
 	
 	}
 
 }
 
 // Run Class
-add_action( 'init', array( 'Poseidon_Pro_Customizer', 'setup' ) );
+add_action( 'init', array( 'Tortuga_Pro_Customizer', 'setup' ) );
 
 endif;
