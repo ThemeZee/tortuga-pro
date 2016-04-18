@@ -1,0 +1,38 @@
+/*
+ * Tortuga Settings CSS
+ *
+ * CSS Stylesheet for settings page on Appearance -> Pro Version
+ *
+ * @package Tortuga Pro
+ */
+
+/* License Settings */
+.tortuga-pro-settings-wrap {
+	margin: 25px 0 0;
+}
+
+.tortuga-pro-settings-wrap .license-status {
+	display: inline-block;
+	color: #fff;
+	background: #444;
+	margin: 0 12px 0 0;
+	padding: 4px 8px;
+	text-transform: uppercase;
+}
+
+.tortuga-pro-settings-wrap .license-active {
+	background: green;
+}
+
+.tortuga-pro-settings-wrap .license-invalid,
+.tortuga-pro-settings-wrap .license-expired {
+	background: red;
+}
+
+.tortuga-pro-settings-wrap .license-description {
+	margin: 16px 0 0;
+}
+
+.tortuga-pro-settings-wrap .license-renewal {
+	margin: 16px 0 0;
+}

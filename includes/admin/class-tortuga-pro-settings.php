@@ -49,8 +49,11 @@ class Tortuga_Pro_Settings {
 	 * @return void
 	*/
 	public function __construct() {
-
+		
+		// Register License Settings
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
+		
+		// Add License API functions
 		add_action( 'admin_init', array( $this, 'activate_license' ) );
 		add_action( 'admin_init', array( $this, 'deactivate_license' ) );
 		add_action( 'admin_init', array( $this, 'check_license' ) );
@@ -93,27 +96,13 @@ class Tortuga_Pro_Settings {
 	*/
 	public function default_settings() {
 
-		$default_settings = array();
+		$default_settings = array(
+			'license_key' => '',
+			'license_status' => 'inactive',
+		);
 
-		foreach ( $this->get_registered_settings() as $key => $option ) :
-		
-			if ( $option[ 'type' ] == 'multicheck' ) :
-			
-				foreach ( $option[ 'options' ] as $index => $value ) :
-				
-					$default_settings[$key][$index] = isset( $option['default'] ) ? $option['default'] : false;
-				
-				endforeach;
-			
-			else :
-				
-				$default_settings[$key] =  isset( $option['default'] ) ? $option['default'] : false;
-				
-			endif;
-		
-		endforeach;
-		
 		return $default_settings;
+	
 	}
 
 	/**
@@ -128,51 +117,31 @@ class Tortuga_Pro_Settings {
 			add_option( 'tortuga_pro_settings' );
 		}
 		
-		// Add Sections
-		add_settings_section( 'tortuga_pro_settings_license', esc_html__( 'License', 'tortuga-pro' ), array( $this, 'license_section_intro' ), 'tortuga_pro_settings' );
+		// Add License Section
+		add_settings_section( 'tortuga_pro_settings_license', esc_html__( 'Automatic Updates', 'tortuga-pro' ), array( $this, 'license_section_intro' ), 'tortuga_pro_settings' );
 		
-		// Add Settings
-		foreach ( $this->get_registered_settings() as $key => $option ) :
-
-			$name = isset( $option['name'] ) ? $option['name'] : '';
-			$section = isset( $option['section'] ) ? $option['section'] : 'widgets';
-			
-			add_settings_field(
-				'tortuga_pro_settings[' . $key . ']',
-				$name,
-				is_callable( array( $this, $option[ 'type' ] . '_callback' ) ) ? array( $this, $option[ 'type' ] . '_callback' ) : array( $this, 'missing_callback' ),
-				'tortuga_pro_settings',
-				'tortuga_pro_settings_' . $section,
-				array(
-					'id'      => $key,
-					'name'    => isset( $option['name'] ) ? $option['name'] : null,
-					'desc'    => ! empty( $option['desc'] ) ? $option['desc'] : '',
-					'size'    => isset( $option['size'] ) ? $option['size'] : null,
-					'max'     => isset( $option['max'] ) ? $option['max'] : null,
-					'min'     => isset( $option['min'] ) ? $option['min'] : null,
-					'step'    => isset( $option['step'] ) ? $option['step'] : null,
-					'options' => isset( $option['options'] ) ? $option['options'] : '',
-					'default'     => isset( $option['default'] ) ? $option['default'] : ''
-				)
-			);
-			
-		endforeach;
+		// Add License Status Setting
+		add_settings_field(
+			'tortuga_pro_settings[license_status]',
+			esc_html__( 'License Status', 'tortuga-pro' ),
+			array( $this, 'license_status' ),
+			'tortuga_pro_settings',
+			'tortuga_pro_settings_license'
+		);
+		
+		// Add License Key Setting
+		add_settings_field(
+			'tortuga_pro_settings[license_key]',
+			esc_html__( 'License Key', 'tortuga-pro' ),
+			array( $this, 'license_key' ),
+			'tortuga_pro_settings',
+			'tortuga_pro_settings_license'
+		);
 
 		// Creates our settings in the options table
 		register_setting( 'tortuga_pro_settings', 'tortuga_pro_settings', array( $this, 'sanitize_settings' ) );
 	}
 
-	
-	/**
-	 * General Section Intro
-	 *
-	 * @return void
-	*/
-	function general_section_intro() {
-		esc_html_e( 'Configure the Tortuga Pro Addon.', 'tortuga-pro');
-	}
-	
-	
 	/**
 	 * License Section Intro
 	 *
@@ -182,8 +151,7 @@ class Tortuga_Pro_Settings {
 		printf( __( 'Please enter your license key. An active license key is needed for automatic plugin updates and <a href="%s" target="_blank">support</a>.', 'tortuga-pro' ), 'https://themezee.com/support/?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=tortuga-pro&utm_content=support' );
 
 	}
-	
-	
+
 	/**
 	 * Sanitize the Plugin Settings
 	 *
@@ -200,348 +168,88 @@ class Tortuga_Pro_Settings {
 			$saved = array();
 		}
 		
-		$settings = $this->get_registered_settings();
 		$input = $input ? $input : array();
 		
 		// Loop through each setting being saved and pass it through a sanitization filter
 		foreach ( $input as $key => $value ) :
 
-			// Get the setting type (checkbox, select, etc)
-			$type = isset( $settings[ $key ][ 'type' ] ) ? $settings[ $key ][ 'type' ] : false;
-			
-			// Sanitize user input based on setting type
-			if ( $type == 'text' or $type == 'license' ) :
-				
-				$input[ $key ] = sanitize_text_field( $value );
-			
-			elseif ( $type == 'radio' or $type == 'select' ) :
-				
-				$available_options = array_keys( $settings[ $key ][ 'options' ] );
-				$input[ $key ] = in_array( $value, $available_options, true ) ? $value : $settings[ $key ][ 'default' ];
-							
-			elseif ( $type == 'number' ) :
-				
-				$input[ $key ] = floatval( $value );
-			
-			elseif ( $type == 'textarea' ) :
-				
-				$input[ $key ] = esc_html( $value );
-			
-			elseif ( $type == 'textarea_html' ) :
-				
-				if ( current_user_can('unfiltered_html') ) :
-					$input[ $key ] = $value;
-				else :
-					$input[ $key ] = wp_kses_post( $value );
-				endif;
-			
-			elseif ( $type == 'checkbox' or $type == 'multicheck' ) :
-				
-				$input[ $key ] = $value; // Validate Checkboxes later
-				
-			else :
-				
-				// Default Sanitization
-				$input[ $key ] = esc_html( $value );
-				
-			endif;
+			$input[ $key ] = sanitize_text_field( $value );
 
 		endforeach;
 		
-		// Ensure a value is always passed for every checkbox
-		if( ! empty( $settings ) ) :
-			foreach ( $settings as $key => $setting ) :
-
-				// Single checkbox
-				if ( isset( $settings[ $key ][ 'type' ] ) && 'checkbox' == $settings[ $key ][ 'type' ] ) :
-					$input[ $key ] = ! empty( $input[ $key ] );
-				endif;
-
-				// Multicheck list
-				if ( isset( $settings[ $key ][ 'type' ] ) && 'multicheck' == $settings[ $key ][ 'type' ] ) :
-					foreach ( $settings[ $key ][ 'options' ] as $index => $value ) :
-						$input[ $key ][ $index ] = ! empty( $input[ $key ][ $index ] );
-					endforeach;
-				endif;
-				
-			endforeach;
-		endif;
-
 		return array_merge( $saved, $input );
 
 	}
-
-	/**
-	 * Retrieve the array of plugin settings
-	 *
-	 * @return array
-	*/
-	function get_registered_settings() {
-
-		$settings = array(
-			'license_key' => array(
-				'name' => esc_html__( 'License Key', 'tortuga-pro' ),
-				'section' => 'license',
-				'type' => 'license',
-				'default' => ''
-			)
-		);
-
-		return apply_filters( 'tortuga_pro_settings', $settings );
-	}
-
 	
 	/**
-	 * Checkbox Callback
+	 * License Status Callback
 	 *
-	 * Renders checkboxes.
+	 * Renders license status field.
 	 *
-	 * @param array $args Arguments passed by the setting
 	 * @global $this->options Array of all the Tortuga Pro Options
 	 * @return void
 	 */
-	function checkbox_callback( $args ) {
-
-		$checked = isset($this->options[$args['id']]) ? checked(1, $this->options[$args['id']], false) : '';
-		$html = '<input type="checkbox" id="tortuga_pro_settings[' . $args['id'] . ']" name="tortuga_pro_settings[' . $args['id'] . ']" value="1" ' . $checked . '/>';
-		$html .= '<label for="tortuga_pro_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
-
-		echo $html;
-	}
-
-	
-	/**
-	 * Multicheck Callback
-	 *
-	 * Renders multiple checkboxes.
-	 *
-	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Tortuga Pro Options
-	 * @return void
-	 */
-	function multicheck_callback( $args ) {
-
-		if ( ! empty( $args['options'] ) ) :
-			foreach( $args['options'] as $key => $option ) {
-				$checked = isset($this->options[$args['id']][$key]) ? checked(1, $this->options[$args['id']][$key], false) : '';
-				echo '<input name="tortuga_pro_settings[' . $args['id'] . '][' . $key . ']" id="tortuga_pro_settings[' . $args['id'] . '][' . $key . ']" type="checkbox" value="1" ' . $checked . '/>&nbsp;';
-				echo '<label for="tortuga_pro_settings[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
-			}
-		endif;
-		echo '<p class="description">' . $args['desc'] . '</p>';
-	}
-	
-	
-	/**
-	 * Text Callback
-	 *
-	 * Renders text fields.
-	 *
-	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Tortuga Pro Options
-	 * @return void
-	 */
-	function text_callback( $args ) {
-
-		if ( isset( $this->options[ $args['id'] ] ) )
-			$value = $this->options[ $args['id'] ];
-		else
-			$value = isset( $args['default'] ) ? $args['default'] : '';
-
-		$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
-		$html = '<input type="text" class="' . $size . '-text" id="tortuga_pro_settings[' . $args['id'] . ']" name="tortuga_pro_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/>';
-		$html .= '<p class="description">'  . $args['desc'] . '</p>';
-
-		echo $html;
-	}
-	
-	
-	/**
-	 * Radio Callback
-	 *
-	 * Renders radio boxes.
-	 *
-	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Tortuga Pro Options
-	 * @return void
-	 */
-	function radio_callback( $args ) {
-
-		if ( ! empty( $args['options'] ) ):
-			foreach ( $args['options'] as $key => $option ) :
-				$checked = false;
-
-				if ( isset( $this->options[ $args['id'] ] ) && $this->options[ $args['id'] ] == $key )
-					$checked = true;
-				elseif( isset( $args['default'] ) && $args['default'] == $key && ! isset( $this->options[ $args['id'] ] ) )
-					$checked = true;
-
-				echo '<input name="tortuga_pro_settings[' . $args['id'] . ']"" id="tortuga_pro_settings[' . $args['id'] . '][' . $key . ']" type="radio" value="' . $key . '" ' . checked(true, $checked, false) . '/>&nbsp;';
-				echo '<label for="tortuga_pro_settings[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
-			endforeach;
-		endif;
-		echo '<p class="description">' . $args['desc'] . '</p>';
-	}
-
-
-	/**
-	 * License Callback
-	 *
-	 * Renders license key fields.
-	 *
-	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Tortuga Pro Options
-	 * @return void
-	 */
-	function license_callback( $args ) {
-
-		if ( isset( $this->options[ $args['id'] ] ) )
-			$value = $this->options[ $args['id'] ];
-		else
-			$value = isset( $args['default'] ) ? $args['default'] : '';
-
-		$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
-		$html = '<input type="text" class="' . $size . '-text" id="tortuga_pro_settings[' . $args['id'] . ']" name="tortuga_pro_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/><br/><br/>';
+	function license_status() {
+		
 		$license_status = $this->get( 'license_status' );
-		$license_key = ! empty( $value ) ? $value : false;
-
-		if( 'valid' === $license_status && ! empty( $license_key ) ) {
-			$html .= '<input type="submit" class="button" name="tortuga_pro_deactivate_license" value="' . esc_attr__( 'Deactivate License', 'tortuga-pro' ) . '"/>';
-			$html .= '<span style="display: inline-block; padding: 5px; color: green;">&nbsp;' . esc_html__( 'Your license is valid!', 'tortuga-pro' ) . '</span>';
-		} elseif( 'expired' === $license_status && ! empty( $license_key ) ) {
+		$license_key = ! empty( $this->options['license_key'] ) ? $this->options['license_key'] : false;
+		$html = '';
+		
+		if( 'valid' === $license_status ) {
+			
+			$html .= '<span class="license-status license-active">' . esc_html__( 'Active', 'tortuga-pro' ) . '</span>';
+			$html .= '<span class="license-description">' . esc_html__( 'You are receiving updates.', 'tortuga-pro' ) . '</span>';
+			
+		} elseif( 'expired' === $license_status ) {
+			
 			$renewal_url = esc_url( add_query_arg( array( 'edd_license_key' => $license_key, 'download_id' => TORTUGA_PRO_PRODUCT_ID ), 'https://themezee.com/checkout' ) );
-			$html .= '<a href="' . esc_url( $renewal_url ) . '" class="button-primary">' . esc_html__( 'Renew Your License', 'tortuga-pro' ) . '</a>';
-			$html .= '<br/><span style="display: inline-block; padding: 5px; color: red;">&nbsp;' . esc_html__( 'Your license has expired, renew today to continue getting updates and support!', 'tortuga-pro' ) . '</span>';
-		} elseif( 'invalid' === $license_status && ! empty( $license_key ) ) {
-			$html .= '<input type="submit" class="button" name="tortuga_pro_activate_license" value="' . esc_attr__( 'Activate License', 'tortuga-pro' ) . '"/>';
-			$html .= '<span style="display: inline-block; padding: 5px; color: red;">&nbsp;' . esc_html__( 'Your license is invalid!', 'tortuga-pro' ) . '</span>';
+			
+			$html .= '<span class="license-status license-expired">' . esc_html__( 'Expired', 'tortuga-pro' ) . '</span>';
+			$html .= '<p class="license-description">' . esc_html__( 'Your license has expired, renew today to continue getting updates and support!', 'tortuga-pro' ) . '</p>';
+			$html .= '<a href="' . esc_url( $renewal_url ) . '" class="license-renewal button-primary">' . esc_html__( 'Renew Your License', 'tortuga-pro' ) . '</a>';
+		
+		} elseif( 'invalid' === $license_status ) {
+			
+			$html .= '<span class="license-status license-invalid">' . esc_html__( 'Invalid', 'tortuga-pro' ) . '</span>';
+			$html .= '<p class="license-description">' . esc_html__( 'Please make sure that you have not reached the site limit and expiration date.', 'tortuga-pro' ) . '</p>';
+		
 		} else {
-			$html .= '<input type="submit" class="button" name="tortuga_pro_activate_license" value="' . esc_attr__( 'Activate License', 'tortuga-pro' ) . '"/>';
+			
+			$html .= '<span class="license-status license-inactive">' . esc_html__( 'Inactive', 'tortuga-pro' ) . '</span>';
+		
 		}
 
-		$html .= '<p class="description">'  . $args['desc'] . '</p>';
-
 		echo $html;
 	}
 
-	
 	/**
-	 * Number Callback
+	 * License Key Callback
 	 *
-	 * Renders number fields.
+	 * Renders license key field.
 	 *
-	 * @param array $args Arguments passed by the setting
 	 * @global $this->options Array of all the Tortuga Pro Options
 	 * @return void
 	 */
-	function number_callback( $args ) {
-
-		if ( isset( $this->options[ $args['id'] ] ) )
-			$value = $this->options[ $args['id'] ];
-		else
-			$value = isset( $args['default'] ) ? $args['default'] : '';
-
-		$max  = isset( $args['max'] ) ? $args['max'] : 999999;
-		$min  = isset( $args['min'] ) ? $args['min'] : 0;
-		$step = isset( $args['step'] ) ? $args['step'] : 1;
-
-		$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
-		$html = '<input type="number" step="' . esc_attr( $step ) . '" max="' . esc_attr( $max ) . '" min="' . esc_attr( $min ) . '" class="' . $size . '-text" id="tortuga_pro_settings[' . $args['id'] . ']" name="tortuga_pro_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/>';
-		$html .= '<p class="description">'  . $args['desc'] . '</p>';
-
-		echo $html;
-	}
-
-	
-	/**
-	 * Textarea Callback
-	 *
-	 * Renders textarea fields.
-	 *
-	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Tortuga Pro Options
-	 * @return void
-	 */
-	function textarea_callback( $args ) {
-
-		if ( isset( $this->options[ $args['id'] ] ) )
-			$value = $this->options[ $args['id'] ];
-		else
-			$value = isset( $args['default'] ) ? $args['default'] : '';
-
-		$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
-		$html = '<textarea class="' . $size . '-text" cols="20" rows="5" id="tortuga_pro_settings_' . $args['id'] . '" name="tortuga_pro_settings[' . $args['id'] . ']">' . esc_textarea( stripslashes( $value ) ) . '</textarea>';
-		$html .= '<p class="description">'  . $args['desc'] . '</p>';
+	function license_key() {
+		
+		$license_status = $this->get( 'license_status' );
+		$license_key = ! empty( $this->options['license_key'] ) ? $this->options['license_key'] : false;
+		$html = '';
+		
+		if( 'valid' === $license_status && ! empty( $license_key ) ) {
+			
+			$html .= '<input type="text" class="regular-text" readonly="readonly" id="tortuga_pro_settings[license_key]" name="tortuga_pro_settings[license_key]" value="' . esc_attr( stripslashes( $license_key ) ) . '"/><br/><br/>';
+			$html .= '<input type="submit" class="button" name="tortuga_pro_deactivate_license" value="' . esc_attr__( 'Deactivate License', 'tortuga-pro' ) . '"/>';
+		
+		} else {
+			
+			$html .= '<input type="text" class="regular-text" id="tortuga_pro_settings[license_key]" name="tortuga_pro_settings[license_key]" value="' . esc_attr( stripslashes( $license_key ) ) . '"/><br/><br/>';
+			$html .= '<input type="submit" class="button" name="tortuga_pro_activate_license" value="' . esc_attr__( 'Activate License', 'tortuga-pro' ) . '"/>';
+		
+		}
 
 		echo $html;
 	}
-	
-	
-	/**
-	 * Textarea HTML Callback
-	 *
-	 * Renders textarea fields which allow HTML code.
-	 *
-	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Tortuga Pro Options
-	 * @return void
-	 */
-	function textarea_html_callback( $args ) {
-
-		if ( isset( $this->options[ $args['id'] ] ) )
-			$value = $this->options[ $args['id'] ];
-		else
-			$value = isset( $args['default'] ) ? $args['default'] : '';
-
-		$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
-		$html = '<textarea class="' . $size . '-text" cols="20" rows="5" id="tortuga_pro_settings_' . $args['id'] . '" name="tortuga_pro_settings[' . $args['id'] . ']">' . esc_textarea( stripslashes( $value ) ) . '</textarea>';
-		$html .= '<p class="description">'  . $args['desc'] . '</p>';
-
-		echo $html;
-	}
-
-
-	/**
-	 * Missing Callback
-	 *
-	 * If a function is missing for settings callbacks alert the user.
-	 *
-	 * @param array $args Arguments passed by the setting
-	 * @return void
-	 */
-	function missing_callback($args) {
-		printf( __( 'The callback function used for the <strong>%s</strong> setting is missing.', 'tortuga-pro' ), $args['id'] );
-	}
-
-	/**
-	 * Select Callback
-	 *
-	 * Renders select fields.
-	 *
-	 * @param array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Tortuga Pro Options
-	 * @return void
-	 */
-	function select_callback($args) {
-
-		if ( isset( $this->options[ $args['id'] ] ) )
-			$value = $this->options[ $args['id'] ];
-		else
-			$value = isset( $args['default'] ) ? $args['default'] : '';
-
-		$html = '<select id="tortuga_pro_settings[' . $args['id'] . ']" name="tortuga_pro_settings[' . $args['id'] . ']"/>';
-
-		foreach ( $args['options'] as $option => $name ) :
-			$selected = selected( $option, $value, false );
-			$html .= '<option value="' . $option . '" ' . $selected . '>' . $name . '</option>';
-		endforeach;
-
-		$html .= '</select>';
-		$html .= '<p class="description">'  . $args['desc'] . '</p>';
-
-		echo $html;
-	}
-	
 
 	/**
 	 * Activate license key
@@ -651,7 +359,7 @@ class Tortuga_Pro_Settings {
 		}
 
 		$status = get_transient( 'tortuga_pro_license_check' );
-
+		
 		// Run the license check a maximum of once per day
 		if( false === $status ) {
 
