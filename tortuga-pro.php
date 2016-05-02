@@ -103,24 +103,24 @@ class Tortuga_Pro {
 	static function includes() {
 	
 		// Include Admin Classes
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-tortuga-pro-plugin-updater.php';
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-tortuga-pro-settings.php';
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-tortuga-pro-settings-page.php';
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-tortuga-pro-admin-notices.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-plugin-updater.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-settings.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-settings-page.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-admin-notices.php';
 		
 		// Include Customizer Classes
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/customizer/class-tortuga-pro-customizer.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/customizer/class-customizer.php';
 		
 		// Include Pro Features
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-tortuga-pro-custom-colors.php';
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-tortuga-pro-custom-fonts.php';
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-tortuga-pro-footer-line.php';
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-tortuga-pro-footer-widgets.php';
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-tortuga-pro-header-bar.php';
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-tortuga-pro-site-logo.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-custom-colors.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-custom-fonts.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-footer-line.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-footer-widgets.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-header-bar.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-site-logo.php';
 		
 		// Include Custom Stylesheet class
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/class-tortuga-pro-custom-stylesheet.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/class-custom-stylesheet.php';
 
 	}
 	

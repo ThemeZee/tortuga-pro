@@ -360,7 +360,6 @@ class Tortuga_Pro_Settings {
 		}
 
 		$status = get_transient( 'tortuga_pro_license_check' );
-		$status = false;
 		
 		// Run the license check a maximum of once per day
 		if( false === $status ) {

@@ -29,9 +29,9 @@ class Tortuga_Pro_Custom_Fonts {
 		}
 		
 		// Include Font List Control Files
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/customizer/class-tortuga-pro-font-list.php';
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/customizer/class-tortuga-pro-customize-font-control.php';
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/customizer/class-tortuga-pro-customize-font-list-control.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/customizer/class-font-list.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/customizer/class-customize-font-control.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/customizer/class-customize-font-list-control.php';
 		
 		// Add Custom Color CSS code to custom stylesheet output
 		add_filter( 'tortuga_pro_custom_css_stylesheet', array( __CLASS__, 'custom_fonts_css' ) ); 
