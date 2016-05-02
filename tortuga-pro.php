@@ -106,6 +106,7 @@ class Tortuga_Pro {
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-tortuga-pro-plugin-updater.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-tortuga-pro-settings.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-tortuga-pro-settings-page.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-tortuga-pro-admin-notices.php';
 		
 		// Include Customizer Classes
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/customizer/class-tortuga-pro-customizer.php';
@@ -136,9 +137,6 @@ class Tortuga_Pro {
 		
 		// Add Settings link to Plugin actions
 		add_filter( 'plugin_action_links_' . plugin_basename( TORTUGA_PRO_PLUGIN_FILE ), array( __CLASS__, 'plugin_action_links' ) );
-		
-		// Add admin notices
-		add_action( 'admin_notices', array( __CLASS__, 'admin_notices' ) );
 		
 		// Add automatic plugin updater from ThemeZee Store API
 		add_action( 'admin_init', array( __CLASS__, 'plugin_updater' ), 0 );
@@ -172,59 +170,6 @@ class Tortuga_Pro {
 		$settings_link = array( 'settings' => sprintf( '<a href="%s">%s</a>', admin_url( 'themes.php?page=tortuga-pro' ), __( 'Settings', 'tortuga-pro' ) ) );
 		
 		return array_merge( $settings_link, $actions );
-	}
-	
-	/**
-	 * Add admin notices
-	 *
-	 * @return void
-	 */
-	static function admin_notices() { 
-	
-		global $pagenow;
-		
-		// Display missing theme notice on themes and plugins page
-		if ( ( $pagenow == 'themes.php' && !isset( $_GET['page'] ) ) or $pagenow == 'plugins.php' ) :
-	
-			// Display notice if Tortuga theme is not active
-			if ( ! get_theme_support( 'tortuga-pro' ) ) : ?>
-			
-				<div class="notice notice-warning">
-					<p>
-						<?php printf( __( 'The %1$s add-on needs the %2$s theme activated in order to work. You should deactivate %1$s if you have switched to another theme permanently.', 'tortuga-pro' ),
-							TORTUGA_PRO_NAME,
-							'Tortuga'
-						); ?>
-					</p>
-				</div>
-		
-			<?php
-			endif;
-			
-		endif;
-	
-		// Display missing license key notice on updates and plugins page
-		if ( $pagenow == 'update-core.php' or $pagenow == 'plugins.php' ) :
-		
-			// Get Settings
-			$options = Tortuga_Pro_Settings::instance();
-		
-			if( '' == $options->get( 'license_key' ) ) : ?>
-				
-				<div class="updated">
-					<p>
-						<?php printf( __( 'Please enter your license key for the %1$s add-on in order to receive updates and support. <a href="%2$s">Enter License Key</a>', 'tortuga-pro' ),
-							TORTUGA_PRO_NAME,
-							admin_url( 'themes.php?page=tortuga-pro' ) ); 
-						?>
-					</p>
-				</div>
-				
-			<?php
-			endif;
-			
-		endif;
-	
 	}
 	
 	/**

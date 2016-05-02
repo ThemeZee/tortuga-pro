@@ -45,7 +45,7 @@ class Tortuga_Pro_Settings_Page {
 		add_theme_page(
 			esc_html__( 'Pro Version', 'tortuga-pro' ),
 			esc_html__( 'Pro Version', 'tortuga-pro' ),
-			'manage_options',
+			'edit_theme_options',
 			'tortuga-pro',
 			array( __CLASS__, 'display_settings_page' )
 		);
@@ -78,7 +78,7 @@ class Tortuga_Pro_Settings_Page {
 					?>
 				</form>
 				
-				<p><?php printf( __( 'You can find your license keys and manage your active sites in your <a href="%s" target="_blank">ThemeZee.com account</a>.', 'tortuga-pro' ), 'https://themezee.com/license-keys/?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=tortuga-pro&utm_content=license-keys' ); ?></p>
+				<p><?php printf( __( 'You can find your license keys and manage your active sites on <a href="%s" target="_blank">themezee.com</a>.', 'tortuga-pro' ), __( 'https://themezee.com/license-keys/', 'tortuga-pro' ) . '?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=tortuga-pro&utm_content=license-keys' ); ?></p>
 				
 			</div>
 			

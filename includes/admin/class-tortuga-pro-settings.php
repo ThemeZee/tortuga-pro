@@ -327,6 +327,7 @@ class Tortuga_Pro_Settings {
 			'edd_action'=> 'deactivate_license',
 			'license' 	=> $license,
 			'item_name' => urlencode( TORTUGA_PRO_NAME ),
+			'item_id'   => TORTUGA_PRO_PRODUCT_ID,
 			'url'       => home_url()
 		);
 		
@@ -359,6 +360,7 @@ class Tortuga_Pro_Settings {
 		}
 
 		$status = get_transient( 'tortuga_pro_license_check' );
+		$status = false;
 		
 		// Run the license check a maximum of once per day
 		if( false === $status ) {
@@ -368,6 +370,7 @@ class Tortuga_Pro_Settings {
 				'edd_action'=> 'check_license',
 				'license' 	=> $this->get( 'license_key' ),
 				'item_name' => urlencode( TORTUGA_PRO_NAME ),
+				'item_id'   => TORTUGA_PRO_PRODUCT_ID,
 				'url'       => home_url()
 			);
 			
@@ -383,7 +386,7 @@ class Tortuga_Pro_Settings {
 			$options = $this->get_all();
 
 			$options['license_status'] = $license_data->license;
-
+			
 			update_option( 'tortuga_pro_settings', $options );
 
 			set_transient( 'tortuga_pro_license_check', $license_data->license, DAY_IN_SECONDS );
