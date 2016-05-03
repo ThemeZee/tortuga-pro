@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tortuga Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-05-03 17:49+0100\n"
-"PO-Revision-Date: 2016-05-03 17:49+0100\n"
+"POT-Creation-Date: 2016-05-03 19:18+0100\n"
+"PO-Revision-Date: 2016-05-03 19:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -337,21 +337,24 @@ msgstr "Obere Navigation"
 msgid "Social Icons"
 msgstr "Social Icons"
 
-#: includes/modules/class-site-logo.php:130
-msgid "Site Logo"
-msgstr "Logo Bild"
+#: includes/modules/class-header-spacing.php:130
+msgid "Header Settings"
+msgstr "Header Einstellungen"
 
-#: includes/modules/class-site-logo.php:146
+#: includes/modules/class-header-spacing.php:148
 msgid "Logo Image (replaces Site Title)"
 msgstr "Logo Bild (ersetzt Titel der Website)"
 
-#: includes/modules/class-site-logo.php:163
+#: includes/modules/class-header-spacing.php:167
 msgid "Logo Spacing (default: 10)"
 msgstr "Logo Abstand (Standard: 10)"
 
-#: includes/modules/class-site-logo.php:180
+#: includes/modules/class-header-spacing.php:184
 msgid "Header Spacing (default: 10)"
 msgstr "Header Abstand (Standard: 10)"
+
+#~ msgid "Site Logo"
+#~ msgstr "Logo Bild"
 
 #~ msgctxt "color setting"
 #~ msgid "Links & Buttons"
@@ -555,9 +558,6 @@ msgstr "Header Abstand (Standard: 10)"
 #~ msgctxt "color setting"
 #~ msgid "Footer Border"
 #~ msgstr "Footer Rahmen"
-
-#~ msgid "Header Settings"
-#~ msgstr "Header Einstellungen"
 
 #~ msgid "Logo Spacing (default: 15)"
 #~ msgstr "Logo Abstand (Standard: 15)"

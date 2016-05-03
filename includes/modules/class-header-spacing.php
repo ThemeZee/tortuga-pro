@@ -1,8 +1,8 @@
 <?php
 /***
- * Site Logo
+ * Header Spacing
  *
- * Adds logo and spacing settings, replaces site title with logo image and adds spacing CSS
+ * Adds header spacing settings and CSS
  *
  * @package Tortuga Pro
  */
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Tortuga_Pro_Site_Logo' ) ) :
+if ( ! class_exists( 'Tortuga_Pro_Header_Spacing' ) ) :
 
-class Tortuga_Pro_Site_Logo {
+class Tortuga_Pro_Header_Spacing {
 
 	/**
 	 * Site Logo Setup
@@ -36,7 +36,7 @@ class Tortuga_Pro_Site_Logo {
 		add_filter( 'tortuga_pro_custom_css_stylesheet', array( __CLASS__, 'custom_spacing_css' ) ); 
 		
 		// Add Site Logo Settings
-		add_action( 'customize_register', array( __CLASS__, 'site_logo_settings' ) );
+		add_action( 'customize_register', array( __CLASS__, 'header_settings' ) );
 	}
 	
 	/**
@@ -123,33 +123,37 @@ class Tortuga_Pro_Site_Logo {
 	 *
 	 * @param object $wp_customize / Customizer Object
 	 */
-	static function site_logo_settings( $wp_customize ) {
+	static function header_settings( $wp_customize ) {
 
 		// Add Sections for Site Logo
-		$wp_customize->add_section( 'tortuga_pro_section_logo', array(
-			'title'    => __( 'Site Logo', 'tortuga-pro' ),
+		$wp_customize->add_section( 'tortuga_pro_section_header', array(
+			'title'    => __( 'Header Settings', 'tortuga-pro' ),
 			'priority' => 20,
 			'panel' => 'tortuga_options_panel' 
 			)
 		);
 		
-		// Add Upload logo image setting
-		$wp_customize->add_setting( 'tortuga_theme_options[header_logo]', array(
-			'default'           => '',
-			'type'           	=> 'option',
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'esc_url'
-			)
-		);
-		$wp_customize->add_control( new WP_Customize_Image_Control(
-			$wp_customize, 'tortuga_theme_options[header_logo]', array(
-				'label'    => __( 'Logo Image (replaces Site Title)', 'tortuga-pro' ),
-				'section'  => 'tortuga_pro_section_logo',
-				'settings' => 'tortuga_theme_options[header_logo]',
-				'priority' => 1,
+		// Add Upload logo image setting for WordPress 4.4 and earlier
+		if ( ! current_theme_supports( 'custom-logo'  ) ) :
+		
+			$wp_customize->add_setting( 'tortuga_theme_options[header_logo]', array(
+				'default'           => '',
+				'type'           	=> 'option',
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'esc_url'
 				)
-			)
-		);
+			);
+			$wp_customize->add_control( new WP_Customize_Image_Control(
+				$wp_customize, 'tortuga_theme_options[header_logo]', array(
+					'label'    => __( 'Logo Image (replaces Site Title)', 'tortuga-pro' ),
+					'section'  => 'tortuga_pro_section_header',
+					'settings' => 'tortuga_theme_options[header_logo]',
+					'priority' => 1,
+					)
+				)
+			);
+			
+		endif;
 		
 		// Add Logo Spacing setting
 		$wp_customize->add_setting( 'tortuga_theme_options[logo_spacing]', array(
@@ -161,7 +165,7 @@ class Tortuga_Pro_Site_Logo {
 		);
 		$wp_customize->add_control( 'tortuga_theme_options[logo_spacing]', array(
 			'label'    => __( 'Logo Spacing (default: 10)', 'tortuga-pro' ),
-			'section'  => 'tortuga_pro_section_logo',
+			'section'  => 'tortuga_pro_section_header',
 			'settings' => 'tortuga_theme_options[logo_spacing]',
 			'type'     => 'text',
 			'priority' => 2
@@ -178,7 +182,7 @@ class Tortuga_Pro_Site_Logo {
 		);
 		$wp_customize->add_control( 'tortuga_theme_options[header_spacing]', array(
 			'label'    => __( 'Header Spacing (default: 10)', 'tortuga-pro' ),
-			'section'  => 'tortuga_pro_section_logo',
+			'section'  => 'tortuga_pro_section_header',
 			'settings' => 'tortuga_theme_options[header_spacing]',
 			'type'     => 'text',
 			'priority' => 3
@@ -190,6 +194,6 @@ class Tortuga_Pro_Site_Logo {
 }
 
 // Run Class
-add_action( 'init', array( 'Tortuga_Pro_Site_Logo', 'setup' ) );
+add_action( 'init', array( 'Tortuga_Pro_Header_Spacing', 'setup' ) );
 
 endif;

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tortuga Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-05-03 17:49+0100\n"
-"PO-Revision-Date: 2016-05-03 17:49+0100\n"
+"POT-Creation-Date: 2016-05-03 19:18+0100\n"
+"PO-Revision-Date: 2016-05-03 19:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -319,18 +319,18 @@ msgstr ""
 msgid "Social Icons"
 msgstr ""
 
-#: includes/modules/class-site-logo.php:130
-msgid "Site Logo"
+#: includes/modules/class-header-spacing.php:130
+msgid "Header Settings"
 msgstr ""
 
-#: includes/modules/class-site-logo.php:146
+#: includes/modules/class-header-spacing.php:148
 msgid "Logo Image (replaces Site Title)"
 msgstr ""
 
-#: includes/modules/class-site-logo.php:163
+#: includes/modules/class-header-spacing.php:167
 msgid "Logo Spacing (default: 10)"
 msgstr ""
 
-#: includes/modules/class-site-logo.php:180
+#: includes/modules/class-header-spacing.php:184
 msgid "Header Spacing (default: 10)"
 msgstr ""

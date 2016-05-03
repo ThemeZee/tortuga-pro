@@ -65,7 +65,7 @@ class Tortuga_Pro {
 		define( 'TORTUGA_PRO_NAME', 'Tortuga Pro' );
 
 		// Define Version Number
-		define( 'TORTUGA_PRO_VERSION', '1.0' );
+		define( 'TORTUGA_PRO_VERSION', '1.0.1' );
 		
 		// Define Plugin Name
 		define( 'TORTUGA_PRO_PRODUCT_ID', 56518 );
@@ -117,7 +117,7 @@ class Tortuga_Pro {
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-footer-line.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-footer-widgets.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-header-bar.php';
-		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-site-logo.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-header-spacing.php';
 		
 		// Include Custom Stylesheet class
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/class-custom-stylesheet.php';
