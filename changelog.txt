@@ -2,6 +2,11 @@
 Tortuga Pro Changelog
 ===================================
 
+Version 1.0.1
+-----------------------------------
+[improved] styling of license settings page
+[added] dismiss links to admin notices
+
 Version 1.0
 -----------------------------------
 Initial Version

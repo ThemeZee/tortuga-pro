@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tortuga Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-03-07 17:00+0100\n"
-"PO-Revision-Date: 2016-03-07 17:00+0100\n"
+"POT-Creation-Date: 2016-05-03 17:49+0100\n"
+"PO-Revision-Date: 2016-05-03 17:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -20,32 +20,54 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: tortuga-pro.php:172
+#: tortuga-pro.php:170
 msgid "Settings"
 msgstr ""
 
-#: tortuga-pro.php:194
-#, php-format
-msgid ""
-"The %1$s add-on needs the %2$s theme activated in order to work. You should "
-"deactivate %1$s if you have switched to another theme permanently."
-msgstr ""
-
-#: tortuga-pro.php:216
+#: includes/admin/class-admin-notices.php:55
 #, php-format
 msgid ""
 "Please enter your license key for the %1$s add-on in order to receive "
 "updates and support. <a href=\"%2$s\">Enter License Key</a>"
 msgstr ""
 
-#: includes/admin/class-tortuga-pro-plugin-updater.php:177
+#: includes/admin/class-admin-notices.php:59
+#: includes/admin/class-admin-notices.php:87
+#: includes/admin/class-admin-notices.php:112
+msgid "Dismiss Notice"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:83
+#, php-format
+msgid ""
+"Your license for %1$s has expired. Please <a href=\"%2$s\">renew</a> to "
+"continue getting updates and support!"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:108
+#, php-format
+msgid ""
+"The %1$s add-on needs the %2$s theme activated in order to work. You should "
+"deactivate %1$s if you have switched to another theme permanently."
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:135
+msgid "Security check failed"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:135
+#: includes/admin/class-plugin-updater.php:324
+msgid "Error"
+msgstr ""
+
+#: includes/admin/class-plugin-updater.php:177
 #, php-format
 msgid ""
 "There is a new version of %1$s available. <a target=\"_blank\" class="
 "\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
 msgstr ""
 
-#: includes/admin/class-tortuga-pro-plugin-updater.php:184
+#: includes/admin/class-plugin-updater.php:184
 #, php-format
 msgid ""
 "There is a new version of %1$s available. <a target=\"_blank\" class="
@@ -53,248 +75,262 @@ msgid ""
 "\">update now</a>."
 msgstr ""
 
-#: includes/admin/class-tortuga-pro-plugin-updater.php:324
+#: includes/admin/class-plugin-updater.php:324
 msgid "You do not have permission to install plugin updates"
 msgstr ""
 
-#: includes/admin/class-tortuga-pro-plugin-updater.php:324
-msgid "Error"
-msgstr ""
-
-#: includes/admin/class-tortuga-pro-settings-page.php:44
-#: includes/admin/class-tortuga-pro-settings-page.php:45
+#: includes/admin/class-settings-page.php:46
+#: includes/admin/class-settings-page.php:47
 msgid "Pro Version"
 msgstr ""
 
-#: includes/admin/class-tortuga-pro-settings-page.php:65
-msgid "Tortuga Pro"
+#: includes/admin/class-settings-page.php:81
+#, php-format
+msgid ""
+"You can find your license keys and manage your active sites on <a href=\"%s"
+"\" target=\"_blank\">themezee.com</a>."
 msgstr ""
 
-#: includes/admin/class-tortuga-pro-settings.php:132
-msgid "License"
+#: includes/admin/class-settings-page.php:81
+msgid "https://themezee.com/license-keys/"
 msgstr ""
 
-#: includes/admin/class-tortuga-pro-settings.php:172
-msgid "Configure the Tortuga Pro Addon."
+#: includes/admin/class-settings.php:121
+msgid "Automatic Updates"
 msgstr ""
 
-#: includes/admin/class-tortuga-pro-settings.php:182
+#: includes/admin/class-settings.php:126
+msgid "License Status"
+msgstr ""
+
+#: includes/admin/class-settings.php:135
+msgid "License Key"
+msgstr ""
+
+#: includes/admin/class-settings.php:151
 #, php-format
 msgid ""
 "Please enter your license key. An active license key is needed for automatic "
 "plugin updates and <a href=\"%s\" target=\"_blank\">support</a>."
 msgstr ""
 
-#: includes/admin/class-tortuga-pro-settings.php:283
-msgid "License Key"
+#: includes/admin/class-settings.php:200
+msgid "Active"
 msgstr ""
 
-#: includes/admin/class-tortuga-pro-settings.php:409
-msgid "Deactivate License"
+#: includes/admin/class-settings.php:201
+msgid "You are receiving updates."
 msgstr ""
 
-#: includes/admin/class-tortuga-pro-settings.php:410
-msgid "Your license is valid!"
+#: includes/admin/class-settings.php:207
+msgid "Expired"
 msgstr ""
 
-#: includes/admin/class-tortuga-pro-settings.php:413
-msgid "Renew Your License"
-msgstr ""
-
-#: includes/admin/class-tortuga-pro-settings.php:414
+#: includes/admin/class-settings.php:208
 msgid ""
 "Your license has expired, renew today to continue getting updates and "
 "support!"
 msgstr ""
 
-#: includes/admin/class-tortuga-pro-settings.php:416
-#: includes/admin/class-tortuga-pro-settings.php:419
+#: includes/admin/class-settings.php:209
+msgid "Renew Your License"
+msgstr ""
+
+#: includes/admin/class-settings.php:213
+msgid "Invalid"
+msgstr ""
+
+#: includes/admin/class-settings.php:214
+msgid ""
+"Please make sure that you have not reached the site limit and expiration "
+"date."
+msgstr ""
+
+#: includes/admin/class-settings.php:218
+msgid "Inactive"
+msgstr ""
+
+#: includes/admin/class-settings.php:242
+msgid "Deactivate License"
+msgstr ""
+
+#: includes/admin/class-settings.php:247
 msgid "Activate License"
 msgstr ""
 
-#: includes/admin/class-tortuga-pro-settings.php:417
-msgid "Your license is invalid!"
-msgstr ""
-
-#: includes/admin/class-tortuga-pro-settings.php:513
-#, php-format
-msgid ""
-"The callback function used for the <strong>%s</strong> setting is missing."
-msgstr ""
-
-#: includes/customizer/class-tortuga-pro-customize-font-control.php:30
+#: includes/customizer/class-customize-font-control.php:30
 msgid "Previous Font"
 msgstr ""
 
-#: includes/customizer/class-tortuga-pro-customize-font-control.php:31
+#: includes/customizer/class-customize-font-control.php:31
 msgid "Next Font"
 msgstr ""
 
-#: includes/customizer/class-tortuga-pro-customize-font-control.php:32
+#: includes/customizer/class-customize-font-control.php:32
 msgctxt "default font button"
 msgid "Default"
 msgstr ""
 
-#: includes/customizer/class-tortuga-pro-customize-font-list-control.php:29
+#: includes/customizer/class-customize-font-list-control.php:29
 msgid "Update Fonts"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:315
+#: includes/modules/class-custom-colors.php:315
 msgid "Theme Colors"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:334
+#: includes/modules/class-custom-colors.php:334
 msgctxt "color setting"
 msgid "Top Navigation"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:351
+#: includes/modules/class-custom-colors.php:351
 msgctxt "color setting"
 msgid "Header"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:368
+#: includes/modules/class-custom-colors.php:368
 msgctxt "color setting"
 msgid "Navigation"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:385
+#: includes/modules/class-custom-colors.php:385
 msgctxt "color setting"
 msgid "Post Titles"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:402
+#: includes/modules/class-custom-colors.php:402
 msgctxt "color setting"
 msgid "Links and Buttons"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:419
+#: includes/modules/class-custom-colors.php:419
 msgctxt "color setting"
 msgid "Widget Titles"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:436
+#: includes/modules/class-custom-colors.php:436
 msgctxt "color setting"
 msgid "Widget Links"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-colors.php:453
-#: includes/modules/class-tortuga-pro-custom-colors.php:470
+#: includes/modules/class-custom-colors.php:453
+#: includes/modules/class-custom-colors.php:470
 msgctxt "color setting"
 msgid "Footer Widgets"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:205
+#: includes/modules/class-custom-fonts.php:205
 msgid "Theme Fonts"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:224
+#: includes/modules/class-custom-fonts.php:224
 msgid "Base Font"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:240
+#: includes/modules/class-custom-fonts.php:240
 msgctxt "font setting"
 msgid "Headings"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:256
+#: includes/modules/class-custom-fonts.php:256
 msgctxt "font setting"
 msgid "Navigation"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:272
+#: includes/modules/class-custom-fonts.php:272
 msgctxt "font setting"
 msgid "Widget Titles"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:289
+#: includes/modules/class-custom-fonts.php:289
 msgid "Choose available Fonts"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:293
+#: includes/modules/class-custom-fonts.php:293
 msgid "Default Browser Fonts (12)"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:294
+#: includes/modules/class-custom-fonts.php:294
 msgid "ThemeZee Favorite Fonts (35)"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:295
+#: includes/modules/class-custom-fonts.php:295
 msgid "Most Popular Google Fonts (100)"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-custom-fonts.php:296
+#: includes/modules/class-custom-fonts.php:296
 msgid "All Google Fonts (650)"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-footer-line.php:104
+#: includes/modules/class-footer-line.php:104
 msgid "Footer Settings"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-footer-line.php:119
+#: includes/modules/class-footer-line.php:119
 msgid "Footer Text"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-footer-line.php:136
+#: includes/modules/class-footer-line.php:136
 msgid "Display Credit Link to ThemeZee on footer line"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-footer-line.php:173
+#: includes/modules/class-footer-line.php:173
 msgid "Footer Navigation"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-footer-widgets.php:95
+#: includes/modules/class-footer-widgets.php:95
 msgid "Footer Left"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-footer-widgets.php:97
+#: includes/modules/class-footer-widgets.php:97
 msgid "Appears on footer on the left hand side."
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-footer-widgets.php:106
+#: includes/modules/class-footer-widgets.php:106
 msgid "Footer Center Left"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-footer-widgets.php:108
+#: includes/modules/class-footer-widgets.php:108
 msgid "Appears on footer on center left position."
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-footer-widgets.php:117
+#: includes/modules/class-footer-widgets.php:117
 msgid "Footer Center Right"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-footer-widgets.php:119
+#: includes/modules/class-footer-widgets.php:119
 msgid "Appears on footer on center right position."
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-footer-widgets.php:128
+#: includes/modules/class-footer-widgets.php:128
 msgid "Footer Right"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-footer-widgets.php:130
+#: includes/modules/class-footer-widgets.php:130
 msgid "Appears on footer on the right hand side."
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-header-bar.php:102
+#: includes/modules/class-header-bar.php:102
 msgid "Top Navigation"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-header-bar.php:103
+#: includes/modules/class-header-bar.php:103
 msgid "Social Icons"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-site-logo.php:130
+#: includes/modules/class-site-logo.php:130
 msgid "Site Logo"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-site-logo.php:146
+#: includes/modules/class-site-logo.php:146
 msgid "Logo Image (replaces Site Title)"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-site-logo.php:163
-msgid "Logo Spacing (default: 0)"
+#: includes/modules/class-site-logo.php:163
+msgid "Logo Spacing (default: 10)"
 msgstr ""
 
-#: includes/modules/class-tortuga-pro-site-logo.php:180
-msgid "Header Spacing (default: 20)"
+#: includes/modules/class-site-logo.php:180
+msgid "Header Spacing (default: 10)"
 msgstr ""
