@@ -5,7 +5,7 @@ Plugin URI: http://themezee.com/addons/tortuga-pro/
 Description: Adds additional features like footer widgets, custom colors, fonts and logo upload to the Tortuga theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 1.0.1
+Version: 1.0.2
 Text Domain: tortuga-pro
 Domain Path: /languages/
 License: GPL v3
@@ -65,7 +65,7 @@ class Tortuga_Pro {
 		define( 'TORTUGA_PRO_NAME', 'Tortuga Pro' );
 
 		// Define Version Number
-		define( 'TORTUGA_PRO_VERSION', '1.0.1' );
+		define( 'TORTUGA_PRO_VERSION', '1.0.2' );
 		
 		// Define Plugin Name
 		define( 'TORTUGA_PRO_PRODUCT_ID', 56518 );
@@ -119,6 +119,11 @@ class Tortuga_Pro {
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-header-bar.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-header-spacing.php';
 		
+		// Include Magazine Widgets
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-list.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-sidebar.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-single.php';
+		
 		// Include Custom Stylesheet class
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/class-custom-stylesheet.php';
 
@@ -132,8 +137,11 @@ class Tortuga_Pro {
 	 */
 	static function setup_actions() {
 		
-		// Enqueue Frontend Widget Styles
-		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_styles' ) );
+		// Enqueue Tortuga Pro Stylesheet
+		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_styles' ), 11 );
+		
+		// Register additional Magazine Post Widgets
+		add_action( 'widgets_init', array( __CLASS__, 'register_widgets' ) );
 		
 		// Add Settings link to Plugin actions
 		add_filter( 'plugin_action_links_' . plugin_basename( TORTUGA_PRO_PLUGIN_FILE ), array( __CLASS__, 'plugin_action_links' ) );
@@ -157,6 +165,24 @@ class Tortuga_Pro {
 		
 		// Enqueue Plugin Stylesheet
 		wp_enqueue_style( 'tortuga-pro', TORTUGA_PRO_PLUGIN_URL . 'assets/css/tortuga-pro.css', array(), TORTUGA_PRO_VERSION );
+		
+	}
+	
+	/**
+	 * Register Magazine Widgets
+	 *
+	 * @return void
+	 */
+	static function register_widgets() {
+		
+		// Return early if Tortuga Theme is not active
+		if ( ! current_theme_supports( 'tortuga-pro'  ) ) {
+			return;
+		}
+		
+		register_widget( 'Tortuga_Pro_Magazine_Posts_List_Widget' );
+		register_widget( 'Tortuga_Pro_Magazine_Posts_Sidebar_Widget' );
+		register_widget( 'Tortuga_Pro_Magazine_Posts_Single_Widget' );
 		
 	}
 	

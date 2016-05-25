@@ -2,6 +2,12 @@
 Tortuga Pro Changelog
 ===================================
 
+Version 1.0.2
+-----------------------------------
+[added] Magazine Posts List widget
+[added] Magazine Posts Sidebar widget
+[added] Magazine Posts Single widget
+
 Version 1.0.1
 -----------------------------------
 [improved] styling of license settings page
