@@ -16,11 +16,8 @@ Copyright(C) 2015, ThemeZee.com - support@themezee.com
 
 */
 
-// Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) exit;
-
-// Use class to avoid namespace collisions
-if ( ! class_exists( 'Tortuga_Pro' ) ) :
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 
 /**
@@ -39,51 +36,51 @@ class Tortuga_Pro {
 	 * @return void
 	 */
 	static function setup() {
-	
-		// Setup Constants
+
+		// Setup Constants.
 		self::constants();
-		
-		// Setup Translation
+
+		// Setup Translation.
 		add_action( 'plugins_loaded', array( __CLASS__, 'translation' ) );
-	
-		// Include Files
+
+		// Include Files.
 		self::includes();
-		
-		// Setup Action Hooks
+
+		// Setup Action Hooks.
 		self::setup_actions();
-		
+
 	}
-	
+
 	/**
 	 * Setup plugin constants
 	 *
 	 * @return void
 	 */
 	static function constants() {
-		
-		// Define Plugin Name
+
+		// Define Plugin Name.
 		define( 'TORTUGA_PRO_NAME', 'Tortuga Pro' );
 
-		// Define Version Number
+		// Define Version Number.
 		define( 'TORTUGA_PRO_VERSION', '1.0.2' );
-		
-		// Define Plugin Name
+
+		// Define Plugin Name.
 		define( 'TORTUGA_PRO_PRODUCT_ID', 56518 );
 
-		// Define Update API URL
-		define( 'TORTUGA_PRO_STORE_API_URL', 'https://themezee.com' ); 
+		// Define Update API URL.
+		define( 'TORTUGA_PRO_STORE_API_URL', 'https://themezee.com' );
 
-		// Plugin Folder Path
+		// Plugin Folder Path.
 		define( 'TORTUGA_PRO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
-		// Plugin Folder URL
+		// Plugin Folder URL.
 		define( 'TORTUGA_PRO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-		// Plugin Root File
+		// Plugin Root File.
 		define( 'TORTUGA_PRO_PLUGIN_FILE', __FILE__ );
-		
+
 	}
-	
+
 	/**
 	 * Load Translation File
 	 *
@@ -92,43 +89,43 @@ class Tortuga_Pro {
 	static function translation() {
 
 		load_plugin_textdomain( 'tortuga-pro', false, dirname( plugin_basename( TORTUGA_PRO_PLUGIN_FILE ) ) . '/languages/' );
-		
+
 	}
-	
+
 	/**
 	 * Include required files
 	 *
 	 * @return void
 	 */
 	static function includes() {
-	
-		// Include Admin Classes
+
+		// Include Admin Classes.
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-plugin-updater.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-settings.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-settings-page.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/admin/class-admin-notices.php';
-		
-		// Include Customizer Classes
+
+		// Include Customizer Classes.
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/customizer/class-customizer.php';
-		
-		// Include Pro Features
+
+		// Include Pro Features.
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-custom-colors.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-custom-fonts.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-footer-line.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-footer-widgets.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-header-bar.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-header-spacing.php';
-		
-		// Include Magazine Widgets
+
+		// Include Magazine Widgets.
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-list.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-sidebar.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-single.php';
-		
-		// Include Custom Stylesheet class
+
+		// Include Custom Stylesheet class.
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/class-custom-stylesheet.php';
 
 	}
-	
+
 	/**
 	 * Setup Action Hooks
 	 *
@@ -136,19 +133,19 @@ class Tortuga_Pro {
 	 * @return void
 	 */
 	static function setup_actions() {
-		
-		// Enqueue Tortuga Pro Stylesheet
+
+		// Enqueue Tortuga Pro Stylesheet.
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_styles' ), 11 );
-		
-		// Register additional Magazine Post Widgets
+
+		// Register additional Magazine Post Widgets.
 		add_action( 'widgets_init', array( __CLASS__, 'register_widgets' ) );
-		
-		// Add Settings link to Plugin actions
+
+		// Add Settings link to Plugin actions.
 		add_filter( 'plugin_action_links_' . plugin_basename( TORTUGA_PRO_PLUGIN_FILE ), array( __CLASS__, 'plugin_action_links' ) );
-		
-		// Add automatic plugin updater from ThemeZee Store API
+
+		// Add automatic plugin updater from ThemeZee Store API.
 		add_action( 'admin_init', array( __CLASS__, 'plugin_updater' ), 0 );
-		
+
 	}
 
 	/**
@@ -158,46 +155,47 @@ class Tortuga_Pro {
 	 */
 	static function enqueue_styles() {
 
-		// Return early if Tortuga Theme is not active
-		if ( ! current_theme_supports( 'tortuga-pro'  ) ) {
+		// Return early if Tortuga Theme is not active.
+		if ( ! current_theme_supports( 'tortuga-pro' ) ) {
 			return;
 		}
-		
-		// Enqueue Plugin Stylesheet
+
+		// Enqueue Plugin Stylesheet.
 		wp_enqueue_style( 'tortuga-pro', TORTUGA_PRO_PLUGIN_URL . 'assets/css/tortuga-pro.css', array(), TORTUGA_PRO_VERSION );
-		
+
 	}
-	
+
 	/**
 	 * Register Magazine Widgets
 	 *
 	 * @return void
 	 */
 	static function register_widgets() {
-		
-		// Return early if Tortuga Theme is not active
-		if ( ! current_theme_supports( 'tortuga-pro'  ) ) {
+
+		// Return early if Tortuga Theme is not active.
+		if ( ! current_theme_supports( 'tortuga-pro' ) ) {
 			return;
 		}
-		
+
 		register_widget( 'Tortuga_Pro_Magazine_Posts_List_Widget' );
 		register_widget( 'Tortuga_Pro_Magazine_Posts_Sidebar_Widget' );
 		register_widget( 'Tortuga_Pro_Magazine_Posts_Single_Widget' );
-		
+
 	}
-	
+
 	/**
 	 * Add Settings link to the plugin actions
 	 *
+	 * @param array $actions Plugin action links.
 	 * @return array $actions Plugin action links
 	 */
 	static function plugin_action_links( $actions ) {
 
 		$settings_link = array( 'settings' => sprintf( '<a href="%s">%s</a>', admin_url( 'themes.php?page=tortuga-pro' ), __( 'Settings', 'tortuga-pro' ) ) );
-		
+
 		return array_merge( $settings_link, $actions );
 	}
-	
+
 	/**
 	 * Plugin Updater
 	 *
@@ -205,33 +203,30 @@ class Tortuga_Pro {
 	 */
 	static function plugin_updater() {
 
-		if( ! is_admin() ) :
+		if ( ! is_admin() ) :
 			return;
 		endif;
-		
+
 		$options = Tortuga_Pro_Settings::instance();
 
-		if( $options->get( 'license_key' ) <> '' ) :
-			
+		if ( $options->get( 'license_key' ) <> '' ) :
+
 			$license_key = $options->get( 'license_key' );
-			
-			// setup the updater
+
+			// Setup the updater.
 			$tortuga_pro_updater = new Tortuga_Pro_Plugin_Updater( TORTUGA_PRO_STORE_API_URL, __FILE__, array(
 					'version' 	=> TORTUGA_PRO_VERSION,
 					'license' 	=> $license_key,
 					'item_name' => TORTUGA_PRO_NAME,
 					'item_id'   => TORTUGA_PRO_PRODUCT_ID,
-					'author' 	=> 'ThemeZee'
+					'author' 	=> 'ThemeZee',
 				)
 			);
-			
+
 		endif;
-		
+
 	}
-	
 }
 
-// Run Plugin
+// Run Plugin.
 Tortuga_Pro::setup();
-
-endif;
