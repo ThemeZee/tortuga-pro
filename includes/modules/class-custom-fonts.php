@@ -276,7 +276,7 @@ class Tortuga_Pro_Custom_Fonts {
 			'default'           => 'favorites',
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => array( 'Tortuga_Pro_Custom_Fonts', 'tortuga_pro_sanitize_available_fonts' ),
+			'sanitize_callback' => array( 'Tortuga_Pro_Custom_Fonts', 'sanitize_available_fonts' ),
 			)
 		);
 		$wp_customize->add_control( new Tortuga_Pro_Customize_Font_List_Control(
