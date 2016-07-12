@@ -53,58 +53,58 @@ class Tortuga_Pro_Custom_Colors {
 		if ( $theme_options['link_color'] != $default_options['link_color'] ) {
 
 			$custom_css .= '
-                /* Link and Button Color Setting */
-                a,
-                a:link,
-                a:visited {
+				/* Link and Button Color Setting */
+				a,
+				a:link,
+				a:visited {
 					color: '. $theme_options['link_color'] .';
-                }
+				}
 
-                a:hover,
-                a:focus,
-                a:active {
-                    color: #303030;
-                }
+				a:hover,
+				a:focus,
+				a:active {
+					color: #303030;
+				}
 
-                button,
-                input[type="button"],
-                input[type="reset"],
-                input[type="submit"],
-                .more-link,
-                .entry-tags .meta-tags a:hover,
-                .entry-tags .meta-tags a:active,
-                .post-navigation .nav-links a,
-                .post-pagination a:hover,
-                .post-pagination a:active,
-                .post-pagination .current,
-                .infinite-scroll #infinite-handle span:hover,
-                .post-slider-controls .zeeflex-direction-nav a,
-                .tzwb-social-icons .social-icons-menu li a {
-                    color: #fff;
+				button,
+				input[type="button"],
+				input[type="reset"],
+				input[type="submit"],
+				.more-link,
+				.entry-tags .meta-tags a:hover,
+				.entry-tags .meta-tags a:active,
+				.post-navigation .nav-links a,
+				.post-pagination a:hover,
+				.post-pagination a:active,
+				.post-pagination .current,
+				.infinite-scroll #infinite-handle span:hover,
+				.post-slider-controls .zeeflex-direction-nav a,
+				.tzwb-social-icons .social-icons-menu li a {
+					color: #fff;
 					background: '. $theme_options['link_color'] .';
-                }
+				}
 
-                button:hover,
-                input[type="button"]:hover,
-                input[type="reset"]:hover,
-                input[type="submit"]:hover,
-                button:focus,
-                input[type="button"]:focus,
-                input[type="reset"]:focus,
-                input[type="submit"]:focus,
-                button:active,
-                input[type="button"]:active,
-                input[type="reset"]:active,
-                input[type="submit"]:active,
-                .more-link:hover,
-                .more-link:focus,
-                .more-link:active,
-                .post-navigation .nav-links a:hover,
-                .post-navigation .nav-links a:active,
-                .post-slider-controls .zeeflex-direction-nav a:hover,
-                .tzwb-social-icons .social-icons-menu li a:hover {
-                    background: #303030;
-                }
+				button:hover,
+				input[type="button"]:hover,
+				input[type="reset"]:hover,
+				input[type="submit"]:hover,
+				button:focus,
+				input[type="button"]:focus,
+				input[type="reset"]:focus,
+				input[type="submit"]:focus,
+				button:active,
+				input[type="button"]:active,
+				input[type="reset"]:active,
+				input[type="submit"]:active,
+				.more-link:hover,
+				.more-link:focus,
+				.more-link:active,
+				.post-navigation .nav-links a:hover,
+				.post-navigation .nav-links a:active,
+				.post-slider-controls .zeeflex-direction-nav a:hover,
+				.tzwb-social-icons .social-icons-menu li a:hover {
+					background: #303030;
+				}
 				';
 
 		}
@@ -113,9 +113,9 @@ class Tortuga_Pro_Custom_Colors {
 		if ( $theme_options['top_navi_color'] != $default_options['top_navi_color'] ) {
 
 			$custom_css .= '
-                /* Top Navigation Color Setting */
-                .header-bar-wrap,
-                .top-navigation-menu ul {
+				/* Top Navigation Color Setting */
+				.header-bar-wrap,
+				.top-navigation-menu ul {
 					background: '. $theme_options['top_navi_color'] .';
 				}';
 
@@ -125,9 +125,9 @@ class Tortuga_Pro_Custom_Colors {
 		if ( $theme_options['header_color'] != $default_options['header_color'] ) {
 
 			$custom_css .= '
-                /* Header Color Setting */
-                .site-header,
-                .main-navigation-menu ul {
+				/* Header Color Setting */
+				.site-header,
+				.main-navigation-menu ul {
 					background: '. $theme_options['header_color'] .';
 				}';
 
@@ -137,34 +137,34 @@ class Tortuga_Pro_Custom_Colors {
 		if ( $theme_options['navi_color'] != $default_options['navi_color'] ) {
 
 			$custom_css .= '
-                /* Navigation Color Setting */
-                .primary-navigation-wrap,
-                .main-navigation-menu ul {
+				/* Navigation Color Setting */
+				.primary-navigation-wrap,
+				.main-navigation-menu ul {
 					border-color: '. $theme_options['navi_color'] .';
-                }
+				}
 
-                .main-navigation-menu a:hover,
-                .main-navigation-menu a:active,
-                .main-navigation-menu li.current-menu-item > a {
+				.main-navigation-menu a:hover,
+				.main-navigation-menu a:active,
+				.main-navigation-menu li.current-menu-item > a {
 					background: '. $theme_options['navi_color'] .';
-                }
+				}
 
-                @media only screen and (max-width: 60em) {
+				@media only screen and (max-width: 60em) {
 
-                    .main-navigation-toggle,
-                    .main-navigation-toggle:active,
-                    .main-navigation-toggle:focus,
-                    .main-navigation-toggle:hover,
-                    .main-navigation-menu .submenu-dropdown-toggle:hover,
-                    .main-navigation-menu .submenu-dropdown-toggle:active {
+					.main-navigation-toggle,
+					.main-navigation-toggle:active,
+					.main-navigation-toggle:focus,
+					.main-navigation-toggle:hover,
+					.main-navigation-menu .submenu-dropdown-toggle:hover,
+					.main-navigation-menu .submenu-dropdown-toggle:active {
 						background: '. $theme_options['navi_color'] .';
-                    }
+					}
 
-                    .main-navigation-menu {
+					.main-navigation-menu {
 						border-color: '. $theme_options['navi_color'] .';
-                    }
+					}
 
-                }
+				}
 				';
 
 		}
@@ -173,29 +173,29 @@ class Tortuga_Pro_Custom_Colors {
 		if ( $theme_options['title_color'] != $default_options['title_color'] ) {
 
 			$custom_css .= '
-                /* Post Titles Primary Color Setting */
-                .archive-title,
-                .page-title,
-                .entry-title,
-                .entry-title a:link,
-                .entry-title a:visited,
-                .comments-header .comments-title,
-                .comment-reply-title span {
+				/* Post Titles Primary Color Setting */
+				.archive-title,
+				.page-title,
+				.entry-title,
+				.entry-title a:link,
+				.entry-title a:visited,
+				.comments-header .comments-title,
+				.comment-reply-title span {
 					color: '. $theme_options['title_color'] .';
-                }
+				}
 
-                .entry-title a:hover,
-                .entry-title a:active{
-                    color: #303030;
-                }
+				.entry-title a:hover,
+				.entry-title a:active{
+					color: #303030;
+				}
 
-                .page-header,
-                .type-post,
-                .type-page,
-                .type-attachment,
-                .comments-area  {
+				.page-header,
+				.type-post,
+				.type-page,
+				.type-attachment,
+				.comments-area  {
 					border-color: '. $theme_options['title_color'] .';
-                }
+				}
 				';
 
 		}
@@ -204,28 +204,28 @@ class Tortuga_Pro_Custom_Colors {
 		if ( $theme_options['widget_title_color'] != $default_options['widget_title_color'] ) {
 
 			$custom_css .= '
-                /* Widget Titles Color Setting */
-                .widget,
-                .widget-magazine-posts-columns .magazine-posts-columns .magazine-posts-columns-content {
+				/* Widget Titles Color Setting */
+				.widget,
+				.widget-magazine-posts-columns .magazine-posts-columns .magazine-posts-columns-content {
 					border-color: '. $theme_options['widget_title_color'] .';
-                }
+				}
 
-                .widget-title,
-                .widget-title a:link,
-                .widget-title a:visited {
+				.widget-title,
+				.widget-title a:link,
+				.widget-title a:visited {
 					color: '. $theme_options['widget_title_color'] .';
-                }
+				}
 
-                .widget-title a:hover,
-                .widget-title a:active  {
-                    color: #303030;
-                }
+				.widget-title a:hover,
+				.widget-title a:active  {
+					color: #303030;
+				}
 
-                .tzwb-tabbed-content .tzwb-tabnavi li a:hover,
-                .tzwb-tabbed-content .tzwb-tabnavi li a:active,
-                .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
+				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
+				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
 					background: '. $theme_options['widget_title_color'] .';
-                }
+				}
 				';
 
 		}
@@ -234,39 +234,39 @@ class Tortuga_Pro_Custom_Colors {
 		if ( $theme_options['widget_link_color'] != $default_options['widget_link_color'] ) {
 
 			$custom_css .= '
-                /* Widget Links Color Setting */
-                .sidebar .widget a:link,
-                .sidebar .widget a:visited {
+				/* Widget Links Color Setting */
+				.sidebar .widget a:link,
+				.sidebar .widget a:visited {
 					color: '. $theme_options['widget_link_color'] .';
-                }
+				}
 
-                .sidebar .widget a:hover,
-                .sidebar .widget a:active,
-                .sidebar .widget .entry-meta a:link,
-                .sidebar .widget .entry-meta a:visited {
-                    color: #303030;
-                }
+				.sidebar .widget a:hover,
+				.sidebar .widget a:active,
+				.sidebar .widget .entry-meta a:link,
+				.sidebar .widget .entry-meta a:visited {
+					color: #303030;
+				}
 
-                .sidebar .widget .entry-meta a:hover,
-                .sidebar .widget .entry-meta a:active {
-                    color: #777;
-                }
+				.sidebar .widget .entry-meta a:hover,
+				.sidebar .widget .entry-meta a:active {
+					color: #777;
+				}
 
-                .sidebar .widget_tag_cloud .tagcloud a:link,
-                .sidebar .widget_tag_cloud .tagcloud a:visited {
-                    color: #fff;
-                }
+				.sidebar .widget_tag_cloud .tagcloud a:link,
+				.sidebar .widget_tag_cloud .tagcloud a:visited {
+					color: #fff;
+				}
 
-                .sidebar .widget_tag_cloud .tagcloud a:hover,
-                .sidebar .widget_tag_cloud .tagcloud a:active,
-                .tzwb-social-icons .social-icons-menu li a {
-                    color: #fff;
+				.sidebar .widget_tag_cloud .tagcloud a:hover,
+				.sidebar .widget_tag_cloud .tagcloud a:active,
+				.tzwb-social-icons .social-icons-menu li a {
+					color: #fff;
 					background: '. $theme_options['widget_link_color'] .';
-                }
+				}
 
-                .tzwb-social-icons .social-icons-menu li a:hover {
-                    background: #303030;
-                }
+				.tzwb-social-icons .social-icons-menu li a:hover {
+					background: #303030;
+				}
 				';
 		}
 
@@ -274,10 +274,10 @@ class Tortuga_Pro_Custom_Colors {
 		if ( $theme_options['footer_widgets_color'] != $default_options['footer_widgets_color'] ) {
 
 			$custom_css .= '
-                /* Footer Widget Color Setting */
-                .footer-widgets-background {
+				/* Footer Widget Color Setting */
+				.footer-widgets-background {
 					background: '. $theme_options['footer_widgets_color'] .';
-                }
+				}
 				';
 
 		}
@@ -286,10 +286,10 @@ class Tortuga_Pro_Custom_Colors {
 		if ( $theme_options['footer_color'] != $default_options['footer_color'] ) {
 
 			$custom_css .= '
-                /* Footer Line Color Setting */
-                .footer-wrap {
+				/* Footer Line Color Setting */
+				.footer-wrap {
 					background: '. $theme_options['footer_color'] .';
-                }
+				}
 				';
 
 		}
