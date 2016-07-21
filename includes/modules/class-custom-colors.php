@@ -145,7 +145,11 @@ class Tortuga_Pro_Custom_Colors {
 
 				.main-navigation-menu a:hover,
 				.main-navigation-menu a:active,
-				.main-navigation-menu li.current-menu-item > a {
+				.main-navigation-menu li.current-menu-item > a,
+				.mega-menu-content .widget_meta ul li a:hover,
+				.mega-menu-content .widget_pages ul li a:hover,
+				.mega-menu-content .widget_categories ul li a:hover,
+				.mega-menu-content .widget_archive ul li a:hover {
 					background: '. $theme_options['navi_color'] .';
 				}
 

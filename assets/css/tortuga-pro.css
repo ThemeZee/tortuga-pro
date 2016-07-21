@@ -13,7 +13,12 @@
 ## Header Bar
 --------------------------------------------------------------*/
 .header-bar-wrap {
+	color: #fff;
 	background: #383838;
+}
+
+.header-bar {
+	position: relative;
 }
 
 .top-navigation-toggle {
@@ -26,12 +31,10 @@
 	padding: 0;
 	list-style-type: none;
 	list-style-position: outside;
-	position: relative;
 }
 
 .top-navigation-menu li {
 	float: left;
-	position: relative;
 }
 
 .top-navigation-menu a {
@@ -91,16 +94,14 @@
 }
 
 .top-navigation-menu ul li{
-	margin: 0;
-	padding: 0;
-	border: none;
+	float: none;
+	position: relative;
 }
 
 .top-navigation-menu ul a {
-	width: 250px;
-	width: 16rem;
+	min-width: 250px;
+	min-width: 16rem;
 	padding: 0.8em 1em;
-	float: left;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -122,21 +123,13 @@
 }
 
 .top-navigation-menu li ul ul {
-	margin-left: 250px;
-	margin-left: 16rem;
+	top: 0;
+	left: 100%;
 	margin-top: -4px;
 }
 
-.top-navigation-menu li:hover ul ul,
-.top-navigation-menu li:hover ul ul ul,
-.top-navigation-menu li:hover ul ul ul ul {
-	display: none;
-}
-
-.top-navigation-menu li:hover ul,
-.top-navigation-menu li li:hover ul,
-.top-navigation-menu li li li:hover ul,
-.top-navigation-menu li li li li:hover ul {
+.top-navigation-menu li.menu-item-has-children:hover > ul,
+.top-navigation-menu li.menu-item-has-children[aria-expanded="true"] > ul {
 	display: block;
 }
 
@@ -148,6 +141,14 @@
 	text-decoration: none;
 }
 
+.top-navigation-menu .mega-menu-content .widget_meta ul li a:hover,
+.top-navigation-menu .mega-menu-content .widget_pages ul li a:hover,
+.top-navigation-menu .mega-menu-content .widget_categories ul li a:hover,
+.top-navigation-menu .mega-menu-content .widget_archive ul li a:hover {
+	background: rgba(255,255,255,0.10);
+}
+
+/* Social Icons */
 .header-bar .social-icons-navigation {
 	float: right;
 }
