@@ -13,8 +13,8 @@
 ## Header Bar
 --------------------------------------------------------------*/
 .header-bar-wrap {
-	color: #fff;
 	background: #383838;
+	color: #fff;
 }
 
 .header-bar {
@@ -29,8 +29,8 @@
 	display: inline;
 	margin: 0 0 0 -0.8em;
 	padding: 0;
-	list-style-type: none;
 	list-style-position: outside;
+	list-style-type: none;
 }
 
 .top-navigation-menu li {
@@ -39,12 +39,12 @@
 
 .top-navigation-menu a {
 	display: block;
-	font-family: 'Titillium Web', Tahoma, Arial;
-	font-size: 13px;
-	font-size: 0.8125rem;
 	padding: 0.7em 1.2em;
 	text-decoration: none;
 	text-transform: uppercase;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-family: 'Titillium Web', Tahoma, Arial;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
@@ -52,17 +52,17 @@
 .top-navigation-menu > .menu-item-has-children > a:after {
 	display: inline-block;
 	margin: 0.4em 0 0 0.25em;
-	font-size: 12px;
-	line-height: 1;
-	font-family: 'Genericons';
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-decoration: inherit;
-	vertical-align: top;
-	content: '\f431';
 	color: #fff;
+	content: '\f431';
+	vertical-align: top;
+	text-decoration: inherit;
+	font-size: 12px;
+	font-family: 'Genericons';
+	line-height: 1;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .top-navigation-menu a:link,
@@ -77,26 +77,26 @@
 
 .top-navigation-menu ul {
 	position: absolute;
-	display: none;
 	z-index: 9999;
+	display: none;
 	margin: 0;
 	padding: 0;
-	list-style-type: none;
-	list-style-position: outside;
-	background: #383838;
 	border-top: 4px solid rgba(255,255,255,0.10);
+	background: #383838;
+	list-style-position: outside;
+	list-style-type: none;
 }
 
 .top-navigation-menu ul li{
-	float: none;
 	position: relative;
+	float: none;
 }
 
 .top-navigation-menu ul a {
+	box-sizing: border-box;
+	padding: 0.8em 1em;
 	min-width: 250px;
 	min-width: 16rem;
-	padding: 0.8em 1em;
-	box-sizing: border-box;
 	border-bottom: 1px dotted rgba(255,255,255,0.15);
 	-webkit-transition: none;
 	transition: none;
@@ -151,19 +151,19 @@
 }
 
 .header-bar .social-icons-menu li a:hover:before {
-	text-decoration: none;
 	color: rgba(255,255,255,0.6);
+	text-decoration: none;
 }
 
 /*--------------------------------------------------------------
 # Site Logo
 --------------------------------------------------------------*/
 .site-branding .site-logo {
-	border: 0;
+	margin: 0;
 	max-width: 100%;
 	height: auto;
+	border: 0;
 	vertical-align: top;
-	margin: 0;
 }
 
 /*--------------------------------------------------------------
@@ -173,9 +173,9 @@
 /* Magazine Posts List */
 .widget-magazine-posts-list .type-post .wp-post-image {
 	float: left;
-	max-width: 50%;
 	margin: 0 0.75em 0 0;
 	padding: 0 0.75em 0 0;
+	max-width: 50%;
 }
 
 .widget-magazine-posts-list .type-post .entry-title {
@@ -198,8 +198,8 @@
 # Footer Widget Area
 --------------------------------------------------------------*/
 .footer-widgets-background {
-	background: #383838;
 	padding: 2em 0 0;
+	background: #383838;
 }
 
 .footer-widgets {
@@ -208,16 +208,16 @@
 
 .footer-widget-column {
 	float: left;
-	width: 25%;
-	padding-right: 2em;
 	box-sizing: border-box;
+	padding-right: 2em;
+	width: 25%;
 }
 
 .footer-widgets .widget {
-	color: #fff;
-	background: none;
 	border: none;
+	background: none;
 	box-shadow: none;
+	color: #fff;
 }
 
 .footer-widgets .widget-title {
@@ -247,28 +247,28 @@
 }
 
 .footer-navigation-menu {
+	position: relative;
 	display: inline;
 	margin: 0;
-	list-style-type: none;
 	list-style-position: outside;
-	position: relative;
+	list-style-type: none;
 }
 
 .footer-navigation-menu li {
-	float: left;
 	position: relative;
+	float: left;
 }
 
 .site-footer .footer-navigation-menu a {
 	display: block;
-	font-family: 'Titillium Web', Tahoma, Arial;
+	padding: 0.7em 1em;
+	text-decoration: none;
+	text-transform: uppercase;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-size: 14px;
 	font-size: 0.875rem;
-	padding: 0.7em 1em;
-	text-transform: uppercase;
-	text-decoration: none;
+	font-family: 'Titillium Web', Tahoma, Arial;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
@@ -286,7 +286,6 @@
 ## Desktop X-Large ( < 1200px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 80em) {
-
 	.footer-widgets-background {
 		padding: 1.5em 0 0;
 	}
@@ -302,7 +301,6 @@
 }
 
 @media only screen and (max-width: 70em) {
-
 	/* Magazine Posts List */
 	.widget-magazine-posts-list .type-post .entry-title {
 		font-size: 20px;
@@ -319,7 +317,6 @@
 ## Desktop Medium ( < 1040px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 65em) {
-
 	/* Magazine Posts List */
 	.widget-magazine-posts-list .type-post .entry-content {
 		display: none;
@@ -339,7 +336,6 @@
 ## Desktop Small ( < 960px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 60em) {
-
 	/* Magazine Post Widgets */
 	.widget-magazine-posts-list .type-post .entry-title {
 		font-size: 22px;
@@ -365,8 +361,8 @@
 		margin: 0;
 	}
 	.top-navigation-menu li {
-		float: none;
 		position: static;
+		float: none;
 	}
 
 	.top-navigation-menu ul {
@@ -375,8 +371,8 @@
 	}
 
 	.top-navigation-menu ul a {
-		width: auto;
 		float: none;
+		width: auto;
 	}
 
 	.top-navigation-menu li ul ul {
@@ -408,23 +404,23 @@
 	.top-navigation-toggle:hover,
 	.top-navigation-toggle:active,
 	.top-navigation-toggle:focus {
-		cursor: pointer;
 		background: none;
+		cursor: pointer;
 	}
 
 	.top-navigation-toggle:after {
-		float: left;
 		display: inline-block;
-		font-family: 'Genericons';
-		font-size: 17px;
+		float: left;
+		color: #fff;
+		content: '\f419';
+		vertical-align: middle;
+		text-decoration: inherit;
 		font-weight: normal;
+		font-size: 17px;
+		font-family: 'Genericons';
 		line-height: 1;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		text-decoration: inherit;
-		vertical-align: middle;
-		content: '\f419';
-		color: #fff;
 	}
 
 	.top-navigation-toggle:hover {
@@ -433,19 +429,19 @@
 
 	/* Top Navigation Menu */
 	.top-navigation-menu {
+		display: none;
 		float: left;
 		width: 100%;
-		display: none;
 		border-top: 4px solid rgba(255,255,255,0.15);
 	}
 
 	.top-navigation-menu a {
 		display: block;
 		clear: left;
-		font-size: 13px;
-		font-size: 0.8125rem;
 		padding: 1em 1.25em;
 		border-bottom: 1px dotted rgba(255,255,255,0.15);
+		font-size: 13px;
+		font-size: 0.8125rem;
 	}
 
 	.top-navigation-menu li:last-child a {
@@ -459,8 +455,8 @@
 
 	.top-navigation-menu ul a {
 		display: block;
-		width: 100%;
 		padding-left: 3em;
+		width: 100%;
 	}
 
 	.top-navigation-menu ul li:last-child a {
@@ -477,27 +473,27 @@
 
 	/* Mobile Submenu Dropdowns */
 	.top-navigation-menu .submenu-dropdown-toggle {
-		float: right;
 		display: block;
+		float: right;
 		margin: 0;
 		padding: 0.5em 1em 0.6em;
 	}
 
 	.top-navigation-menu .submenu-dropdown-toggle:hover {
-		cursor: pointer;
 		background: rgba(255,255,255,0.10);
+		cursor: pointer;
 	}
 
 	.top-navigation-menu .submenu-dropdown-toggle:before {
+		color: #fff;
+		content: '\f431';
+		vertical-align: middle;
+		text-decoration: inherit;
 		font-size: 24px;
-		line-height: 1;
 		font-family: 'Genericons';
+		line-height: 1;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		text-decoration: inherit;
-		vertical-align: middle;
-		content: '\f431';
-		color: #fff;
 	}
 
 	.top-navigation-menu .submenu-dropdown-toggle.active:before {
@@ -512,33 +508,33 @@
 
 	/* Footer Navigation Toggle */
 	.footer-navigation-toggle {
-		float: right;
 		display: inline-block;
-		background: none;
-		padding: 1em;
+		float: right;
 		margin: 1.5em 0 0;
+		padding: 1em;
+		background: none;
 	}
 
 	.footer-navigation-toggle:hover,
 	.footer-navigation-toggle:active,
 	.footer-navigation-toggle:focus {
-		cursor: pointer;
 		background: none;
+		cursor: pointer;
 	}
 
 	.footer-navigation-toggle:after {
-		float: left;
 		display: inline-block;
-		font-family: 'Genericons';
-		font-size: 24px;
+		float: left;
+		color: #fff;
+		content: '\f419';
+		vertical-align: middle;
+		text-decoration: inherit;
 		font-weight: normal;
+		font-size: 24px;
+		font-family: 'Genericons';
 		line-height: 1;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		text-decoration: inherit;
-		vertical-align: middle;
-		content: '\f419';
-		color: #fff;
 	}
 
 	.footer-navigation-toggle:hover:after {
@@ -548,15 +544,15 @@
 	/* Footer Navigation Menu */
 	.footer-navigation {
 		display: block;
-		width: 100%;
 		padding: 0;
+		width: 100%;
 	}
 
 	.footer-navigation-menu {
-		float: right;
 		display: none;
-		width: 100%;
+		float: right;
 		padding: 0.5em 0 1em;
+		width: 100%;
 		border-top: 2px solid #404040;
 	}
 
@@ -570,7 +566,6 @@
 ## Tablet Medium ( < 800px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 50em) {
-
 	/* Magazine Posts List */
 	.widget-magazine-posts-list .type-post .entry-title {
 		font-size: 20px;
@@ -584,7 +579,6 @@
 }
 
 @media only screen and (max-width: 45em) {
-
 	.widget-magazine-posts-list .type-post .entry-content {
 		display: none;
 	}
@@ -595,7 +589,6 @@
 ## Mobile Extra Large ( < 640px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 40em) {
-
 	/* Magazine Posts List */
 	.widget-magazine-posts-list .type-post .entry-title {
 		font-size: 18px;
@@ -618,27 +611,25 @@
 ## Mobile Large ( < 560px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 35em) {
-
 	.footer-widgets {
 		margin-right: 0;
 	}
 
 	.footer-widget-column {
 		float: none;
-		width: 100%;
 		padding-right: 0;
+		width: 100%;
 	}
 
 }
 
 @media only screen and (max-width: 30em) {
-
 	/* Magazine Posts List */
 	.widget-magazine-posts-list .type-post .wp-post-image {
 		float: none;
-		max-width: 100%;
 		margin: 0 0 0.5em;
 		padding: 0;
+		max-width: 100%;
 	}
 
 	.widget-magazine-posts-list .type-post .entry-title {
@@ -662,7 +653,6 @@
 
 /* Ensure footer navigation is visible on desktop view */
 @media only screen and (min-width: 60.001em) {
-
 	.top-navigation-menu, .footer-navigation-menu {
 		display: block !important;
 	}
