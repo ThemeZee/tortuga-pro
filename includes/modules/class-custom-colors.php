@@ -74,9 +74,9 @@ class Tortuga_Pro_Custom_Colors {
 				.entry-tags .meta-tags a:hover,
 				.entry-tags .meta-tags a:active,
 				.post-navigation .nav-links a,
-				.post-pagination a:hover,
-				.post-pagination a:active,
-				.post-pagination .current,
+				.pagination a:hover,
+				.pagination a:active,
+				.pagination .current,
 				.infinite-scroll #infinite-handle span:hover,
 				.post-slider-controls .zeeflex-direction-nav a,
 				.tzwb-social-icons .social-icons-menu li a {

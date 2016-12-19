@@ -17,13 +17,13 @@
 				.hover( function() { $( this ).css( 'color', '#303030' ); },
 					function() { $( this ).css( 'color', newval ); }
 				);
-			$( 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .post-navigation .nav-links a, .post-pagination .current, .post-slider-controls .zeeflex-direction-nav a, .tzwb-social-icons .social-icons-menu li a' )
+			$( 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .post-navigation .nav-links a, .pagination .current, .post-slider-controls .zeeflex-direction-nav a, .tzwb-social-icons .social-icons-menu li a' )
 				.css( 'background', newval );
-			$( 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .post-navigation .nav-links a, .post-pagination .current, .post-slider-controls .zeeflex-direction-nav a, .tzwb-social-icons .social-icons-menu li a' )
+			$( 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .post-navigation .nav-links a, .pagination .current, .post-slider-controls .zeeflex-direction-nav a, .tzwb-social-icons .social-icons-menu li a' )
 				.hover( function() { $( this ).css( 'background', '#303030' ); },
 					function() { $( this ).css( 'background', newval ); }
 				);
-			$( '.entry-tags .meta-tags a, .post-pagination a' )
+			$( '.entry-tags .meta-tags a, .pagination a' )
 				.hover( function() { $( this ).css( 'background', newval ); },
 					function() { $( this ).css( 'background', '#303030' ); }
 				);
@@ -124,7 +124,7 @@
 
 			// Embed Font.
 			var fontFamilyUrl = newval.split( " " ).join( "+" );
-			var googleFontPath = "http://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
+			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
 			var googleFontSource = "<link id='tortuga-pro-custom-text-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
 			var checkLink = $( "head" ).find( "#tortuga-pro-custom-text-font" ).length;
 
@@ -145,7 +145,7 @@
 
 			// Embed Font.
 			var fontFamilyUrl = newval.split( " " ).join( "+" );
-			var googleFontPath = "http://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
+			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
 			var googleFontSource = "<link id='tortuga-pro-custom-title-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
 			var checkLink = $( "head" ).find( "#tortuga-pro-custom-title-font" ).length;
 
@@ -166,7 +166,7 @@
 
 			// Embed Font.
 			var fontFamilyUrl = newval.split( " " ).join( "+" );
-			var googleFontPath = "http://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
+			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
 			var googleFontSource = "<link id='tortuga-pro-custom-navi-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
 			var checkLink = $( "head" ).find( "#tortuga-pro-custom-navi-font" ).length;
 
@@ -187,7 +187,7 @@
 
 			// Embed Font.
 			var fontFamilyUrl = newval.split( " " ).join( "+" );
-			var googleFontPath = "http://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
+			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
 			var googleFontSource = "<link id='tortuga-pro-custom-widget-title-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
 			var checkLink = $( "head" ).find( "#tortuga-pro-custom-widget-title-font" ).length;
 
