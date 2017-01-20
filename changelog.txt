@@ -2,33 +2,39 @@
 Tortuga Pro Changelog
 ===================================
 
+Version 1.0.6
+-----------------------------------
+* changed Google Font URL to https in Customizer
+* updated custom color settings for pagination
+* updated EDD Plugin Updater class to version 1.6.9
+
 Version 1.0.5
 -----------------------------------
-[added] RTL language support for all Pro features
-[added] 18 new Google Fonts to font settings
+* added RTL language support for all Pro features
+* added 18 new Google Fonts to font settings
 
 Version 1.0.4
 -----------------------------------
-[added] custom styling for mega menu plugin
-[improved] browser prefixing of CSS stylesheets
+* added custom styling for mega menu plugin
+* improved browser prefixing of CSS stylesheets
 
 Version 1.0.3
 -----------------------------------
-[added] loading of custom colors and custom fonts CSS with wp_add_inline_style()
-[updated] plugin uploader class
-[improved] code formatting
+* added loading of custom colors and custom fonts CSS with wp_add_inline_style()
+* updated plugin uploader class
+* improved code formatting
 
 Version 1.0.2
 -----------------------------------
-[added] Magazine Posts List widget
-[added] Magazine Posts Sidebar widget
-[added] Magazine Posts Single widget
+* added Magazine Posts List widget
+* added Magazine Posts Sidebar widget
+* added Magazine Posts Single widget
 
 Version 1.0.1
 -----------------------------------
-[improved] styling of license settings page
-[added] dismiss links to admin notices
-[removed] site logo setting for sites using WP 4.5 or higher
+* improved styling of license settings page
+* added dismiss links to admin notices
+* removed site logo setting for sites using WP 4.5 or higher
 
 Version 1.0
 -----------------------------------

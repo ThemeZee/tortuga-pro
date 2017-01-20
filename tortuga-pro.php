@@ -5,7 +5,7 @@ Plugin URI: http://themezee.com/addons/tortuga-pro/
 Description: Adds additional features like footer widgets, custom colors, fonts and logo upload to the Tortuga theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 1.0.5
+Version: 1.0.6
 Text Domain: tortuga-pro
 Domain Path: /languages/
 License: GPL v3
@@ -62,7 +62,7 @@ class Tortuga_Pro {
 		define( 'TORTUGA_PRO_NAME', 'Tortuga Pro' );
 
 		// Define Version Number.
-		define( 'TORTUGA_PRO_VERSION', '1.0.5' );
+		define( 'TORTUGA_PRO_VERSION', '1.0.6' );
 
 		// Define Plugin Name.
 		define( 'TORTUGA_PRO_PRODUCT_ID', 56518 );
@@ -216,15 +216,11 @@ class Tortuga_Pro {
 	 */
 	static function plugin_updater() {
 
-		if ( ! is_admin() ) :
-			return;
-		endif;
-
 		$options = Tortuga_Pro_Settings::instance();
 
 		if ( $options->get( 'license_key' ) <> '' ) :
 
-			$license_key = $options->get( 'license_key' );
+			$license_key = trim( $options->get( 'license_key' ) );
 
 			// Setup the updater.
 			$tortuga_pro_updater = new Tortuga_Pro_Plugin_Updater( TORTUGA_PRO_STORE_API_URL, __FILE__, array(
