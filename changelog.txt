@@ -7,6 +7,7 @@ Version 1.0.6
 * changed Google Font URL to https in Customizer
 * updated custom color settings for pagination
 * updated EDD Plugin Updater class to version 1.6.9
+* improved styling of footer navigation menu
 
 Version 1.0.5
 -----------------------------------
