@@ -84,7 +84,7 @@ class Tortuga_Pro_Header_Spacing {
 
 			$custom_css .= '
 				.site-branding {
-					margin: '. $margin .'em 0;
+					margin: ' . $margin . 'em 0;
 				}
 				';
 
@@ -99,8 +99,8 @@ class Tortuga_Pro_Header_Spacing {
 				@media only screen and (min-width: 60em) {
 
 					.header-main {
-						padding-top: '. $margin .'em;
-						padding-bottom: '. $margin .'em;
+						padding-top: ' . $margin . 'em;
+						padding-bottom: ' . $margin . 'em;
 					}
 
 				}

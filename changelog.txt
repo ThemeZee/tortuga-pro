@@ -2,6 +2,11 @@
 Tortuga Pro Changelog
 ===================================
 
+Version 1.2
+-----------------------------------
+* added transient caching for Magazine widgets to increase performance
+* changed Magazine widgets to use templates for improved child theme compatibility
+
 Version 1.0.6
 -----------------------------------
 * changed Google Font URL to https in Customizer

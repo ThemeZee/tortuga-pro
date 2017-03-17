@@ -5,7 +5,7 @@
  * Display the latest posts from a selected category.
  * Intented to be used in one of the sidebar widget areas.
  *
- * @package Tortuga
+ * @package Tortuga Pro
  */
 
 /**
