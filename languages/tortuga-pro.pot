@@ -1,8 +1,9 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Tortuga Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-05-03 19:18+0100\n"
+"POT-Creation-Date: 2017-03-17 17:12+0100\n"
 "PO-Revision-Date: 2016-05-03 19:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
@@ -10,19 +11,15 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: ../\n"
+"X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
-
-#: tortuga-pro.php:170
-msgid "Settings"
-msgstr ""
 
 #: includes/admin/class-admin-notices.php:55
 #, php-format
@@ -31,51 +28,49 @@ msgid ""
 "updates and support. <a href=\"%2$s\">Enter License Key</a>"
 msgstr ""
 
-#: includes/admin/class-admin-notices.php:59
-#: includes/admin/class-admin-notices.php:87
-#: includes/admin/class-admin-notices.php:112
+#: includes/admin/class-admin-notices.php:60
+#: includes/admin/class-admin-notices.php:89
+#: includes/admin/class-admin-notices.php:114
 msgid "Dismiss Notice"
 msgstr ""
 
-#: includes/admin/class-admin-notices.php:83
+#: includes/admin/class-admin-notices.php:84
 #, php-format
 msgid ""
 "Your license for %1$s has expired. Please <a href=\"%2$s\">renew</a> to "
 "continue getting updates and support!"
 msgstr ""
 
-#: includes/admin/class-admin-notices.php:108
+#: includes/admin/class-admin-notices.php:110
 #, php-format
 msgid ""
 "The %1$s add-on needs the %2$s theme activated in order to work. You should "
 "deactivate %1$s if you have switched to another theme permanently."
 msgstr ""
 
-#: includes/admin/class-admin-notices.php:135
+#: includes/admin/class-admin-notices.php:137
 msgid "Security check failed"
 msgstr ""
 
-#: includes/admin/class-admin-notices.php:135
-#: includes/admin/class-plugin-updater.php:324
+#: includes/admin/class-admin-notices.php:137
+#: includes/admin/class-plugin-updater.php:395
 msgid "Error"
 msgstr ""
 
-#: includes/admin/class-plugin-updater.php:177
+#: includes/admin/class-plugin-updater.php:201
 #, php-format
 msgid ""
-"There is a new version of %1$s available. <a target=\"_blank\" class="
-"\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s."
 msgstr ""
 
-#: includes/admin/class-plugin-updater.php:184
+#: includes/admin/class-plugin-updater.php:209
 #, php-format
 msgid ""
-"There is a new version of %1$s available. <a target=\"_blank\" class="
-"\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
-"\">update now</a>."
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s "
+"or %5$supdate now%6$s."
 msgstr ""
 
-#: includes/admin/class-plugin-updater.php:324
+#: includes/admin/class-plugin-updater.php:395
 msgid "You do not have permission to install plugin updates"
 msgstr ""
 
@@ -95,187 +90,187 @@ msgstr ""
 msgid "https://themezee.com/license-keys/"
 msgstr ""
 
-#: includes/admin/class-settings.php:121
+#: includes/admin/class-settings.php:118
 msgid "Automatic Updates"
 msgstr ""
 
-#: includes/admin/class-settings.php:126
+#: includes/admin/class-settings.php:123
 msgid "License Status"
 msgstr ""
 
-#: includes/admin/class-settings.php:135
+#: includes/admin/class-settings.php:132
 msgid "License Key"
 msgstr ""
 
-#: includes/admin/class-settings.php:151
+#: includes/admin/class-settings.php:148
 #, php-format
 msgid ""
 "Please enter your license key. An active license key is needed for automatic "
 "plugin updates and <a href=\"%s\" target=\"_blank\">support</a>."
 msgstr ""
 
-#: includes/admin/class-settings.php:200
+#: includes/admin/class-settings.php:198
 msgid "Active"
 msgstr ""
 
-#: includes/admin/class-settings.php:201
+#: includes/admin/class-settings.php:199
 msgid "You are receiving updates."
 msgstr ""
 
-#: includes/admin/class-settings.php:207
+#: includes/admin/class-settings.php:205
 msgid "Expired"
 msgstr ""
 
-#: includes/admin/class-settings.php:208
+#: includes/admin/class-settings.php:206
 msgid ""
 "Your license has expired, renew today to continue getting updates and "
 "support!"
 msgstr ""
 
-#: includes/admin/class-settings.php:209
+#: includes/admin/class-settings.php:207
 msgid "Renew Your License"
 msgstr ""
 
-#: includes/admin/class-settings.php:213
+#: includes/admin/class-settings.php:211
 msgid "Invalid"
 msgstr ""
 
-#: includes/admin/class-settings.php:214
+#: includes/admin/class-settings.php:212
 msgid ""
 "Please make sure that you have not reached the site limit and expiration "
 "date."
 msgstr ""
 
-#: includes/admin/class-settings.php:218
+#: includes/admin/class-settings.php:216
 msgid "Inactive"
 msgstr ""
 
-#: includes/admin/class-settings.php:242
+#: includes/admin/class-settings.php:240
 msgid "Deactivate License"
 msgstr ""
 
-#: includes/admin/class-settings.php:247
+#: includes/admin/class-settings.php:245
 msgid "Activate License"
 msgstr ""
 
-#: includes/customizer/class-customize-font-control.php:30
+#: includes/customizer/class-customize-font-control.php:51
 msgid "Previous Font"
 msgstr ""
 
-#: includes/customizer/class-customize-font-control.php:31
+#: includes/customizer/class-customize-font-control.php:52
 msgid "Next Font"
 msgstr ""
 
-#: includes/customizer/class-customize-font-control.php:32
+#: includes/customizer/class-customize-font-control.php:53
 msgctxt "default font button"
 msgid "Default"
 msgstr ""
 
-#: includes/customizer/class-customize-font-list-control.php:29
+#: includes/customizer/class-customize-font-list-control.php:44
 msgid "Update Fonts"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:315
+#: includes/modules/class-custom-colors.php:314
 msgid "Theme Colors"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:334
+#: includes/modules/class-custom-colors.php:333
 msgctxt "color setting"
 msgid "Top Navigation"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:351
+#: includes/modules/class-custom-colors.php:350
 msgctxt "color setting"
 msgid "Header"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:368
+#: includes/modules/class-custom-colors.php:367
 msgctxt "color setting"
 msgid "Navigation"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:385
+#: includes/modules/class-custom-colors.php:384
 msgctxt "color setting"
 msgid "Post Titles"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:402
+#: includes/modules/class-custom-colors.php:401
 msgctxt "color setting"
 msgid "Links and Buttons"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:419
+#: includes/modules/class-custom-colors.php:418
 msgctxt "color setting"
 msgid "Widget Titles"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:436
+#: includes/modules/class-custom-colors.php:435
 msgctxt "color setting"
 msgid "Widget Links"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:453
-#: includes/modules/class-custom-colors.php:470
+#: includes/modules/class-custom-colors.php:452
+#: includes/modules/class-custom-colors.php:469
 msgctxt "color setting"
 msgid "Footer Widgets"
 msgstr ""
 
-#: includes/modules/class-custom-fonts.php:205
+#: includes/modules/class-custom-fonts.php:200
 msgid "Theme Fonts"
 msgstr ""
 
-#: includes/modules/class-custom-fonts.php:224
+#: includes/modules/class-custom-fonts.php:219
 msgid "Base Font"
 msgstr ""
 
-#: includes/modules/class-custom-fonts.php:240
+#: includes/modules/class-custom-fonts.php:235
 msgctxt "font setting"
 msgid "Headings"
 msgstr ""
 
-#: includes/modules/class-custom-fonts.php:256
+#: includes/modules/class-custom-fonts.php:251
 msgctxt "font setting"
 msgid "Navigation"
 msgstr ""
 
-#: includes/modules/class-custom-fonts.php:272
+#: includes/modules/class-custom-fonts.php:267
 msgctxt "font setting"
 msgid "Widget Titles"
 msgstr ""
 
-#: includes/modules/class-custom-fonts.php:289
+#: includes/modules/class-custom-fonts.php:284
 msgid "Choose available Fonts"
 msgstr ""
 
-#: includes/modules/class-custom-fonts.php:293
+#: includes/modules/class-custom-fonts.php:288
 msgid "Default Browser Fonts (12)"
 msgstr ""
 
-#: includes/modules/class-custom-fonts.php:294
+#: includes/modules/class-custom-fonts.php:289
 msgid "ThemeZee Favorite Fonts (35)"
 msgstr ""
 
-#: includes/modules/class-custom-fonts.php:295
+#: includes/modules/class-custom-fonts.php:290
 msgid "Most Popular Google Fonts (100)"
 msgstr ""
 
-#: includes/modules/class-custom-fonts.php:296
+#: includes/modules/class-custom-fonts.php:291
 msgid "All Google Fonts (650)"
 msgstr ""
 
-#: includes/modules/class-footer-line.php:104
+#: includes/modules/class-footer-line.php:105
 msgid "Footer Settings"
 msgstr ""
 
-#: includes/modules/class-footer-line.php:119
+#: includes/modules/class-footer-line.php:120
 msgid "Footer Text"
 msgstr ""
 
-#: includes/modules/class-footer-line.php:136
+#: includes/modules/class-footer-line.php:137
 msgid "Display Credit Link to ThemeZee on footer line"
 msgstr ""
 
-#: includes/modules/class-footer-line.php:173
+#: includes/modules/class-footer-line.php:174
 msgid "Footer Navigation"
 msgstr ""
 
@@ -311,26 +306,87 @@ msgstr ""
 msgid "Appears on footer on the right hand side."
 msgstr ""
 
-#: includes/modules/class-header-bar.php:102
+#: includes/modules/class-header-bar.php:108
 msgid "Top Navigation"
 msgstr ""
 
-#: includes/modules/class-header-bar.php:103
+#: includes/modules/class-header-bar.php:109
 msgid "Social Icons"
 msgstr ""
 
-#: includes/modules/class-header-spacing.php:130
+#: includes/modules/class-header-spacing.php:124
 msgid "Header Settings"
 msgstr ""
 
-#: includes/modules/class-header-spacing.php:148
+#: includes/modules/class-header-spacing.php:142
 msgid "Logo Image (replaces Site Title)"
 msgstr ""
 
-#: includes/modules/class-header-spacing.php:167
+#: includes/modules/class-header-spacing.php:160
 msgid "Logo Spacing (default: 10)"
 msgstr ""
 
-#: includes/modules/class-header-spacing.php:184
+#: includes/modules/class-header-spacing.php:177
 msgid "Header Spacing (default: 10)"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-list.php:24
+msgid "Magazine (List)"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-list.php:27
+msgid ""
+"Displays your posts from a selected category in a simple list layout. Please "
+"use this widget ONLY in the Magazine Homepage widget area."
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-list.php:192
+#: includes/widgets/widget-magazine-posts-sidebar.php:197
+#: includes/widgets/widget-magazine-posts-single.php:190
+msgid "Title:"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-list.php:198
+#: includes/widgets/widget-magazine-posts-sidebar.php:203
+#: includes/widgets/widget-magazine-posts-single.php:196
+msgid "Category:"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-list.php:201
+#: includes/widgets/widget-magazine-posts-sidebar.php:206
+#: includes/widgets/widget-magazine-posts-single.php:199
+msgid "All Categories"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-list.php:213
+#: includes/widgets/widget-magazine-posts-sidebar.php:218
+msgid "Number of posts:"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-sidebar.php:24
+msgid "Magazine (Sidebar)"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-sidebar.php:27
+msgid ""
+"Displays your posts from a selected category. You can use this widget in the "
+"Main Sidebar widget area."
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-sidebar.php:226
+msgid "Display post excerpt"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-single.php:24
+msgid "Magazine (Single Post)"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-single.php:27
+msgid ""
+"Displays a single post from a selected category. Please use this widget ONLY "
+"in the Magazine Homepage widget area."
+msgstr ""
+
+#: tortuga-pro.php:207
+msgid "Settings"
 msgstr ""
