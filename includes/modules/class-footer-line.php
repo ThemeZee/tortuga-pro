@@ -121,7 +121,7 @@ class Tortuga_Pro_Footer_Line {
 			'section'  => 'tortuga_pro_section_footer',
 			'settings' => 'tortuga_theme_options[footer_text]',
 			'type'     => 'textarea',
-			'priority' => 1,
+			'priority' => 30,
 			)
 		);
 
@@ -138,7 +138,7 @@ class Tortuga_Pro_Footer_Line {
 			'section'  => 'tortuga_pro_section_footer',
 			'settings' => 'tortuga_theme_options[credit_link]',
 			'type'     => 'checkbox',
-			'priority' => 2,
+			'priority' => 40,
 			)
 		);
 

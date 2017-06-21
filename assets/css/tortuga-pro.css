@@ -277,6 +277,47 @@
 }
 
 /*--------------------------------------------------------------
+# Scroll to Top Button
+--------------------------------------------------------------*/
+.scroll-to-top-button {
+	z-index: 9999;
+	width: 40px;
+	height: 40px;
+	display: inline;
+	position: fixed;
+	cursor: pointer;
+	margin: 0 auto;
+	padding: 0;
+	right: 0.75em;
+	bottom: 0.75em;
+	background: #dd5533;
+	transition: none;
+}
+
+.scroll-to-top-button:focus,
+.scroll-to-top-button:active {
+	background: #dd5533;
+}
+
+.scroll-to-top-button:hover {
+	background: #303030;
+}
+
+.scroll-to-top-button:after {
+	display: inline-block;
+	margin: 0 0 0 2px;
+	color: #fff;
+	content: '\f432';
+	vertical-align: top;
+	text-decoration: inherit;
+	font-size: 28px;
+	font-family: 'Genericons';
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/
 
@@ -528,14 +569,15 @@
 	.widget-magazine-posts-list .type-post .entry-content .more-link {
 		display: none;
 	}
-
 }
 
 @media only screen and (max-width: 45em) {
 	.widget-magazine-posts-list .type-post .entry-content {
 		display: none;
 	}
-
+	.scroll-to-top-button {
+		display: none !important;
+	}
 }
 
 /*--------------------------------------------------------------

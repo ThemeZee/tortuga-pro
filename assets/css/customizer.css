@@ -6,8 +6,13 @@
  * @package Tortuga Pro
  */
 
-#customize-control-tortuga_theme_options-header_spacing {
+#customize-control-tortuga_theme_options-header_spacing,
+#customize-control-tortuga_theme_options-footer_text {
 	margin-top: 16px;
+}
+
+#customize-control-tortuga_theme_options-scroll_top_title {
+	margin-bottom: 0;
 }
 
 #customize-control-tortuga_theme_options-footer_text textarea {
