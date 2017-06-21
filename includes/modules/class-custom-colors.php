@@ -79,7 +79,10 @@ class Tortuga_Pro_Custom_Colors {
 				.pagination .current,
 				.infinite-scroll #infinite-handle span:hover,
 				.post-slider-controls .zeeflex-direction-nav a,
-				.tzwb-social-icons .social-icons-menu li a {
+				.tzwb-social-icons .social-icons-menu li a,
+				.scroll-to-top-button,
+				.scroll-to-top-button:focus,
+				.scroll-to-top-button:active {
 					color: #fff;
 					background: ' . $theme_options['link_color'] . ';
 				}
@@ -102,7 +105,8 @@ class Tortuga_Pro_Custom_Colors {
 				.post-navigation .nav-links a:hover,
 				.post-navigation .nav-links a:active,
 				.post-slider-controls .zeeflex-direction-nav a:hover,
-				.tzwb-social-icons .social-icons-menu li a:hover {
+				.tzwb-social-icons .social-icons-menu li a:hover,
+				.scroll-to-top-button:hover {
 					background: #303030;
 				}
 				';
