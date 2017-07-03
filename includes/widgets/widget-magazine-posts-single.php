@@ -24,7 +24,7 @@ class Tortuga_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 			esc_html__( 'Magazine (Single Post)', 'tortuga-pro' ), // Name.
 			array(
 				'classname' => 'tortuga-magazine-single-widget',
-				'description' => esc_html__( 'Displays a single post from a selected category. Please use this widget ONLY in the Magazine Homepage widget area.', 'tortuga-pro' ),
+				'description' => esc_html__( 'Displays a single post from a selected category.', 'tortuga-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -36,7 +36,7 @@ class Tortuga_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 	private function default_settings() {
 
 		$defaults = array(
-			'title'	   => '',
+			'title'    => esc_html__( 'Magazine (Single Post)', 'tortuga-pro' ),
 			'category' => 0,
 		);
 
