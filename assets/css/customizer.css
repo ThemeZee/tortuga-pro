@@ -48,3 +48,16 @@
 .customize-control-tortuga_pro_custom_font .actions .button:hover {
 	cursor: pointer;
 }
+
+/* Magazine Sections */
+.adding-magazine-widget #available-widgets #available-widgets-list [id*='widget-tpl-tortuga-magazine-posts-sidebar'] {
+	display: none !important;
+}
+
+.adding-magazine-widget #available-widgets [id*='widget-tpl-tortuga-magazine-posts-list'] .widget-top::before {
+	background-image: url( '../images/magazine-list.png' );
+}
+
+.adding-magazine-widget #available-widgets [id*='widget-tpl-tortuga-magazine-posts-single'] .widget-top::before {
+	background-image: url( '../images/magazine-single.png' );
+}
