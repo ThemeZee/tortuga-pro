@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tortuga Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2017-06-21 17:36+0200\n"
+"POT-Creation-Date: 2017-07-04 11:35+0200\n"
 "PO-Revision-Date: 2016-05-03 19:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
@@ -162,47 +162,47 @@ msgstr ""
 msgid "Update Fonts"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:314
+#: includes/modules/class-custom-colors.php:318
 msgid "Theme Colors"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:333
+#: includes/modules/class-custom-colors.php:337
 msgctxt "color setting"
 msgid "Top Navigation"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:350
+#: includes/modules/class-custom-colors.php:354
 msgctxt "color setting"
 msgid "Header"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:367
+#: includes/modules/class-custom-colors.php:371
 msgctxt "color setting"
 msgid "Navigation"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:384
+#: includes/modules/class-custom-colors.php:388
 msgctxt "color setting"
 msgid "Post Titles"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:401
+#: includes/modules/class-custom-colors.php:405
 msgctxt "color setting"
 msgid "Links and Buttons"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:418
+#: includes/modules/class-custom-colors.php:422
 msgctxt "color setting"
 msgid "Widget Titles"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:435
+#: includes/modules/class-custom-colors.php:439
 msgctxt "color setting"
 msgid "Widget Links"
 msgstr ""
 
-#: includes/modules/class-custom-colors.php:452
-#: includes/modules/class-custom-colors.php:469
+#: includes/modules/class-custom-colors.php:456
+#: includes/modules/class-custom-colors.php:473
 msgctxt "color setting"
 msgid "Footer Widgets"
 msgstr ""
@@ -331,13 +331,12 @@ msgid "Display Scroll to Top Button"
 msgstr ""
 
 #: includes/widgets/widget-magazine-posts-list.php:24
+#: includes/widgets/widget-magazine-posts-list.php:39
 msgid "Magazine (List)"
 msgstr ""
 
 #: includes/widgets/widget-magazine-posts-list.php:27
-msgid ""
-"Displays your posts from a selected category in a simple list layout. Please "
-"use this widget ONLY in the Magazine Homepage widget area."
+msgid "Displays your posts from a selected category in a list layout."
 msgstr ""
 
 #: includes/widgets/widget-magazine-posts-list.php:194
@@ -364,6 +363,7 @@ msgid "Number of posts:"
 msgstr ""
 
 #: includes/widgets/widget-magazine-posts-sidebar.php:24
+#: includes/widgets/widget-magazine-posts-sidebar.php:39
 msgid "Magazine (Sidebar)"
 msgstr ""
 
@@ -378,13 +378,12 @@ msgid "Display post excerpt"
 msgstr ""
 
 #: includes/widgets/widget-magazine-posts-single.php:24
+#: includes/widgets/widget-magazine-posts-single.php:39
 msgid "Magazine (Single Post)"
 msgstr ""
 
 #: includes/widgets/widget-magazine-posts-single.php:27
-msgid ""
-"Displays a single post from a selected category. Please use this widget ONLY "
-"in the Magazine Homepage widget area."
+msgid "Displays a single post from a selected category."
 msgstr ""
 
 #: tortuga-pro.php:208
