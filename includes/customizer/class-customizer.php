@@ -62,6 +62,7 @@ class Tortuga_Pro_Customizer {
 			'header_logo'          => '',
 			'logo_spacing'         => 10,
 			'header_spacing'       => 10,
+			'author_bio'           => false,
 			'scroll_to_top'        => false,
 			'footer_text'          => '',
 			'credit_link'          => true,
