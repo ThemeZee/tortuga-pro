@@ -8,6 +8,17 @@
 
 ( function( $ ) {
 
+	/* Header Search checkbox */
+	wp.customize( 'tortuga_theme_options[header_search]', function( value ) {
+		value.bind( function( newval ) {
+			if ( false === newval ) {
+				hideElement( '.primary-navigation-wrap .header-search' );
+			} else {
+				showElement( '.primary-navigation-wrap .header-search' );
+			}
+		} );
+	} );
+
 	/* Author Bio checkbox */
 	wp.customize( 'tortuga_theme_options[author_bio]', function( value ) {
 		value.bind( function( newval ) {
