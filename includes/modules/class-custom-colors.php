@@ -109,40 +109,127 @@ class Tortuga_Pro_Custom_Colors {
 				.scroll-to-top-button:hover {
 					background: #303030;
 				}
-				';
-
-		}
+			';
+		} // End if().
 
 		// Set Top Navigation Color.
-		if ( $theme_options['top_navi_color'] != $default_options['top_navi_color'] ) {
+		if ( $theme_options['top_navi_color'] !== $default_options['top_navi_color'] ) {
 
 			$custom_css .= '
 				/* Top Navigation Color Setting */
 				.header-bar-wrap,
 				.top-navigation-menu ul {
 					background: ' . $theme_options['top_navi_color'] . ';
-				}';
+				}
+			';
 
-		}
+			// Check if a dark background color was chosen.
+			if ( self::is_color_light( $theme_options['top_navi_color'] ) ) {
+				$custom_css .= '
+					.header-bar-wrap,
+					.top-navigation-menu a,
+					.top-navigation-menu a:link,
+					.top-navigation-menu a:visited,
+					.top-navigation-toggle,
+					.top-navigation-toggle:focus,
+					.top-navigation-menu .submenu-dropdown-toggle,
+					.header-bar .social-icons-menu li a,
+					.header-bar .social-icons-menu li a:link,
+					.header-bar .social-icons-menu li a:visited {
+					    color: #303030;
+					}
 
-		// Set Primary Navigation Color.
-		if ( $theme_options['header_color'] != $default_options['header_color'] ) {
+					.header-bar .social-icons-menu li a:hover,
+					.header-bar .social-icons-menu li a:active {
+						color: rgba(0,0,0,0.6);
+					}
+
+					.top-navigation-menu a:hover,
+					.top-navigation-menu a:active,
+					.top-navigation-toggle:hover,
+					.top-navigation-toggle:active,
+					.top-navigation-menu .submenu-dropdown-toggle:hover,
+					.top-navigation-menu .submenu-dropdown-toggle:active {
+						background: rgba(0,0,0,0.10);
+					}
+
+					.top-navigation-menu,
+					.top-navigation-menu a,
+					.top-navigation-menu ul,
+					.top-navigation-menu ul a,
+					.top-navigation-menu ul li:last-child > a {
+						border-color: rgba(0,0,0,0.15);
+					}
+				';
+			} // End if().
+		} // End if().
+
+		// Set Header Color.
+		if ( $theme_options['header_color'] !== $default_options['header_color'] ) {
 
 			$custom_css .= '
 				/* Header Color Setting */
 				.site-header,
 				.main-navigation-menu ul {
 					background: ' . $theme_options['header_color'] . ';
-				}';
+				}
+			';
 
-		}
+			// Check if a dark background color was chosen.
+			if ( self::is_color_light( $theme_options['header_color'] ) ) {
+				$custom_css .= '
+					.primary-navigation-wrap {
+						background: rgba(0,0,0,0.05);
+					}
 
-		// Set Secondary Navigation Color.
+					.site-header,
+					.site-title,
+					.site-title a:link,
+					.site-title a:visited,
+					.primary-navigation-wrap,
+					.main-navigation-menu a,
+					.main-navigation-menu a:link,
+					.main-navigation-menu a:visited,
+					.main-navigation-menu .submenu-dropdown-toggle,
+					.header-search .header-search-icon {
+						color: #303030;
+					}
+
+					.site-title a:hover,
+					.site-title a:active,
+					.header-search .header-search-icon:hover,
+					.header-search .header-search-icon:active {
+						color: rgba(0,0,0,0.6);
+					}
+
+					.main-navigation-menu a:hover,
+					.main-navigation-menu a:active,
+					.main-navigation-menu li.current-menu-item > a,
+					.main-navigation-menu .submenu-dropdown-toggle:hover,
+					.main-navigation-menu .submenu-dropdown-toggle:active {
+						color: #fff;
+					}
+
+					.main-navigation-menu a,
+					.main-navigation-menu ul a,
+					.main-navigation-menu ul li:last-child a {
+						border-color: rgba(0,0,0,0.2);
+					}
+
+					.main-navigation-menu li ul ul {
+						border-left-color: rgba(0,0,0,0.2);
+					}
+				';
+			} // End if().
+		} // End if().
+
+		// Set Navigation Color.
 		if ( $theme_options['navi_color'] != $default_options['navi_color'] ) {
 
 			$custom_css .= '
 				/* Navigation Color Setting */
 				.primary-navigation-wrap,
+				.main-navigation-menu,
 				.main-navigation-menu ul {
 					border-color: ' . $theme_options['navi_color'] . ';
 				}
@@ -150,32 +237,34 @@ class Tortuga_Pro_Custom_Colors {
 				.main-navigation-menu a:hover,
 				.main-navigation-menu a:active,
 				.main-navigation-menu li.current-menu-item > a,
+				.main-navigation-toggle,
+				.main-navigation-toggle:active,
+				.main-navigation-toggle:focus,
+				.main-navigation-toggle:hover,
+				.main-navigation-menu .submenu-dropdown-toggle:hover,
+				.main-navigation-menu .submenu-dropdown-toggle:active,
 				.mega-menu-content .widget_meta ul li a:hover,
 				.mega-menu-content .widget_pages ul li a:hover,
 				.mega-menu-content .widget_categories ul li a:hover,
 				.mega-menu-content .widget_archive ul li a:hover {
 					background: ' . $theme_options['navi_color'] . ';
 				}
+			';
 
-				@media only screen and (max-width: 60em) {
-
+			// Check if a dark background color was chosen.
+			if ( self::is_color_light( $theme_options['navi_color'] ) ) {
+				$custom_css .= '
 					.main-navigation-toggle,
-					.main-navigation-toggle:active,
-					.main-navigation-toggle:focus,
-					.main-navigation-toggle:hover,
+					.main-navigation-menu a:hover,
+					.main-navigation-menu a:active,
+					.main-navigation-menu li.current-menu-item > a,
 					.main-navigation-menu .submenu-dropdown-toggle:hover,
 					.main-navigation-menu .submenu-dropdown-toggle:active {
-						background: ' . $theme_options['navi_color'] . ';
+						color: #303030;
 					}
-
-					.main-navigation-menu {
-						border-color: ' . $theme_options['navi_color'] . ';
-					}
-
-				}
 				';
-
-		}
+			} // End if().
+		} // End if().
 
 		// Set Primary Post Color.
 		if ( $theme_options['title_color'] != $default_options['title_color'] ) {
@@ -204,8 +293,7 @@ class Tortuga_Pro_Custom_Colors {
 				.comments-area  {
 					border-color: ' . $theme_options['title_color'] . ';
 				}
-				';
-
+			';
 		}
 
 		// Set Widget Title Color.
@@ -234,8 +322,7 @@ class Tortuga_Pro_Custom_Colors {
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
 					background: ' . $theme_options['widget_title_color'] . ';
 				}
-				';
-
+			';
 		}
 
 		// Set Widget Link Color.
@@ -275,8 +362,8 @@ class Tortuga_Pro_Custom_Colors {
 				.tzwb-social-icons .social-icons-menu li a:hover {
 					background: #303030;
 				}
-				';
-		}
+			';
+		} // End if().
 
 		// Set Footer Widgets Color.
 		if ( $theme_options['footer_widgets_color'] != $default_options['footer_widgets_color'] ) {
@@ -286,8 +373,7 @@ class Tortuga_Pro_Custom_Colors {
 				.footer-widgets-background {
 					background: ' . $theme_options['footer_widgets_color'] . ';
 				}
-				';
-
+			';
 		}
 
 		// Set Footer Line Color.
@@ -298,12 +384,10 @@ class Tortuga_Pro_Custom_Colors {
 				.footer-wrap {
 					background: ' . $theme_options['footer_color'] . ';
 				}
-				';
-
+			';
 		}
 
 		return $custom_css;
-
 	}
 
 	/**
@@ -318,8 +402,7 @@ class Tortuga_Pro_Custom_Colors {
 			'title'    => __( 'Theme Colors', 'tortuga-pro' ),
 			'priority' => 60,
 			'panel' => 'tortuga_options_panel',
-			)
-		);
+		) );
 
 		// Get Default Colors from settings.
 		$default_options = Tortuga_Pro_Customizer::get_default_options();
@@ -330,8 +413,7 @@ class Tortuga_Pro_Custom_Colors {
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[top_navi_color]', array(
 				'label'      => _x( 'Top Navigation', 'color setting', 'tortuga-pro' ),
@@ -347,8 +429,7 @@ class Tortuga_Pro_Custom_Colors {
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[header_color]', array(
 				'label'      => _x( 'Header', 'color setting', 'tortuga-pro' ),
@@ -362,10 +443,9 @@ class Tortuga_Pro_Custom_Colors {
 		$wp_customize->add_setting( 'tortuga_theme_options[navi_color]', array(
 			'default'           => $default_options['navi_color'],
 			'type'           	=> 'option',
-			'transport'         => 'refresh',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[navi_color]', array(
 				'label'      => _x( 'Navigation', 'color setting', 'tortuga-pro' ),
@@ -381,8 +461,7 @@ class Tortuga_Pro_Custom_Colors {
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[title_color]', array(
 				'label'      => _x( 'Post Titles', 'color setting', 'tortuga-pro' ),
@@ -398,8 +477,7 @@ class Tortuga_Pro_Custom_Colors {
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[link_color]', array(
 				'label'      => _x( 'Links and Buttons', 'color setting', 'tortuga-pro' ),
@@ -415,8 +493,7 @@ class Tortuga_Pro_Custom_Colors {
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[widget_title_color]', array(
 				'label'      => _x( 'Widget Titles', 'color setting', 'tortuga-pro' ),
@@ -432,8 +509,7 @@ class Tortuga_Pro_Custom_Colors {
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[widget_link_color]', array(
 				'label'      => _x( 'Widget Links', 'color setting', 'tortuga-pro' ),
@@ -449,8 +525,7 @@ class Tortuga_Pro_Custom_Colors {
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[footer_widgets_color]', array(
 				'label'      => _x( 'Footer Widgets', 'color setting', 'tortuga-pro' ),
@@ -466,8 +541,7 @@ class Tortuga_Pro_Custom_Colors {
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[footer_color]', array(
 				'label'      => _x( 'Footer Widgets', 'color setting', 'tortuga-pro' ),
@@ -476,7 +550,42 @@ class Tortuga_Pro_Custom_Colors {
 				'priority' => 9,
 			)
 		) );
+	}
 
+	/**
+	 * Returns color brightness.
+	 *
+	 * @param int Number of brightness.
+	 */
+	static function get_color_brightness( $hex_color ) {
+
+		// Remove # string.
+		$hex_color = str_replace( '#', '', $hex_color );
+
+		// Convert into RGB.
+		$r = hexdec( substr( $hex_color, 0, 2 ) );
+		$g = hexdec( substr( $hex_color, 2, 2 ) );
+		$b = hexdec( substr( $hex_color, 4, 2 ) );
+
+		return ( ( ( $r * 299 ) + ( $g * 587 ) + ( $b * 114 ) ) / 1000 );
+	}
+
+	/**
+	 * Check if the color is light.
+	 *
+	 * @param bool True if color is light.
+	 */
+	static function is_color_light( $hex_color ) {
+		return ( self::get_color_brightness( $hex_color ) > 130 );
+	}
+
+	/**
+	 * Check if the color is dark.
+	 *
+	 * @param bool True if color is dark.
+	 */
+	static function is_color_dark( $hex_color ) {
+		return ( self::get_color_brightness( $hex_color ) <= 130 );
 	}
 }
 
