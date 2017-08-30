@@ -335,12 +335,34 @@
 
 .footer-widgets .widget a:link,
 .footer-widgets .widget a:visited  {
-	color: #eee;
+	color: rgba(255,255,255,0.85);
 }
 
 .footer-widgets .widget a:hover,
 .footer-widgets .widget a:active  {
 	color: rgba(255,255,255,0.6);
+}
+
+/* Custom Footer Widgets */
+.footer-widgets .entry-meta,
+.footer-widgets .tzwb-social-icons .social-icons-menu li a,
+.footer-widgets .widget_tag_cloud .tagcloud a {
+	color: #fff;
+}
+
+.footer-widgets .widget_tag_cloud .tagcloud a,
+.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a,
+.footer-widgets .tzwb-social-icons .social-icons-menu li a:hover {
+	background: rgba(0,0,0,0.15);
+}
+
+.footer-widgets .widget_tag_cloud .tagcloud a:hover,
+.footer-widgets .widget_tag_cloud .tagcloud a:active,
+.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:hover,
+.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:active,
+.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
+	color: #fff;
+	background: #dd5533;
 }
 
 /*--------------------------------------------------------------

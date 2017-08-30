@@ -73,6 +73,8 @@ class Tortuga_Pro_Custom_Colors {
 				.more-link,
 				.entry-tags .meta-tags a:hover,
 				.entry-tags .meta-tags a:active,
+				.widget_tag_cloud .tagcloud a:hover,
+				.widget_tag_cloud .tagcloud a:active,
 				.post-navigation .nav-links a,
 				.pagination a:hover,
 				.pagination a:active,
@@ -80,6 +82,9 @@ class Tortuga_Pro_Custom_Colors {
 				.infinite-scroll #infinite-handle span:hover,
 				.post-slider-controls .zeeflex-direction-nav a,
 				.tzwb-social-icons .social-icons-menu li a,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
+				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
 				.scroll-to-top-button,
 				.scroll-to-top-button:focus,
 				.scroll-to-top-button:active {
@@ -282,7 +287,7 @@ class Tortuga_Pro_Custom_Colors {
 				}
 
 				.entry-title a:hover,
-				.entry-title a:active{
+				.entry-title a:active {
 					color: #303030;
 				}
 
@@ -290,7 +295,7 @@ class Tortuga_Pro_Custom_Colors {
 				.type-post,
 				.type-page,
 				.type-attachment,
-				.comments-area  {
+				.comments-area {
 					border-color: ' . $theme_options['title_color'] . ';
 				}
 			';
@@ -316,76 +321,96 @@ class Tortuga_Pro_Custom_Colors {
 				.widget-title a:active  {
 					color: #303030;
 				}
-
-				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
-				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
-				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-					background: ' . $theme_options['widget_title_color'] . ';
-				}
 			';
 		}
 
-		// Set Widget Link Color.
-		if ( $theme_options['widget_link_color'] != $default_options['widget_link_color'] ) {
-
-			$custom_css .= '
-				/* Widget Links Color Setting */
-				.sidebar .widget a:link,
-				.sidebar .widget a:visited {
-					color: ' . $theme_options['widget_link_color'] . ';
-				}
-
-				.sidebar .widget a:hover,
-				.sidebar .widget a:active,
-				.sidebar .widget .entry-meta a:link,
-				.sidebar .widget .entry-meta a:visited {
-					color: #303030;
-				}
-
-				.sidebar .widget .entry-meta a:hover,
-				.sidebar .widget .entry-meta a:active {
-					color: #777;
-				}
-
-				.sidebar .widget_tag_cloud .tagcloud a:link,
-				.sidebar .widget_tag_cloud .tagcloud a:visited {
-					color: #fff;
-				}
-
-				.sidebar .widget_tag_cloud .tagcloud a:hover,
-				.sidebar .widget_tag_cloud .tagcloud a:active,
-				.tzwb-social-icons .social-icons-menu li a {
-					color: #fff;
-					background: ' . $theme_options['widget_link_color'] . ';
-				}
-
-				.tzwb-social-icons .social-icons-menu li a:hover {
-					background: #303030;
-				}
-			';
-		} // End if().
-
 		// Set Footer Widgets Color.
-		if ( $theme_options['footer_widgets_color'] != $default_options['footer_widgets_color'] ) {
+		if ( $theme_options['footer_widgets_color'] !== $default_options['footer_widgets_color'] ) {
 
 			$custom_css .= '
-				/* Footer Widget Color Setting */
+				/* Top Navigation Color Setting */
 				.footer-widgets-background {
 					background: ' . $theme_options['footer_widgets_color'] . ';
 				}
 			';
-		}
 
-		// Set Footer Line Color.
-		if ( $theme_options['footer_color'] != $default_options['footer_color'] ) {
+			// Check if a dark background color was chosen.
+			if ( self::is_color_light( $theme_options['footer_widgets_color'] ) ) {
+				$custom_css .= '
+					.footer-widgets .widget,
+					.footer-widgets .widget-title,
+					.footer-widgets .entry-meta,
+					.footer-widgets .widget_tag_cloud .tagcloud a {
+					    color: #303030;
+					}
+
+					.footer-widgets .widget a:link,
+					.footer-widgets .widget a:visited  {
+						color: rgba(0,0,0,0.85);
+					}
+
+					.footer-widgets .widget a:hover,
+					.footer-widgets .widget a:active  {
+						color: rgba(0,0,0,0.6);
+					}
+
+					.footer-widgets .tzwb-social-icons .social-icons-menu li a {
+						color: #fff;
+					}
+
+					.footer-widgets .widget_tag_cloud .tagcloud a,
+					.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a,
+					.footer-widgets .tzwb-social-icons .social-icons-menu li a:hover {
+						color: #303030;
+						background: rgba(0,0,0,0.05);
+					}
+				';
+			} // End if().
+		} // End if().
+
+		// Set Link Color 2.
+		if ( $theme_options['link_color'] != $default_options['link_color'] ) {
 
 			$custom_css .= '
-				/* Footer Line Color Setting */
+				.footer-widgets .widget_tag_cloud .tagcloud a:hover,
+				.footer-widgets .widget_tag_cloud .tagcloud a:active,
+				.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:hover,
+				.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:active,
+				.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
+					color: #fff;
+					background: ' . $theme_options['link_color'] . ';
+				}
+			';
+		} // End if().
+
+		// Set Footer Line Color.
+		if ( $theme_options['footer_color'] !== $default_options['footer_color'] ) {
+
+			$custom_css .= '
+				/* Top Navigation Color Setting */
 				.footer-wrap {
 					background: ' . $theme_options['footer_color'] . ';
 				}
 			';
-		}
+
+			// Check if a dark background color was chosen.
+			if ( self::is_color_light( $theme_options['footer_color'] ) ) {
+				$custom_css .= '
+					.site-footer a:link,
+					.site-footer a:visited {
+						border-color: rgba(0,0,0,0.6);
+						color: #303030;
+					}
+
+					.site-footer,
+					.site-footer a:hover,
+					.site-footer a:focus,
+					.site-footer a:active {
+						color: rgba(0,0,0,0.6);
+					}
+				';
+			} // End if().
+		} // End if().
 
 		return $custom_css;
 	}
@@ -419,7 +444,7 @@ class Tortuga_Pro_Custom_Colors {
 				'label'      => _x( 'Top Navigation', 'color setting', 'tortuga-pro' ),
 				'section'    => 'tortuga_pro_section_colors',
 				'settings'   => 'tortuga_theme_options[top_navi_color]',
-				'priority' => 1,
+				'priority' => 10,
 			)
 		) );
 
@@ -435,7 +460,7 @@ class Tortuga_Pro_Custom_Colors {
 				'label'      => _x( 'Header', 'color setting', 'tortuga-pro' ),
 				'section'    => 'tortuga_pro_section_colors',
 				'settings'   => 'tortuga_theme_options[header_color]',
-				'priority' => 2,
+				'priority' => 20,
 			)
 		) );
 
@@ -451,7 +476,7 @@ class Tortuga_Pro_Custom_Colors {
 				'label'      => _x( 'Navigation', 'color setting', 'tortuga-pro' ),
 				'section'    => 'tortuga_pro_section_colors',
 				'settings'   => 'tortuga_theme_options[navi_color]',
-				'priority' => 3,
+				'priority' => 30,
 			)
 		) );
 
@@ -467,7 +492,7 @@ class Tortuga_Pro_Custom_Colors {
 				'label'      => _x( 'Post Titles', 'color setting', 'tortuga-pro' ),
 				'section'    => 'tortuga_pro_section_colors',
 				'settings'   => 'tortuga_theme_options[title_color]',
-				'priority' => 4,
+				'priority' => 40,
 			)
 		) );
 
@@ -483,7 +508,7 @@ class Tortuga_Pro_Custom_Colors {
 				'label'      => _x( 'Links and Buttons', 'color setting', 'tortuga-pro' ),
 				'section'    => 'tortuga_pro_section_colors',
 				'settings'   => 'tortuga_theme_options[link_color]',
-				'priority' => 5,
+				'priority' => 50,
 			)
 		) );
 
@@ -499,23 +524,7 @@ class Tortuga_Pro_Custom_Colors {
 				'label'      => _x( 'Widget Titles', 'color setting', 'tortuga-pro' ),
 				'section'    => 'tortuga_pro_section_colors',
 				'settings'   => 'tortuga_theme_options[widget_title_color]',
-				'priority' => 6,
-			)
-		) );
-
-		// Add Widget Title Color setting.
-		$wp_customize->add_setting( 'tortuga_theme_options[widget_link_color]', array(
-			'default'           => $default_options['widget_link_color'],
-			'type'           	=> 'option',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color',
-		) );
-		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'tortuga_theme_options[widget_link_color]', array(
-				'label'      => _x( 'Widget Links', 'color setting', 'tortuga-pro' ),
-				'section'    => 'tortuga_pro_section_colors',
-				'settings'   => 'tortuga_theme_options[widget_link_color]',
-				'priority' => 7,
+				'priority' => 60,
 			)
 		) );
 
@@ -531,7 +540,7 @@ class Tortuga_Pro_Custom_Colors {
 				'label'      => _x( 'Footer Widgets', 'color setting', 'tortuga-pro' ),
 				'section'    => 'tortuga_pro_section_colors',
 				'settings'   => 'tortuga_theme_options[footer_widgets_color]',
-				'priority' => 8,
+				'priority' => 70,
 			)
 		) );
 
@@ -547,7 +556,7 @@ class Tortuga_Pro_Custom_Colors {
 				'label'      => _x( 'Footer Widgets', 'color setting', 'tortuga-pro' ),
 				'section'    => 'tortuga_pro_section_colors',
 				'settings'   => 'tortuga_theme_options[footer_color]',
-				'priority' => 9,
+				'priority' => 80,
 			)
 		) );
 	}

@@ -73,7 +73,6 @@ class Tortuga_Pro_Customizer {
 			'title_color'          => '#dd5533',
 			'link_color'           => '#dd5533',
 			'widget_title_color'   => '#dd5533',
-			'widget_link_color'    => '#dd5533',
 			'footer_widgets_color' => '#383838',
 			'footer_color'         => '#303030',
 			'text_font'            => 'Open Sans',
