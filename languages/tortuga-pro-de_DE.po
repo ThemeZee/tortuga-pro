@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tortuga Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2017-07-04 11:43+0200\n"
-"PO-Revision-Date: 2017-07-04 11:44+0200\n"
+"POT-Creation-Date: 2017-08-31 11:13+0200\n"
+"PO-Revision-Date: 2017-08-31 11:26+0200\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: includes/admin/class-admin-notices.php:52
@@ -175,47 +175,55 @@ msgstr "Standard"
 msgid "Update Fonts"
 msgstr "Schriftarten aktualisieren"
 
-#: includes/modules/class-custom-colors.php:318
+#: includes/modules/class-author-bio.php:60
+#, php-format
+msgid "About %s"
+msgstr "Über %s"
+
+#: includes/modules/class-author-bio.php:62
+msgid "View all posts"
+msgstr "Alle Beiträge ansehen"
+
+#: includes/modules/class-author-bio.php:91
+msgid "Display Author Bio"
+msgstr "Autor Bio anzeigen"
+
+#: includes/modules/class-custom-colors.php:427
 msgid "Theme Colors"
 msgstr "Theme Farben"
 
-#: includes/modules/class-custom-colors.php:337
+#: includes/modules/class-custom-colors.php:444
 msgctxt "color setting"
 msgid "Top Navigation"
 msgstr "Obere Navigation"
 
-#: includes/modules/class-custom-colors.php:354
+#: includes/modules/class-custom-colors.php:460
 msgctxt "color setting"
 msgid "Header"
 msgstr "Header"
 
-#: includes/modules/class-custom-colors.php:371
+#: includes/modules/class-custom-colors.php:476
 msgctxt "color setting"
 msgid "Navigation"
 msgstr "Navigation"
 
-#: includes/modules/class-custom-colors.php:388
+#: includes/modules/class-custom-colors.php:492
 msgctxt "color setting"
 msgid "Post Titles"
 msgstr "Beitrags-Titel"
 
-#: includes/modules/class-custom-colors.php:405
+#: includes/modules/class-custom-colors.php:508
 msgctxt "color setting"
 msgid "Links and Buttons"
 msgstr "Links und Buttons"
 
-#: includes/modules/class-custom-colors.php:422
+#: includes/modules/class-custom-colors.php:524
 msgctxt "color setting"
 msgid "Widget Titles"
 msgstr "Widget Titel"
 
-#: includes/modules/class-custom-colors.php:439
-msgctxt "color setting"
-msgid "Widget Links"
-msgstr "Widget Links"
-
-#: includes/modules/class-custom-colors.php:456
-#: includes/modules/class-custom-colors.php:473
+#: includes/modules/class-custom-colors.php:540
+#: includes/modules/class-custom-colors.php:556
 msgctxt "color setting"
 msgid "Footer Widgets"
 msgstr "Footer Widgets"
@@ -319,19 +327,27 @@ msgstr "Obere Navigation"
 msgid "Social Icons"
 msgstr "Social Icons"
 
-#: includes/modules/class-header-spacing.php:124
+#: includes/modules/class-header-search.php:78
+msgid "Search"
+msgstr "Suche"
+
+#: includes/modules/class-header-search.php:101
+msgid "Header Search"
+msgstr "Header Suche"
+
+#: includes/modules/class-header-search.php:117
+msgid "Enable search field in header"
+msgstr "Suchfeld im Header anzeigen"
+
+#: includes/modules/class-header-spacing.php:89
 msgid "Header Settings"
 msgstr "Header Einstellungen"
 
-#: includes/modules/class-header-spacing.php:142
-msgid "Logo Image (replaces Site Title)"
-msgstr "Logo Bild (ersetzt Titel der Website)"
-
-#: includes/modules/class-header-spacing.php:160
+#: includes/modules/class-header-spacing.php:103
 msgid "Logo Spacing (default: 10)"
 msgstr "Logo Abstand (Standard: 10)"
 
-#: includes/modules/class-header-spacing.php:177
+#: includes/modules/class-header-spacing.php:119
 msgid "Header Spacing (default: 10)"
 msgstr "Header Abstand (Standard: 10)"
 
@@ -386,7 +402,7 @@ msgid ""
 "Main Sidebar widget area."
 msgstr ""
 "Zeigt die Beiträge einer gewählten Kategorie. Bitte verwende dieses Widget "
-"in der Sidebar. "
+"in der Sidebar."
 
 #: includes/widgets/widget-magazine-posts-sidebar.php:228
 msgid "Display post excerpt"
@@ -401,6 +417,13 @@ msgstr "Magazin (Einzelner Beitrag)"
 msgid "Displays a single post from a selected category."
 msgstr "Zeigt einen einzelnen Beitrag einer gewählten Kategorie."
 
-#: tortuga-pro.php:208
+#: tortuga-pro.php:210
 msgid "Settings"
 msgstr "Einstellungen"
+
+#~ msgctxt "color setting"
+#~ msgid "Widget Links"
+#~ msgstr "Widget Links"
+
+#~ msgid "Logo Image (replaces Site Title)"
+#~ msgstr "Logo Bild (ersetzt Titel der Website)"
