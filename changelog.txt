@@ -2,6 +2,10 @@
 Tortuga Pro Changelog
 ===================================
 
+Version 1.4.1
+-----------------------------------
+* fixed color settings for blockquotes
+
 Version 1.4
 -----------------------------------
 * added Header Search feature

@@ -40,6 +40,7 @@
 
 			custom_css += 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .entry-tags .meta-tags a:hover, .entry-tags .meta-tags a:active, .widget_tag_cloud .tagcloud a:hover, .widget_tag_cloud .tagcloud a:active, .post-navigation .nav-links a, .pagination a:hover, .pagination a:active, .pagination .current, .infinite-scroll #infinite-handle span:hover, .post-slider-controls .zeeflex-direction-nav a, .tzwb-social-icons .social-icons-menu li a, .tzwb-tabbed-content .tzwb-tabnavi li a:hover, .tzwb-tabbed-content .tzwb-tabnavi li a:active, .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab, .scroll-to-top-button, .scroll-to-top-button:focus, .scroll-to-top-button:active { color: #fff; background: ' + newval + '; }';
 			custom_css += 'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .more-link:hover, .more-link:focus, .more-link:active, .post-navigation .nav-links a:hover, .post-navigation .nav-links a:active, .post-slider-controls .zeeflex-direction-nav a:hover, .tzwb-social-icons .social-icons-menu li a:hover, .scroll-to-top-button:hover { background: #303030; }';
+			custom_css += 'blockquote { border-left-color: ' + newval + '; }';
 
 			addColorStyles( custom_css, 1 );
 

@@ -114,6 +114,10 @@ class Tortuga_Pro_Custom_Colors {
 				.scroll-to-top-button:hover {
 					background: #303030;
 				}
+
+				blockquote {
+					border-left-color: ' . $theme_options['link_color'] . ';
+				}
 			';
 		} // End if().
 
