@@ -79,7 +79,6 @@ class Tortuga_Pro_Customizer {
 			'title_font'           => 'Titillium Web',
 			'navi_font'            => 'Titillium Web',
 			'widget_title_font'    => 'Titillium Web',
-			'available_fonts'      => 'favorites',
 		);
 
 		return $default_options;
