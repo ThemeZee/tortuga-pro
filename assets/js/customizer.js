@@ -46,6 +46,9 @@
 
 			custom_css = '.footer-widgets .widget_tag_cloud .tagcloud a:hover, .footer-widgets .widget_tag_cloud .tagcloud a:active, .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:hover, .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:active, .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab { color: #fff; background: ' + newval + '; }';
 			addColorStyles( custom_css, 8 );
+
+			$( '.has-primary-color' ).css( 'color', newval );
+			$( '.has-primary-background-color' ).css( 'background-color', newval );
 		} );
 	} );
 
