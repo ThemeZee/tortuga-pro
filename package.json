@@ -4,7 +4,8 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	"export": "git archive HEAD -9 --prefix tortuga-pro/ --format=zip > ../../tortuga-pro.zip",
+	"test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
