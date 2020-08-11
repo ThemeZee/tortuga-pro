@@ -1,16 +1,19 @@
 /*
  * Tortuga Pro CSS
  *
- * Copyright(C) 2015, ThemeZee.com - support@themezee.com
- * License: GPL v3
- * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ * Copyright(C) 2020, ThemeZee.com - support@themezee.com
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  *
  * @package Tortuga Pro
  */
 
+/*--------------------------------------------------------------
+# - CSS Variables
+--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-## Header Bar
+# Header Bar
 --------------------------------------------------------------*/
 .header-bar-wrap {
 	background: #383838;
@@ -72,7 +75,7 @@
 
 .top-navigation-menu a:hover,
 .top-navigation-menu a:active {
-	background: rgba(255,255,255,0.10);
+	background: rgba(255, 255, 255, 0.1);
 }
 
 .top-navigation-menu ul {
@@ -81,13 +84,13 @@
 	display: none;
 	margin: 0;
 	padding: 0;
-	border-top: 4px solid rgba(255,255,255,0.15);
+	border-top: 4px solid rgba(255, 255, 255, 0.15);
 	background: #383838;
 	list-style-position: outside;
 	list-style-type: none;
 }
 
-.top-navigation-menu ul li{
+.top-navigation-menu ul li {
 	position: relative;
 	float: none;
 }
@@ -97,7 +100,7 @@
 	padding: 0.8em 1em;
 	min-width: 250px;
 	min-width: 16rem;
-	border-bottom: 1px dotted rgba(255,255,255,0.15);
+	border-bottom: 1px dotted rgba(255, 255, 255, 0.15);
 	-webkit-transition: none;
 	transition: none;
 }
@@ -144,7 +147,7 @@
 .top-navigation-menu .mega-menu-content .widget_pages ul li a:hover,
 .top-navigation-menu .mega-menu-content .widget_categories ul li a:hover,
 .top-navigation-menu .mega-menu-content .widget_archive ul li a:hover {
-	background: rgba(255,255,255,0.10);
+	background: rgba(255, 255, 255, 0.1);
 }
 
 /* Social Icons */
@@ -161,7 +164,7 @@
 }
 
 .header-bar .social-icons-menu li a:hover {
-	color: rgba(255,255,255,0.6);
+	color: rgba(255, 255, 255, 0.6);
 	text-decoration: none;
 }
 
@@ -184,7 +187,7 @@
 .header-search .header-search-icon:hover,
 .header-search .header-search-icon:active {
 	cursor: pointer;
-	color: rgba(255,255,255,0.5);
+	color: rgba(255, 255, 255, 0.5);
 }
 
 .header-search .header-search-icon:focus {
@@ -235,7 +238,7 @@
 }
 
 /*--------------------------------------------------------------
-# Magazine Post Widgets
+# Magazine Widgets
 --------------------------------------------------------------*/
 
 /* Magazine Posts List */
@@ -304,7 +307,7 @@
 }
 
 /*--------------------------------------------------------------
-# Footer Widget Area
+# Footer Widgets
 --------------------------------------------------------------*/
 .footer-widgets-background {
 	padding: 2em 0 0;
@@ -334,13 +337,13 @@
 }
 
 .footer-widgets .widget a:link,
-.footer-widgets .widget a:visited  {
-	color: rgba(255,255,255,0.85);
+.footer-widgets .widget a:visited {
+	color: rgba(255, 255, 255, 0.85);
 }
 
 .footer-widgets .widget a:hover,
-.footer-widgets .widget a:active  {
-	color: rgba(255,255,255,0.6);
+.footer-widgets .widget a:active {
+	color: rgba(255, 255, 255, 0.6);
 }
 
 /* Custom Footer Widgets */
@@ -353,7 +356,7 @@
 .footer-widgets .widget_tag_cloud .tagcloud a,
 .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a,
 .footer-widgets .tzwb-social-icons .social-icons-menu li a:hover {
-	background: rgba(0,0,0,0.15);
+	background: rgba(0, 0, 0, 0.15);
 }
 
 .footer-widgets .widget_tag_cloud .tagcloud a:hover,
@@ -366,7 +369,7 @@
 }
 
 /*--------------------------------------------------------------
-# Footer Navigation
+# Footer Menu
 --------------------------------------------------------------*/
 .footer-navigation {
 	float: right;
@@ -456,7 +459,6 @@
 ## Desktop X-Large ( < 1200px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 80em) {
-
 	.footer-widgets-background {
 		padding: 1.5em 0 0;
 	}
@@ -468,7 +470,6 @@
 	.footer-widget-column {
 		padding-right: 1.5em;
 	}
-
 }
 
 @media only screen and (max-width: 70em) {
@@ -481,7 +482,6 @@
 	.widget-magazine-posts-list .type-post .entry-content .more-link {
 		display: none;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -500,7 +500,6 @@
 	.footer-widget-column:nth-child(3) {
 		clear: left;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -537,11 +536,11 @@
 	}
 
 	/*** Mobile Top Navigation ***/
-
 	/* Reset */
 	.top-navigation-menu {
 		margin: 0;
 	}
+
 	.top-navigation-menu li {
 		position: static;
 		float: none;
@@ -586,7 +585,7 @@
 
 	.top-navigation-toggle:hover,
 	.top-navigation-toggle:active {
-		background: rgba(255,255,255,0.10);
+		background: rgba(255, 255, 255, 0.1);
 		cursor: pointer;
 	}
 
@@ -613,14 +612,14 @@
 		display: none;
 		float: left;
 		width: 100%;
-		border-top: 4px solid rgba(255,255,255,0.15);
+		border-top: 4px solid rgba(255, 255, 255, 0.15);
 	}
 
 	.top-navigation-menu a {
 		display: block;
 		clear: left;
 		padding: 1em 1.25em;
-		border-bottom: 1px dotted rgba(255,255,255,0.15);
+		border-bottom: 1px dotted rgba(255, 255, 255, 0.15);
 		font-size: 13px;
 		font-size: 0.8125rem;
 	}
@@ -645,7 +644,7 @@
 	}
 
 	.top-navigation-menu ul li:last-child > a {
-		border-bottom: 1px dotted rgba(255,255,255,0.15);
+		border-bottom: 1px dotted rgba(255, 255, 255, 0.15);
 	}
 
 	/* Mobile Submenu Dropdowns */
@@ -658,7 +657,7 @@
 	}
 
 	.top-navigation-menu .submenu-dropdown-toggle:hover {
-		background: rgba(255,255,255,0.10);
+		background: rgba(255, 255, 255, 0.1);
 		cursor: pointer;
 	}
 
@@ -749,7 +748,6 @@
 		padding-right: 0;
 		width: 100%;
 	}
-
 }
 
 @media only screen and (max-width: 30em) {
@@ -789,7 +787,6 @@
 	.widget-magazine-posts-list .type-post .entry-content .more-link {
 		display: inline-block;
 	}
-
 }
 
 /*--------------------------------------------------------------

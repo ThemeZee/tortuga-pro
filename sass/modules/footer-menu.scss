@@ -1,0 +1,38 @@
+.footer-navigation {
+	float: right;
+	padding: 2em 0;
+}
+
+.footer-navigation-toggle {
+	display: none;
+}
+
+.footer-navigation-menu {
+	display: block;
+	margin: 0;
+	list-style-position: outside;
+	list-style-type: none;
+}
+
+.footer-navigation-menu li {
+	float: left;
+}
+
+.site-footer .footer-navigation-menu a {
+	display: block;
+	padding: 0.7em 1em;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-family: 'Titillium Web', Tahoma, Arial;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.site-footer .footer-navigation-menu a:link,
+.site-footer.footer-navigation-menu a:visited {
+	border-bottom: none;
+}

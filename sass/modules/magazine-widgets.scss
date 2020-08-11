@@ -1,0 +1,24 @@
+
+/* Magazine Posts List */
+.widget-magazine-posts-list .type-post .wp-post-image {
+	float: left;
+	margin: 0 0.75em 0 0;
+	padding: 0 0.75em 0 0;
+	max-width: 50%;
+}
+
+.widget-magazine-posts-list .type-post .entry-title {
+	font-size: 22px;
+	font-size: 1.375rem;
+}
+
+/* Magazine Posts Single */
+.widget-magazine-posts-single .type-post .wp-post-image {
+	margin: 0.5em 0;
+}
+
+/* Magazine Posts Sidebar */
+.widget-magazine-posts-sidebar .type-post .entry-title {
+	font-size: 18px;
+	font-size: 1.125rem;
+}
