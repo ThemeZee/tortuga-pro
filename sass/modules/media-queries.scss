@@ -54,17 +54,6 @@
 ## Desktop Small ( < 960px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 60em) {
-	/* Header Search */
-	.header-search .header-search-form {
-		width: 100%;
-		top: 3.35em;
-		right: 0;
-	}
-
-	.header-search .header-search-form .search-form {
-		min-width: auto;
-	}
-
 	/* Magazine Post Widgets */
 	.widget-magazine-posts-list .type-post .entry-title {
 		font-size: 22px;

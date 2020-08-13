@@ -114,7 +114,7 @@ class Tortuga_Pro_Header_Search {
 		) );
 
 		$wp_customize->add_control( 'tortuga_theme_options[header_search]', array(
-			'label'    => esc_html__( 'Enable search field in header', 'tortuga-pro' ),
+			'label'    => esc_html__( 'Enable search field in main navigation', 'tortuga-pro' ),
 			'section'  => 'tortuga_pro_section_header',
 			'settings' => 'tortuga_theme_options[header_search]',
 			'type'     => 'checkbox',

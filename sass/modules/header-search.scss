@@ -1,10 +1,6 @@
-.header-search {
-	position: relative;
-}
-
 .header-search .header-search-icon {
 	position: absolute;
-	right: 0;
+	right: 1.5rem;
 	display: inline-block;
 	padding: 0.6em 0.75em 0.9em;
 	color: #fff;
@@ -14,7 +10,7 @@
 .header-search .header-search-icon:hover,
 .header-search .header-search-icon:active {
 	cursor: pointer;
-	color: rgba(255,255,255,0.5);
+	color: rgba(255, 255, 255, 0.5);
 }
 
 .header-search .header-search-icon:focus {
@@ -39,8 +35,8 @@
 
 .header-search .header-search-form {
 	position: absolute;
-	top: 3.3em;
-	right: 0;
+	top: 3.45em;
+	right: 2rem;
 	display: none;
 	margin: 0;
 	padding: 1em;
@@ -51,4 +47,26 @@
 
 .header-search .header-search-form .search-form {
 	min-width: 300px;
+}
+
+@media only screen and (max-width: 80em) {
+	.header-search .header-search-icon {
+		right: 1rem;
+	}
+
+	.header-search .header-search-form {
+		right: 1.5rem;
+	}
+}
+
+@media only screen and (max-width: 60em) {
+	.header-search .header-search-form {
+		width: 100%;
+		top: 3.25em;
+		right: 0;
+	}
+
+	.header-search .header-search-form .search-form {
+		min-width: auto;
+	}
 }
