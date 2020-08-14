@@ -136,7 +136,7 @@ class Tortuga_Pro_Custom_Colors {
 			$custom_css .= '
 				/* Top Navigation Color Setting */
 				.header-bar-wrap,
-				.top-navigation-menu ul {
+				.top-navigation ul ul {
 					background: ' . $theme_options['top_navi_color'] . ';
 				}
 			';
@@ -145,12 +145,11 @@ class Tortuga_Pro_Custom_Colors {
 			if ( self::is_color_light( $theme_options['top_navi_color'] ) ) {
 				$custom_css .= '
 					.header-bar-wrap,
-					.top-navigation-menu a,
-					.top-navigation-menu a:link,
-					.top-navigation-menu a:visited,
-					.top-navigation-toggle,
-					.top-navigation-toggle:focus,
-					.top-navigation-menu .submenu-dropdown-toggle,
+					.top-navigation ul a,
+					.top-navigation ul a:link,
+					.top-navigation ul a:visited,
+					.secondary-menu-toggle,
+					.secondary-menu-toggle:focus,
 					.header-bar .social-icons-menu li a,
 					.header-bar .social-icons-menu li a:link,
 					.header-bar .social-icons-menu li a:visited {
@@ -162,21 +161,33 @@ class Tortuga_Pro_Custom_Colors {
 						color: rgba(0,0,0,0.6);
 					}
 
-					.top-navigation-menu a:hover,
-					.top-navigation-menu a:active,
-					.top-navigation-toggle:hover,
-					.top-navigation-toggle:active,
-					.top-navigation-menu .submenu-dropdown-toggle:hover,
-					.top-navigation-menu .submenu-dropdown-toggle:active {
-						background: rgba(0,0,0,0.10);
+					.top-navigation ul a:hover,
+					.top-navigation ul a:active,
+					.secondary-menu-toggle:hover,
+					.secondary-menu-toggle:active,
+					.top-navigation .dropdown-toggle:hover,
+					.top-navigation .dropdown-toggle:active,
+					.top-navigation ul .menu-item-has-children > a:hover,
+					.top-navigation ul .menu-item-has-children > a:active {
+						background: rgba(0,0,0,0.1);
 					}
 
-					.top-navigation-menu,
-					.top-navigation-menu a,
-					.top-navigation-menu ul,
-					.top-navigation-menu ul a,
-					.top-navigation-menu ul li:last-child > a {
+					.top-navigation ul,
+					.top-navigation ul a,
+					.top-navigation ul ul,
+					.top-navigation ul ul a,
+					.top-navigation ul ul li:last-child > a {
 						border-color: rgba(0,0,0,0.15);
+					}
+
+					.secondary-menu-toggle .icon,
+					.top-navigation .dropdown-toggle .icon,
+					.top-navigation ul .menu-item-has-children > a > .icon {
+					    fill: #303030;
+					}
+
+					.top-navigation ul .menu-item-has-children > a:hover > .icon {
+					    fill: rgba(0,0,0,0.6);
 					}
 				';
 			} // End if().
@@ -188,7 +199,7 @@ class Tortuga_Pro_Custom_Colors {
 			$custom_css .= '
 				/* Header Color Setting */
 				.site-header,
-				.main-navigation-menu ul {
+				.main-navigation ul ul {
 					background: ' . $theme_options['header_color'] . ';
 				}
 			';
@@ -205,10 +216,9 @@ class Tortuga_Pro_Custom_Colors {
 					.site-title a:link,
 					.site-title a:visited,
 					.primary-navigation-wrap,
-					.main-navigation-menu a,
-					.main-navigation-menu a:link,
-					.main-navigation-menu a:visited,
-					.main-navigation-menu .submenu-dropdown-toggle,
+					.main-navigation ul a,
+					.main-navigation ul a:link,
+					.main-navigation ul a:visited,
 					.header-search .header-search-icon {
 						color: #303030;
 					}
@@ -220,21 +230,31 @@ class Tortuga_Pro_Custom_Colors {
 						color: rgba(0,0,0,0.6);
 					}
 
-					.main-navigation-menu a:hover,
-					.main-navigation-menu a:active,
-					.main-navigation-menu li.current-menu-item > a,
-					.main-navigation-menu .submenu-dropdown-toggle:hover,
-					.main-navigation-menu .submenu-dropdown-toggle:active {
+					.main-navigation ul a:hover,
+					.main-navigation ul a:active,
+					.main-navigation ul li.current-menu-item > a {
 						color: #fff;
 					}
 
-					.main-navigation-menu a,
-					.main-navigation-menu ul a,
-					.main-navigation-menu ul li:last-child a {
+					.main-navigation .dropdown-toggle .icon,
+					.main-navigation ul .menu-item-has-children > a > .icon {
+					    fill: #303030;
+					}
+
+					.main-navigation .dropdown-toggle:hover .icon,
+					.main-navigation .dropdown-toggle:active .icon,
+					.main-navigation ul .menu-item-has-children > a:hover > .icon,
+					.main-navigation ul .menu-item-has-children > a:active > .icon {
+						fill: #fff;
+					}
+
+					.main-navigation ul a,
+					.main-navigation ul ul a,
+					.main-navigation ul ul li:last-child a {
 						border-color: rgba(0,0,0,0.2);
 					}
 
-					.main-navigation-menu li ul ul {
+					.main-navigation ul li ul ul {
 						border-left-color: rgba(0,0,0,0.2);
 					}
 				';
@@ -247,24 +267,22 @@ class Tortuga_Pro_Custom_Colors {
 			$custom_css .= '
 				/* Navigation Color Setting */
 				.primary-navigation-wrap,
-				.main-navigation-menu,
-				.main-navigation-menu ul {
+				.main-navigation ul,
+				.main-navigation ul ul {
 					border-color: ' . $theme_options['navi_color'] . ';
 				}
 
-				.main-navigation-menu a:hover,
-				.main-navigation-menu a:active,
-				.main-navigation-menu li.current-menu-item > a,
-				.main-navigation-toggle,
-				.main-navigation-toggle:active,
-				.main-navigation-toggle:focus,
-				.main-navigation-toggle:hover,
-				.main-navigation-menu .submenu-dropdown-toggle:hover,
-				.main-navigation-menu .submenu-dropdown-toggle:active,
-				.mega-menu-content .widget_meta ul li a:hover,
-				.mega-menu-content .widget_pages ul li a:hover,
-				.mega-menu-content .widget_categories ul li a:hover,
-				.mega-menu-content .widget_archive ul li a:hover {
+				.main-navigation ul a:hover,
+				.main-navigation ul a:active,
+				.main-navigation ul li.current-menu-item > a,
+				.primary-menu-toggle,
+				.primary-menu-toggle:active,
+				.primary-menu-toggle:focus,
+				.primary-menu-toggle:hover,
+				.main-navigation .dropdown-toggle:hover,
+				.main-navigation .dropdown-toggle:active,
+				.main-navigation ul .menu-item-has-children > a:hover,
+				.main-navigation ul .menu-item-has-children > a:active {
 					background: ' . $theme_options['navi_color'] . ';
 				}
 			';
@@ -272,13 +290,23 @@ class Tortuga_Pro_Custom_Colors {
 			// Check if a dark background color was chosen.
 			if ( self::is_color_light( $theme_options['navi_color'] ) ) {
 				$custom_css .= '
-					.main-navigation-toggle,
-					.main-navigation-menu a:hover,
-					.main-navigation-menu a:active,
-					.main-navigation-menu li.current-menu-item > a,
-					.main-navigation-menu .submenu-dropdown-toggle:hover,
-					.main-navigation-menu .submenu-dropdown-toggle:active {
+					.primary-menu-toggle,
+					.main-navigation ul a:hover,
+					.main-navigation ul a:active,
+					.main-navigation ul li.current-menu-item > a,
+					.main-navigation .dropdown-toggle:hover,
+					.main-navigation .dropdown-toggle:active,
+					.main-navigation ul .menu-item-has-children > a:hover,
+					.main-navigation ul .menu-item-has-children > a:active {
 						color: #303030;
+					}
+
+					.primary-menu-toggle .icon,
+					.main-navigation .dropdown-toggle:hover .icon,
+					.main-navigation .dropdown-toggle:active .icon,
+					.main-navigation ul .menu-item-has-children > a:hover > .icon,
+					.main-navigation ul .menu-item-has-children > a:active > .icon {
+						fill: #303030;
 					}
 				';
 			} // End if().
