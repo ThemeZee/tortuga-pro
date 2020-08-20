@@ -2,6 +2,10 @@
 Tortuga Pro Changelog
 ===================================
 
+Version 1.7.1
+-----------------------------------
+* fixed typography settings for navigation menus
+
 Version 1.7
 -----------------------------------
 * updated styles and scripts of top navigation menu
