@@ -2,6 +2,10 @@
 Tortuga Pro Changelog
 ===================================
 
+Version 1.8.2
+-----------------------------------
+* fixed color settings for main navigation menu
+
 Version 1.8.1
 -----------------------------------
 * added AMP dropdown toggles for sub menus

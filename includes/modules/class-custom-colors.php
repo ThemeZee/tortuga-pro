@@ -163,6 +163,7 @@ class Tortuga_Pro_Custom_Colors {
 
 					.top-navigation ul a:hover,
 					.top-navigation ul a:active,
+					.top-navigation ul a:focus,
 					.secondary-menu-toggle:hover,
 					.secondary-menu-toggle:active,
 					.top-navigation .dropdown-toggle:hover,
@@ -232,6 +233,7 @@ class Tortuga_Pro_Custom_Colors {
 
 					.main-navigation ul a:hover,
 					.main-navigation ul a:active,
+					.main-navigation ul a:focus,
 					.main-navigation ul li.current-menu-item > a {
 						color: #fff;
 					}
@@ -274,6 +276,7 @@ class Tortuga_Pro_Custom_Colors {
 
 				.main-navigation ul a:hover,
 				.main-navigation ul a:active,
+				.main-navigation ul a:focus,
 				.main-navigation ul li.current-menu-item > a,
 				.primary-menu-toggle,
 				.primary-menu-toggle:active,
@@ -293,6 +296,7 @@ class Tortuga_Pro_Custom_Colors {
 					.primary-menu-toggle,
 					.main-navigation ul a:hover,
 					.main-navigation ul a:active,
+					.main-navigation ul a:focus,
 					.main-navigation ul li.current-menu-item > a,
 					.main-navigation .dropdown-toggle:hover,
 					.main-navigation .dropdown-toggle:active,
