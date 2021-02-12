@@ -94,7 +94,7 @@ class Tortuga_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_js() {
-		wp_enqueue_script( 'tortuga-pro-customizer-js', TORTUGA_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), '20201119', true );
+		wp_enqueue_script( 'tortuga-pro-customizer-js', TORTUGA_PRO_PLUGIN_URL . 'assets/js/customize-preview.min.js', array( 'customize-preview' ), '20210212', true );
 	}
 
 	/**
@@ -103,7 +103,7 @@ class Tortuga_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_css() {
-		wp_enqueue_style( 'tortuga-pro-customizer-css', TORTUGA_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), '20201119' );
+		wp_enqueue_style( 'tortuga-pro-customizer-css', TORTUGA_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), '20210212' );
 	}
 }
 
