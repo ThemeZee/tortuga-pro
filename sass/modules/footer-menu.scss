@@ -36,3 +36,27 @@
 .site-footer.footer-navigation-menu a:visited {
 	border-bottom: none;
 }
+
+@media only screen and (max-width: 60em) {
+	.footer-navigation {
+		float: none;
+		text-align: center;
+		padding-bottom: 0;
+	}
+
+	.footer-navigation-menu li {
+		float: none;
+		display: inline-block;
+	}
+}
+
+@media only screen and (max-width: 40em) {
+	.footer-navigation-menu li,
+	.footer-navigation-menu a {
+		display: block;
+	}
+
+	.footer-navigation-menu a {
+		padding: 0.4em 0;
+	}
+}
