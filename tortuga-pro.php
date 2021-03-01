@@ -136,6 +136,9 @@ class Tortuga_Pro {
 		// Enqueue Tortuga Pro Stylesheet.
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_styles' ), 11 );
 
+		// Add Custom CSS code to the Gutenberg editor.
+		add_action( 'enqueue_block_editor_assets', array( __CLASS__, 'enqueue_editor_styles' ), 11 );
+
 		// Register additional Magazine Widgets.
 		add_action( 'widgets_init', array( __CLASS__, 'register_widgets' ) );
 
@@ -165,6 +168,33 @@ class Tortuga_Pro {
 			wp_enqueue_style( 'tortuga-pro', TORTUGA_PRO_PLUGIN_URL . 'assets/css/tortuga-pro.css', array(), TORTUGA_PRO_VERSION );
 		}
 
+		// Enqueue Custom CSS.
+		wp_add_inline_style( 'tortuga-pro', self::get_custom_css() );
+	}
+
+	/**
+	 * Enqueue Editor Styles
+	 *
+	 * @return void
+	 */
+	static function enqueue_editor_styles() {
+
+		// Return early if Tortuga Theme is not active.
+		if ( ! current_theme_supports( 'tortuga-pro' ) ) {
+			return;
+		}
+
+		// Enqueue Custom CSS.
+		wp_add_inline_style( 'tortuga-editor-styles', self::get_custom_css() );
+	}
+
+	/**
+	 * Return custom CSS for color and font variables.
+	 *
+	 * @return void
+	 */
+	static function get_custom_css() {
+
 		// Get Custom CSS.
 		$custom_css = apply_filters( 'tortuga_pro_custom_css_stylesheet', '' );
 
@@ -174,8 +204,7 @@ class Tortuga_Pro {
 		$custom_css = preg_replace( '/\n/', '', $custom_css );
 		$custom_css = preg_replace( '/\t/', '', $custom_css );
 
-		// Add Custom CSS.
-		wp_add_inline_style( 'tortuga-pro', $custom_css );
+		return $custom_css;
 	}
 
 	/**
