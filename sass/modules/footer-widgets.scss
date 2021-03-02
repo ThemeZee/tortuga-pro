@@ -1,6 +1,6 @@
 .footer-widgets-background {
 	padding: 2em 0 0;
-	background: #383838;
+	@include background(--footer-widgets-background-color);
 }
 
 .footer-widgets {
@@ -18,34 +18,35 @@
 	border: none;
 	background: none;
 	box-shadow: none;
-	color: #fff;
+	@include color(--footer-widgets-text-color);
 }
 
 .footer-widgets .widget-title {
-	color: #fff;
+	@include color(--footer-widgets-text-color);
 }
 
 .footer-widgets .widget a:link,
-.footer-widgets .widget a:visited  {
-	color: rgba(255,255,255,0.85);
+.footer-widgets .widget a:visited {
+	@include color(--footer-widgets-link-color);
 }
 
 .footer-widgets .widget a:hover,
-.footer-widgets .widget a:active  {
-	color: rgba(255,255,255,0.6);
+.footer-widgets .widget a:active {
+	@include color(--footer-widgets-link-hover-color);
 }
 
 /* Custom Footer Widgets */
 .footer-widgets .entry-meta,
 .footer-widgets .tzwb-social-icons .social-icons-menu li a,
 .footer-widgets .widget_tag_cloud .tagcloud a {
-	color: #fff;
+	@include color(--footer-widgets-text-color);
 }
 
 .footer-widgets .widget_tag_cloud .tagcloud a,
 .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a,
 .footer-widgets .tzwb-social-icons .social-icons-menu li a:hover {
-	background: rgba(0,0,0,0.15);
+	@include background(--button-hover-color);
+	@include color(--button-hover-text-color);
 }
 
 .footer-widgets .widget_tag_cloud .tagcloud a:hover,
@@ -53,8 +54,8 @@
 .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:active,
 .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-	color: #fff;
-	background: #dd5533;
+	@include background(--button-color);
+	@include color(--button-text-color);
 }
 
 @media only screen and (max-width: 80em) {

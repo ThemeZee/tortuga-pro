@@ -3,14 +3,14 @@
 	right: 1.5rem;
 	display: inline-block;
 	padding: 0.6em 0.75em 0.9em;
-	color: #fff;
+	@include color(--navi-color);
 	z-index: 99;
 }
 
 .header-search .header-search-icon:hover,
 .header-search .header-search-icon:active {
 	cursor: pointer;
-	color: rgba(255, 255, 255, 0.5);
+	@include background(--navi-hover-color);
 }
 
 .header-search .header-search-icon:focus {
@@ -40,7 +40,7 @@
 	display: none;
 	margin: 0;
 	padding: 1em;
-	background: #fff;
+	@include background(--page-background-color);
 	box-shadow: 0 2px 2px #aaa;
 	z-index: 999;
 }
