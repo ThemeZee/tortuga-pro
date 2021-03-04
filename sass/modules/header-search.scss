@@ -10,6 +10,7 @@
 .header-search .header-search-icon:hover,
 .header-search .header-search-icon:active {
 	cursor: pointer;
+	@include color(--navi-hover-text-color);
 	@include background(--navi-hover-color);
 }
 
