@@ -30,191 +30,149 @@
 		} );
 	} );
 
-	/* Link & Button Color Option */
-	wp.customize( 'tortuga_theme_options[link_color]', function( value ) {
-		value.bind( function( newval ) {
-			var custom_css;
-
-			custom_css = 'a, a:link, a:visited { color: ' + newval + '; }';
-			custom_css += 'a:hover, a:focus, a:active { color: #303030; }';
-
-			custom_css += 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .entry-tags .meta-tags a:hover, .entry-tags .meta-tags a:active, .widget_tag_cloud .tagcloud a:hover, .widget_tag_cloud .tagcloud a:active, .post-navigation .nav-links a, .pagination a:hover, .pagination a:active, .pagination .current, .infinite-scroll #infinite-handle span:hover, .post-slider-controls .zeeflex-direction-nav a, .tzwb-social-icons .social-icons-menu li a, .tzwb-tabbed-content .tzwb-tabnavi li a:hover, .tzwb-tabbed-content .tzwb-tabnavi li a:active, .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab, .scroll-to-top-button, .scroll-to-top-button:focus, .scroll-to-top-button:active { color: #fff; background: ' + newval + '; }';
-			custom_css += 'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .more-link:hover, .more-link:focus, .more-link:active, .post-navigation .nav-links a:hover, .post-navigation .nav-links a:active, .post-slider-controls .zeeflex-direction-nav a:hover, .tzwb-social-icons .social-icons-menu li a:hover, .scroll-to-top-button:hover { background: #303030; }';
-			custom_css += 'blockquote { border-left-color: ' + newval + '; }';
-
-			addColorStyles( custom_css, 1 );
-
-			custom_css = '.footer-widgets .widget_tag_cloud .tagcloud a:hover, .footer-widgets .widget_tag_cloud .tagcloud a:active, .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:hover, .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:active, .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab { color: #fff; background: ' + newval + '; }';
-			addColorStyles( custom_css, 8 );
-
-			$( '.has-primary-color' ).css( 'color', newval );
-			$( '.has-primary-background-color' ).css( 'background-color', newval );
-		} );
-	} );
 
 	/* Top Navigation Color Option */
 	wp.customize( 'tortuga_theme_options[top_navi_color]', function( value ) {
 		value.bind( function( newval ) {
-			var custom_css, text_color, hover_color, bg_color, border_color;
-
-			custom_css = '.header-bar-wrap, .top-navigation ul ul { background: ' + newval + '; }';
+			var text_color, hover_color, hover_bg_color, border_color;
 
 			if( isColorLight( newval ) ) {
-				text_color = '#303030';
-				hover_color = 'rgba(0,0,0,0.6)';
-				bg_color = 'rgba(0,0,0,0.10)';
-				border_color = 'rgba(0,0,0,0.15)';
+				text_color = '#151515';
+				hover_color = 'rgba(0, 0, 0, 0.5)';
+				hover_bg_color = 'rgba(0, 0, 0, 0.1)';
+				border_color = 'rgba(0, 0, 0, 0.15)';
 			} else {
-				text_color = '#ffffff';
-				hover_color = 'rgba(255,255,255,0.6)';
-				bg_color = 'rgba(255,255,255,0.10)';
-				border_color = 'rgba(255,255,255,0.15)';
+				text_color = '#fff';
+				hover_color = 'rgba(255, 255, 255, 0.6)';
+				hover_bg_color = 'rgba(0, 0, 0, 0.1)';
+				border_color = 'rgba(255, 255, 255, 0.15)';
 			}
 
-			custom_css += '.header-bar-wrap, .top-navigation ul a, .top-navigation ul a:link, .top-navigation ul a:visited, .secondary-menu-toggle, .secondary-menu-toggle:focus, .top-navigation .dropdown-toggle, .top-navigation ul .menu-item-has-children > a, .header-bar .social-icons-menu li a, .header-bar .social-icons-menu li a:link, .header-bar .social-icons-menu li a:visited { color: ' + text_color + '; }';
-			custom_css += '.secondary-menu-toggle .icon, .top-navigation .dropdown-toggle .icon, .top-navigation ul .menu-item-has-children > a > .icon { fill: ' + text_color + '; }';
-			custom_css += '.header-bar .social-icons-menu li a:hover, .header-bar .social-icons-menu li a:active { color: ' + hover_color + '; }';
-			custom_css += '.top-navigation ul .menu-item-has-children > a:hover > .icon { fill: ' + hover_color + '; }';
-			custom_css += '.top-navigation ul a:hover, .top-navigation ul a:active, .secondary-menu-toggle:hover, .secondary-menu-toggle:active, .top-navigation .dropdown-toggle:hover, .top-navigation .dropdown-toggle:active, .top-navigation ul .menu-item-has-children > a:hover { background: ' + bg_color + '; }';
-			custom_css += '.top-navigation ul, .top-navigation ul a, .top-navigation ul ul, .top-navigation ul ul a, .top-navigation ul ul li:last-child > a { border-color: ' + border_color + '; }';
-
-			addColorStyles( custom_css, 2 );
+			document.documentElement.style.setProperty( '--header-bar-background-color', newval );
+			document.documentElement.style.setProperty( '--header-bar-text-color', text_color );
+			document.documentElement.style.setProperty( '--header-bar-text-hover-color', hover_color );
+			document.documentElement.style.setProperty( '--header-bar-bg-hover-color', hover_bg_color );
+			document.documentElement.style.setProperty( '--header-bar-border-color', border_color );
 		} );
 	} );
 
 	/* Header Color Option */
 	wp.customize( 'tortuga_theme_options[header_color]', function( value ) {
 		value.bind( function( newval ) {
-			var custom_css, text_color, hover_color, bg_color, border_color;
-
-			custom_css = '.site-header, .main-navigation ul ul { background: ' + newval + '; }';
+			var text_color, hover_color, background_color, border_color;
 
 			if( isColorLight( newval ) ) {
-				text_color = '#303030';
-				hover_color = 'rgba(0,0,0,0.6)';
-				bg_color = 'rgba(0,0,0,0.05)';
-				border_color = 'rgba(0,0,0,0.2)';
+				text_color = '#151515';
+				hover_color = 'rgba(0, 0, 0, 0.5)';
+				background_color = 'rgba(0, 0, 0, 0.05)';
+				border_color = 'rgba(0, 0, 0, 0.15)';
 			} else {
-				text_color = '#ffffff';
-				hover_color = 'rgba(255,255,255,0.6)';
-				bg_color = 'rgba(0,0,0,0.15)';
-				border_color = 'rgba(255,255,255,0.2)';
+				text_color = '#fff';
+				hover_color = 'rgba(255, 255, 255, 0.6)';
+				background_color = 'rgba(0, 0, 0, 0.15)';
+				border_color = 'rgba(255, 255, 255, 0.2)';
 			}
 
-			custom_css += '.primary-navigation-wrap { background: ' + bg_color + '; }';
-			custom_css += '.site-header, .site-title, .site-title a:link, .site-title a:visited, .primary-navigation-wrap, .main-navigation ul a, .main-navigation ul a:link, .main-navigation ul a:visited, .main-navigation ul .submenu-dropdown-toggle, .header-search .header-search-icon { color: ' + text_color + '; }';
-			custom_css += '.site-title a:hover, .site-title a:active, .header-search .header-search-icon:hover, .header-search .header-search-icon:active { color: ' + hover_color + '; }';
-			custom_css += '.main-navigation .dropdown-toggle .icon, .main-navigation ul .menu-item-has-children > a > .icon { fill: ' + text_color + '; }';
-			custom_css += '.main-navigation .dropdown-toggle:hover .icon, .main-navigation .dropdown-toggle:active .icon, .main-navigation ul .menu-item-has-children > a:hover > .icon, .main-navigation ul .menu-item-has-children > a:active > .icon { fill: ' + hover_color + '; }';
-			custom_css += '.main-navigation ul a:hover, .main-navigation ul a:active, .main-navigation ul li.current-menu-item > a, .main-navigation ul .submenu-dropdown-toggle:hover, .main-navigation ul .submenu-dropdown-toggle:active { color: #fff; }';
-			custom_css += '.main-navigation ul a, .main-navigation ul ul a, .main-navigation ul ul li:last-child a { border-color: ' + border_color + '; }';
-			custom_css += '.main-navigation ul li ul ul { border-left-color: ' + border_color + '; }';
-
-			addColorStyles( custom_css, 3 );
+			document.documentElement.style.setProperty( '--header-background-color', newval );
+			document.documentElement.style.setProperty( '--header-text-color', text_color );
+			document.documentElement.style.setProperty( '--site-title-color', text_color );
+			document.documentElement.style.setProperty( '--site-title-hover-color', hover_color );
+			document.documentElement.style.setProperty( '--navi-color', text_color );
+			document.documentElement.style.setProperty( '--navi-background-color', background_color );
+			document.documentElement.style.setProperty( '--navi-border-color', border_color );
 		} );
 	} );
 
 	/* Navigation Color Option */
 	wp.customize( 'tortuga_theme_options[navi_color]', function( value ) {
 		value.bind( function( newval ) {
-			var custom_css, text_color;
-
-			custom_css = '.primary-navigation-wrap, .main-navigation ul, .main-navigation ul ul { border-color: ' + newval + '; }';
-			custom_css += '.main-navigation ul a:hover, .main-navigation ul a:active, .main-navigation ul li.current-menu-item > a, .primary-menu-toggle, .primary-menu-toggle:active, .primary-menu-toggle:focus, .primary-menu-toggle:hover, .main-navigation .dropdown-toggle:hover, .main-navigation .dropdown-toggle:active, .main-navigation ul .menu-item-has-children > a:hover, .main-navigation ul .menu-item-has-children > a:active { background: ' + newval + '; }';
+			var text_color;
 
 			if( isColorLight( newval ) ) {
-				text_color = '#303030';
+				text_color = '#151515';
 			} else {
-				text_color = '#ffffff';
+				text_color = '#fff';
 			}
 
-			custom_css += '.primary-menu-toggle, .main-navigation ul a:hover, .main-navigation ul a:active, .main-navigation ul li.current-menu-item > a, .main-navigation ul .submenu-dropdown-toggle:hover, .main-navigation ul .submenu-dropdown-toggle:active { color: ' + text_color + '; }';
-			custom_css += '.primary-menu-toggle .icon, .main-navigation .dropdown-toggle:hover .icon, .main-navigation .dropdown-toggle:active .icon, .main-navigation ul .menu-item-has-children > a:hover > .icon, .main-navigation ul .menu-item-has-children > a:active > .icon { fill: ' + text_color + '; }';
-			addColorStyles( custom_css, 4 );
+			document.documentElement.style.setProperty( '--navi-hover-color', newval );
+			document.documentElement.style.setProperty( '--navi-hover-text-color', text_color );
+		} );
+	} );
+
+	/* Link & Button Color Option */
+	wp.customize( 'tortuga_theme_options[link_color]', function( value ) {
+		value.bind( function( newval ) {
+			var text_color;
+
+			if( isColorLight( newval ) ) {
+				text_color = '#151515';
+			} else {
+				text_color = '#fff';
+			}
+
+			document.documentElement.style.setProperty( '--link-color', newval );
+			document.documentElement.style.setProperty( '--button-color', newval );
+			document.documentElement.style.setProperty( '--button-text-color', text_color );
 		} );
 	} );
 
 	/* Title Color Option */
 	wp.customize( 'tortuga_theme_options[title_color]', function( value ) {
 		value.bind( function( newval ) {
-			var custom_css;
-
-			custom_css = '.archive-title, .page-title, .entry-title, .entry-title a:link, .entry-title a:visited, .comments-header .comments-title, .comment-reply-title span { color: ' + newval + '; }';
-			custom_css += '.entry-title a:hover, .entry-title a:active { color: #303030; }';
-			custom_css += '.page-header, .type-post, .type-page, .type-attachment, .comments-area { border-color: ' + newval + '; }';
-
-			addColorStyles( custom_css, 5 );
+			document.documentElement.style.setProperty( '--title-color', newval );
+			document.documentElement.style.setProperty( '--page-border-color', newval );
 		} );
 	} );
 
 	/* Widget Title Color Option */
 	wp.customize( 'tortuga_theme_options[widget_title_color]', function( value ) {
 		value.bind( function( newval ) {
-			var custom_css;
-
-			custom_css = '.widget-title, .widget-title a:link, .widget-title a:visited { color: ' + newval + '; }';
-			custom_css += '.widget-title a:hover, .widget-title a:active { color: #303030; }';
-			custom_css += '.widget, .widget-magazine-posts-columns .magazine-posts-columns .magazine-posts-columns-content { border-color: ' + newval + '; }';
-
-			addColorStyles( custom_css, 6 );
+			document.documentElement.style.setProperty( '--widget-title-color', newval );
+			document.documentElement.style.setProperty( '--widget-border-color', newval );
 		} );
 	} );
 
 	/* Footer Widgets Color Option */
 	wp.customize( 'tortuga_theme_options[footer_widgets_color]', function( value ) {
 		value.bind( function( newval ) {
-			var custom_css, text_color, link_color, hover_color, bg_color,
-				button_color = '#dd5533';
-
-			if( typeof wp.customize.value( 'tortuga_theme_options[link_color]' ) !== 'undefined' ) {
-				button_color = wp.customize.value( 'tortuga_theme_options[link_color]' ).get();
-			}
-
-			custom_css = '.footer-widgets-background { background: ' + newval + '; }';
+			var text_color, link_color, link_hover_color;
 
 			if( isColorLight( newval ) ) {
-				text_color = '#303030';
-				link_color = 'rgba(0,0,0,0.85)';
-				hover_color = 'rgba(0,0,0,0.6)';
-				bg_color = 'rgba(0,0,0,0.15)';
+				text_color = '#151515';
+				link_color = 'rgba(0, 0, 0, 0.8)';
+				link_hover_color = 'rgba(0, 0, 0, 0.5)';
 			} else {
-				text_color = '#ffffff';
-				link_color = 'rgba(255,255,255,0.85)';
-				hover_color = 'rgba(255,255,255,0.6)';
-				bg_color = 'rgba(255,255,255,0.05)';
+				text_color = '#fff';
+				link_color = 'rgba(255, 255, 255, 0.85)';
+				link_hover_color = 'rgba(255, 255, 255, 0.6)';
 			}
 
-			custom_css += '.footer-widgets .widget, .footer-widgets .widget-title, .footer-widgets .entry-meta, .footer-widgets .widget_tag_cloud .tagcloud a { color: ' + text_color + '; }';
-			custom_css += '.footer-widgets .widget a:link, .footer-widgets .widget a:visited { color: ' + link_color + '; }';
-			custom_css += '.footer-widgets .widget a:hover, .footer-widgets .widget a:active { color: ' + hover_color + '; }';
-			custom_css += '.footer-widgets .tzwb-social-icons .social-icons-menu li a { color: #fff; }';
-			custom_css += '.footer-widgets .widget_tag_cloud .tagcloud a, .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a, .footer-widgets .tzwb-social-icons .social-icons-menu li a:hover { color: ' + text_color + '; background: ' + bg_color + '; }';
-			custom_css += '.footer-widgets .widget_tag_cloud .tagcloud a:hover, .footer-widgets .widget_tag_cloud .tagcloud a:active, .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:hover, .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:active, .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab { color: #fff; background: ' + button_color + '; }';
-
-			addColorStyles( custom_css, 7 );
+			document.documentElement.style.setProperty( '--footer-widgets-background-color', newval );
+			document.documentElement.style.setProperty( '--footer-widgets-text-color', text_color );
+			document.documentElement.style.setProperty( '--footer-widgets-link-color', link_color );
+			document.documentElement.style.setProperty( '--footer-widgets-link-hover-color', link_hover_color );
 		} );
 	} );
 
 	/* Footer Line Color Option */
 	wp.customize( 'tortuga_theme_options[footer_color]', function( value ) {
 		value.bind( function( newval ) {
-			var custom_css, text_color, hover_color;
-
-			custom_css = '.footer-wrap { background: ' + newval + '; }';
+			var text_color, link_color, link_hover_color;
 
 			if( isColorLight( newval ) ) {
-				text_color = '#303030';
-				hover_color = 'rgba(0,0,0,0.6)';
+				text_color = 'rgba(0, 0, 0, 0.6)';
+				link_color = '#151515';
+				link_hover_color = 'rgba(0, 0, 0, 0.6)';
 			} else {
-				text_color = '#ffffff';
-				hover_color = 'rgba(255,255,255,0.6)';
+				text_color = 'rgba(255, 255, 255, 0.6)';
+				link_color = '#fff';
+				link_hover_color = 'rgba(255, 255, 255, 0.6)';
 			}
 
-			custom_css += '.site-footer a:link, .site-footer a:visited { border-color: ' + hover_color + '; }';
-			custom_css += '.site-footer a:link, .site-footer a:visited { color: ' + text_color + '; }';
-			custom_css += '.site-footer, .site-footer a:hover, .site-footer a:focus, .site-footer a:active { color: ' + hover_color + '; }';
-
-			addColorStyles( custom_css, 9 );
+			document.documentElement.style.setProperty( '--footer-background-color', newval );
+			document.documentElement.style.setProperty( '--footer-text-color', text_color );
+			document.documentElement.style.setProperty( '--footer-link-color', link_color );
+			document.documentElement.style.setProperty( '--footer-link-hover-color', link_hover_color );
 		} );
 	} );
 
@@ -374,22 +332,6 @@
 
 	function isColorDark( hexColor ) {
 		return ( getColorBrightness( hexColor ) <= 130 );
-	}
-
-	function writeColorStyles() {
-		for( var i = 1; i < 10; i++) {
-			$( 'head' ).append( '<style id="tortuga-pro-colors-' + i + '"></style>' );
-		}
-	}
-
-	function addColorStyles( colorRules, priority ) {
-
-		// Write Color Styles if they do not exist.
-		if ( ! $( '#tortuga-pro-colors-1' ).length ) {
-			writeColorStyles();
-		}
-
-		$( '#tortuga-pro-colors-' + priority ).html( colorRules );
 	}
 
 	function loadCustomFont( font, type ) {

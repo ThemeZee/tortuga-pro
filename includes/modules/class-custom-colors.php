@@ -91,12 +91,6 @@ class Tortuga_Pro_Custom_Colors {
 			}
 		}
 
-		// Set Primary Post Color.
-		if ( $theme_options['title_color'] != $default_options['title_color'] ) {
-			$color_variables .= '--title-color: ' . $theme_options['title_color'] . ';';
-			$color_variables .= '--page-border-color: ' . $theme_options['title_color'] . ';';
-		}
-
 		// Set Link Color.
 		if ( $theme_options['link_color'] != $default_options['link_color'] ) {
 			$color_variables .= '--link-color: ' . $theme_options['link_color'] . ';';
@@ -106,6 +100,12 @@ class Tortuga_Pro_Custom_Colors {
 			if ( self::is_color_light( $theme_options['link_color'] ) ) {
 				$color_variables .= '--button-text-color: #151515;';
 			}
+		}
+
+		// Set Title Color.
+		if ( $theme_options['title_color'] != $default_options['title_color'] ) {
+			$color_variables .= '--title-color: ' . $theme_options['title_color'] . ';';
+			$color_variables .= '--page-border-color: ' . $theme_options['title_color'] . ';';
 		}
 
 		// Set Widget Title Color.
