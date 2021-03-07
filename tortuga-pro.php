@@ -110,6 +110,7 @@ class Tortuga_Pro {
 
 		// Include Pro Features.
 		require_once TORTUGA_PRO_PLUGIN_DIR . 'includes/modules/class-author-bio.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . 'includes/modules/class-block-colors.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-custom-colors.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-custom-fonts.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-footer-line.php';
