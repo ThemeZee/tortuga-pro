@@ -156,7 +156,7 @@ class Tortuga_Pro_Custom_Colors {
 		// Add Section for Theme Colors.
 		$wp_customize->add_section( 'tortuga_pro_section_colors', array(
 			'title'    => __( 'Theme Colors', 'tortuga-pro' ),
-			'priority' => 60,
+			'priority' => 70,
 			'panel'    => 'tortuga_options_panel',
 		) );
 

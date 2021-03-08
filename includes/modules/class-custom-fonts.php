@@ -212,7 +212,7 @@ class Tortuga_Pro_Custom_Fonts {
 		// Add Section for Theme Fonts.
 		$wp_customize->add_section( 'tortuga_pro_section_typography', array(
 			'title'    => __( 'Typography', 'tortuga-pro' ),
-			'priority' => 70,
+			'priority' => 80,
 			'panel'    => 'tortuga_options_panel',
 		) );
 

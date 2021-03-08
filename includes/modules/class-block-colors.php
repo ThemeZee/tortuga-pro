@@ -134,7 +134,7 @@ class Tortuga_Pro_Block_Colors {
 		// Add Section for Block Colors.
 		$wp_customize->add_section( 'tortuga_pro_section_block_colors', array(
 			'title'    => esc_html__( 'Block Colors', 'tortuga-pro' ),
-			'priority' => 55,
+			'priority' => 60,
 			'panel'    => 'tortuga_options_panel',
 		) );
 
