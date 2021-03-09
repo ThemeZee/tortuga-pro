@@ -154,8 +154,22 @@
 		} );
 	} );
 
-	/* Link & Button Color Option */
+	/* Link Color Option */
 	wp.customize( 'tortuga_theme_options[link_color]', function( value ) {
+		value.bind( function( newval ) {
+			document.documentElement.style.setProperty( '--link-color', newval );
+		} );
+	} );
+
+	/* Link Color Hover Option */
+	wp.customize( 'tortuga_theme_options[link_hover_color]', function( value ) {
+		value.bind( function( newval ) {
+			document.documentElement.style.setProperty( '--link-hover-color', newval );
+		} );
+	} );
+
+	/* Button Color Option */
+	wp.customize( 'tortuga_theme_options[button_color]', function( value ) {
 		value.bind( function( newval ) {
 			var text_color;
 
@@ -165,9 +179,24 @@
 				text_color = '#fff';
 			}
 
-			document.documentElement.style.setProperty( '--link-color', newval );
 			document.documentElement.style.setProperty( '--button-color', newval );
 			document.documentElement.style.setProperty( '--button-text-color', text_color );
+		} );
+	} );
+
+	/* Button Color Hover Option */
+	wp.customize( 'tortuga_theme_options[button_hover_color]', function( value ) {
+		value.bind( function( newval ) {
+			var text_color;
+
+			if( isColorLight( newval ) ) {
+				text_color = '#151515';
+			} else {
+				text_color = '#fff';
+			}
+
+			document.documentElement.style.setProperty( '--button-hover-color', newval );
+			document.documentElement.style.setProperty( '--button-hover-text-color', text_color );
 		} );
 	} );
 
@@ -176,6 +205,13 @@
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--title-color', newval );
 			document.documentElement.style.setProperty( '--page-border-color', newval );
+		} );
+	} );
+
+	/* Title Hover Option */
+	wp.customize( 'tortuga_theme_options[title_hover_color]', function( value ) {
+		value.bind( function( newval ) {
+			document.documentElement.style.setProperty( '--title-hover-color', newval );
 		} );
 	} );
 

@@ -92,20 +92,44 @@ class Tortuga_Pro_Custom_Colors {
 		}
 
 		// Set Link Color.
-		if ( $theme_options['link_color'] != $default_options['link_color'] ) {
+		if ( $theme_options['link_color'] !== $default_options['link_color'] ) {
 			$color_variables .= '--link-color: ' . $theme_options['link_color'] . ';';
-			$color_variables .= '--button-color: ' . $theme_options['link_color'] . ';';
+		}
+
+		// Set Link Hover Color.
+		if ( $theme_options['link_hover_color'] !== $default_options['link_hover_color'] ) {
+			$color_variables .= '--link-hover-color: ' . $theme_options['link_hover_color'] . ';';
+		}
+
+		// Set Button Color.
+		if ( $theme_options['button_color'] !== $default_options['button_color'] ) {
+			$color_variables .= '--button-color: ' . $theme_options['button_color'] . ';';
 
 			// Check if a light background color was chosen.
-			if ( self::is_color_light( $theme_options['link_color'] ) ) {
+			if ( self::is_color_light( $theme_options['button_color'] ) ) {
 				$color_variables .= '--button-text-color: #151515;';
 			}
 		}
 
+		// Set Button Hover Color.
+		if ( $theme_options['button_hover_color'] !== $default_options['button_hover_color'] ) {
+			$color_variables .= '--button-hover-color: ' . $theme_options['button_hover_color'] . ';';
+
+			// Check if a light background color was chosen.
+			if ( self::is_color_light( $theme_options['button_hover_color'] ) ) {
+				$color_variables .= '--button-hover-text-color: #151515;';
+			}
+		}
+
 		// Set Title Color.
-		if ( $theme_options['title_color'] != $default_options['title_color'] ) {
+		if ( $theme_options['title_color'] !== $default_options['title_color'] ) {
 			$color_variables .= '--title-color: ' . $theme_options['title_color'] . ';';
 			$color_variables .= '--page-border-color: ' . $theme_options['title_color'] . ';';
+		}
+
+		// Set Title Hover Color.
+		if ( $theme_options['title_hover_color'] !== $default_options['title_hover_color'] ) {
+			$color_variables .= '--title-hover-color: ' . $theme_options['title_hover_color'] . ';';
 		}
 
 		// Set Widget Title Color.
@@ -172,7 +196,7 @@ class Tortuga_Pro_Custom_Colors {
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[top_navi_color]', array(
-				'label'    => _x( 'Top Navigation', 'color setting', 'tortuga-pro' ),
+				'label'    => _x( 'Top Navigation', 'Color Option', 'tortuga-pro' ),
 				'section'  => 'tortuga_pro_section_colors',
 				'settings' => 'tortuga_theme_options[top_navi_color]',
 				'priority' => 10,
@@ -188,7 +212,7 @@ class Tortuga_Pro_Custom_Colors {
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[header_color]', array(
-				'label'    => _x( 'Header', 'color setting', 'tortuga-pro' ),
+				'label'    => _x( 'Header', 'Color Option', 'tortuga-pro' ),
 				'section'  => 'tortuga_pro_section_colors',
 				'settings' => 'tortuga_theme_options[header_color]',
 				'priority' => 20,
@@ -204,26 +228,10 @@ class Tortuga_Pro_Custom_Colors {
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[navi_color]', array(
-				'label'    => _x( 'Navigation', 'color setting', 'tortuga-pro' ),
+				'label'    => _x( 'Navigation', 'Color Option', 'tortuga-pro' ),
 				'section'  => 'tortuga_pro_section_colors',
 				'settings' => 'tortuga_theme_options[navi_color]',
 				'priority' => 30,
-			)
-		) );
-
-		// Add Post Primary Color setting.
-		$wp_customize->add_setting( 'tortuga_theme_options[title_color]', array(
-			'default'           => $default_options['title_color'],
-			'type'              => 'option',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color',
-		) );
-		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'tortuga_theme_options[title_color]', array(
-				'label'    => _x( 'Post Titles', 'color setting', 'tortuga-pro' ),
-				'section'  => 'tortuga_pro_section_colors',
-				'settings' => 'tortuga_theme_options[title_color]',
-				'priority' => 40,
 			)
 		) );
 
@@ -236,10 +244,90 @@ class Tortuga_Pro_Custom_Colors {
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[link_color]', array(
-				'label'    => _x( 'Links and Buttons', 'color setting', 'tortuga-pro' ),
+				'label'    => esc_html_x( 'Links', 'Color Option', 'tortuga-pro' ),
 				'section'  => 'tortuga_pro_section_colors',
 				'settings' => 'tortuga_theme_options[link_color]',
+				'priority' => 40,
+			)
+		) );
+
+		// Add Link Hover Color setting.
+		$wp_customize->add_setting( 'tortuga_theme_options[link_hover_color]', array(
+			'default'           => $default_options['link_hover_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'tortuga_theme_options[link_hover_color]', array(
+				'label'    => esc_html_x( 'Link Hover', 'Color Option', 'tortuga-pro' ),
+				'section'  => 'tortuga_pro_section_colors',
+				'settings' => 'tortuga_theme_options[link_hover_color]',
 				'priority' => 50,
+			)
+		) );
+
+		// Add Button Color setting.
+		$wp_customize->add_setting( 'tortuga_theme_options[button_color]', array(
+			'default'           => $default_options['button_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'tortuga_theme_options[button_color]', array(
+				'label'    => esc_html_x( 'Buttons', 'Color Option', 'tortuga-pro' ),
+				'section'  => 'tortuga_pro_section_colors',
+				'settings' => 'tortuga_theme_options[button_color]',
+				'priority' => 60,
+			)
+		) );
+
+		// Add Button Hover Color setting.
+		$wp_customize->add_setting( 'tortuga_theme_options[button_hover_color]', array(
+			'default'           => $default_options['button_hover_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'tortuga_theme_options[button_hover_color]', array(
+				'label'    => esc_html_x( 'Button Hover', 'Color Option', 'tortuga-pro' ),
+				'section'  => 'tortuga_pro_section_colors',
+				'settings' => 'tortuga_theme_options[button_hover_color]',
+				'priority' => 70,
+			)
+		) );
+
+		// Add Title Color setting.
+		$wp_customize->add_setting( 'tortuga_theme_options[title_color]', array(
+			'default'           => $default_options['title_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'tortuga_theme_options[title_color]', array(
+				'label'    => esc_html_x( 'Titles', 'Color Option', 'tortuga-pro' ),
+				'section'  => 'tortuga_pro_section_colors',
+				'settings' => 'tortuga_theme_options[title_color]',
+				'priority' => 80,
+			)
+		) );
+
+		// Add Title Hover Color setting.
+		$wp_customize->add_setting( 'tortuga_theme_options[title_hover_color]', array(
+			'default'           => $default_options['title_hover_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'tortuga_theme_options[title_hover_color]', array(
+				'label'    => esc_html_x( 'Title Hover', 'Color Option', 'tortuga-pro' ),
+				'section'  => 'tortuga_pro_section_colors',
+				'settings' => 'tortuga_theme_options[title_hover_color]',
+				'priority' => 90,
 			)
 		) );
 
@@ -252,10 +340,10 @@ class Tortuga_Pro_Custom_Colors {
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[widget_title_color]', array(
-				'label'    => _x( 'Widget Titles', 'color setting', 'tortuga-pro' ),
+				'label'    => _x( 'Widget Titles', 'Color Option', 'tortuga-pro' ),
 				'section'  => 'tortuga_pro_section_colors',
 				'settings' => 'tortuga_theme_options[widget_title_color]',
-				'priority' => 60,
+				'priority' => 100,
 			)
 		) );
 
@@ -268,10 +356,10 @@ class Tortuga_Pro_Custom_Colors {
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[footer_widgets_color]', array(
-				'label'    => _x( 'Footer Widgets', 'color setting', 'tortuga-pro' ),
+				'label'    => _x( 'Footer Widgets', 'Color Option', 'tortuga-pro' ),
 				'section'  => 'tortuga_pro_section_colors',
 				'settings' => 'tortuga_theme_options[footer_widgets_color]',
-				'priority' => 70,
+				'priority' => 110,
 			)
 		) );
 
@@ -284,10 +372,10 @@ class Tortuga_Pro_Custom_Colors {
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'tortuga_theme_options[footer_color]', array(
-				'label'    => _x( 'Footer', 'color setting', 'tortuga-pro' ),
+				'label'    => _x( 'Footer', 'Color Option', 'tortuga-pro' ),
 				'section'  => 'tortuga_pro_section_colors',
 				'settings' => 'tortuga_theme_options[footer_color]',
-				'priority' => 80,
+				'priority' => 120,
 			)
 		) );
 	}

@@ -76,8 +76,12 @@ class Tortuga_Pro_Customizer {
 			'top_navi_color'            => '#383838',
 			'header_color'              => '#303030',
 			'navi_color'                => '#dd5533',
-			'title_color'               => '#dd5533',
 			'link_color'                => '#dd5533',
+			'link_hover_color'          => '#303030',
+			'button_color'              => '#dd5533',
+			'button_hover_color'        => '#303030',
+			'title_color'               => '#dd5533',
+			'title_hover_color'         => '#303030',
 			'widget_title_color'        => '#dd5533',
 			'footer_widgets_color'      => '#383838',
 			'footer_color'              => '#303030',
@@ -102,7 +106,7 @@ class Tortuga_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_js() {
-		wp_enqueue_script( 'tortuga-pro-customizer-js', TORTUGA_PRO_PLUGIN_URL . 'assets/js/customize-preview.js', array( 'customize-preview' ), '20210215', true );
+		wp_enqueue_script( 'tortuga-pro-customizer-js', TORTUGA_PRO_PLUGIN_URL . 'assets/js/customize-preview.js', array( 'customize-preview' ), '20210306', true );
 	}
 
 	/**
