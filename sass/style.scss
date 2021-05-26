@@ -26,15 +26,9 @@
 @import "modules/header-search";
 
 /*--------------------------------------------------------------
-# Site Logo
+# Social Icons
 --------------------------------------------------------------*/
-.site-branding .site-logo {
-	margin: 0;
-	max-width: 100%;
-	height: auto;
-	border: 0;
-	vertical-align: top;
-}
+@import "modules/social-icons";
 
 /*--------------------------------------------------------------
 # Magazine Widgets
