@@ -363,20 +363,13 @@
 	outline: none;
 }
 
-.header-search .header-search-icon .genericon-search {
-	display: inline-block;
-	margin: 0;
+.header-search .header-search-icon .icon-search {
+	display: block;
+	margin: 0.5rem 0 0;
 	padding: 0;
-	content: '\f400';
-	vertical-align: middle;
-	text-decoration: inherit;
-	font-weight: normal;
-	font-style: normal;
-	font-size: 24px;
-	font-family: 'Genericons';
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	width: 20px;
+	height: 20px;
+	fill: currentColor;
 }
 
 .header-search .header-search-form {

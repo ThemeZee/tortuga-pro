@@ -76,7 +76,7 @@ class Tortuga_Pro_Header_Search {
 			<div class="header-search">
 
 				<a class="header-search-icon" aria-expanded="false" <?php self::amp_search_toggle(); ?>>
-					<span class="genericon-search"></span>
+					<?php echo self::get_svg( 'search' ); ?>
 					<span class="screen-reader-text"><?php esc_html_e( 'Search', 'tortuga-pro' ); ?></span>
 				</a>
 
@@ -88,6 +88,17 @@ class Tortuga_Pro_Header_Search {
 
 			<?php
 		endif;
+	}
+
+	/**
+	 * Get SVG icon.
+	 *
+	 * @return void
+	 */
+	static function get_svg( $icon ) {
+		if ( function_exists( 'tortuga_get_svg' ) ) {
+			return tortuga_get_svg( $icon );
+		}
 	}
 
 	/**
