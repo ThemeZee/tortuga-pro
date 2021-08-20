@@ -119,6 +119,7 @@ class Tortuga_Pro {
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-header-search.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-header-spacing.php';
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/modules/class-scroll-to-top.php';
+		require_once TORTUGA_PRO_PLUGIN_DIR . 'includes/modules/class-widget-areas.php';
 
 		// Include Magazine Widgets.
 		require_once TORTUGA_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-list.php';
