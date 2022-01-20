@@ -4,25 +4,36 @@
  * @package Tortuga Pro
  */
 
-( function( $ ) {
+( function() {
 
-	$( document ).ready( function() {
+	document.addEventListener( 'DOMContentLoaded', function() {
+		var headerSearch = document.querySelector( '#main-navigation-wrap .header-search' );
 
-		/* Display Search Form when search icon is clicked */
-		$( '#main-navigation-wrap .header-search a.header-search-icon' ).on( 'click', function() {
-			$( '#main-navigation-wrap .header-search .header-search-form' ).toggle().find( '.search-form .search-field' ).focus();
-			$( this ).toggleClass( 'active' );
+		// Return early if header search is missing.
+		if ( headerSearch === null ) {
+			return;
+		}
+
+		// Find header search elements.
+		var searchIcon   = headerSearch.querySelector( '.header-search-icon' );
+		var searchForm   = headerSearch.querySelector( '.header-search-form' );
+
+		// Display Search Form when search icon is clicked.
+		searchIcon.addEventListener( 'click', function() {
+			searchIcon.classList.toggle( 'active' );
+			searchForm.classList.toggle( 'toggled-on' );
+			searchForm.querySelector( '.search-form .search-field' ).focus();
 		});
 
-		/* Do not close search form if click is inside header search element */
-		$( '#main-navigation-wrap .header-search' ).click( function(e) {
+		// Do not close search form if click is inside header search element.
+		headerSearch.addEventListener( 'click', function(e) {
 			e.stopPropagation();
 		});
 
-		/* Close search form if click is outside header search element */
-		$( document ).click( function() {
-			$( '#main-navigation-wrap .header-search .header-search-form' ).hide();
+		// Close search form if click is outside header search element.
+		document.addEventListener( 'click', function() {
+			searchForm.classList.remove( 'toggled-on' );
 		});
 	} );
 
-} )( jQuery );
+} )();
