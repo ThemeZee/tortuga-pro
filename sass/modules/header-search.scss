@@ -1,9 +1,11 @@
+@use "../_mixins";
+
 .header-search .header-search-icon {
 	position: absolute;
 	right: 1.5rem;
 	display: inline-block;
 	padding: 0.6em 0.75em 0.9em;
-	@include color(--navi-color);
+	@include mixins.color(--navi-color);
 	background: none;
 	z-index: 99;
 }
@@ -11,8 +13,8 @@
 .header-search .header-search-icon:hover,
 .header-search .header-search-icon:active {
 	cursor: pointer;
-	@include color(--navi-hover-text-color);
-	@include background(--navi-hover-color);
+	@include mixins.color(--navi-hover-text-color);
+	@include mixins.background(--navi-hover-color);
 }
 
 .header-search .header-search-icon:focus {
@@ -35,7 +37,7 @@
 	display: none;
 	margin: 0;
 	padding: 1em;
-	@include background(--page-background-color);
+	@include mixins.background(--page-background-color);
 	box-shadow: 0 2px 2px #aaa;
 	z-index: 999;
 }

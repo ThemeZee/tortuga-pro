@@ -1,9 +1,11 @@
+@use "../_mixins";
+
 .entry-author {
 	margin: 0 0 1.5em;
 	padding: 1.5em 0;
 	border-top: 1px dotted;
 	border-bottom: 1px dotted;
-	@include border-color(--medium-border-color);
+	@include mixins.border-color(--medium-border-color);
 }
 
 .entry-author .author-avatar {

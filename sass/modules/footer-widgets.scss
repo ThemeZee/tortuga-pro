@@ -1,6 +1,8 @@
+@use "../_mixins";
+
 .footer-widgets-background {
 	padding: 2em 0 0;
-	@include background(--footer-widgets-background-color);
+	@include mixins.background(--footer-widgets-background-color);
 }
 
 .footer-widgets {
@@ -18,35 +20,35 @@
 	border: none;
 	background: none;
 	box-shadow: none;
-	@include color(--footer-widgets-text-color);
+	@include mixins.color(--footer-widgets-text-color);
 }
 
 .footer-widgets .widget-title {
-	@include color(--footer-widgets-text-color);
+	@include mixins.color(--footer-widgets-text-color);
 }
 
 .footer-widgets .widget a:link,
 .footer-widgets .widget a:visited {
-	@include color(--footer-widgets-link-color);
+	@include mixins.color(--footer-widgets-link-color);
 }
 
 .footer-widgets .widget a:hover,
 .footer-widgets .widget a:active {
-	@include color(--footer-widgets-link-hover-color);
+	@include mixins.color(--footer-widgets-link-hover-color);
 }
 
 /* Custom Footer Widgets */
 .footer-widgets .entry-meta,
 .footer-widgets .tzwb-social-icons .social-icons-menu li a,
 .footer-widgets .widget_tag_cloud .tagcloud a {
-	@include color(--footer-widgets-text-color);
+	@include mixins.color(--footer-widgets-text-color);
 }
 
 .footer-widgets .widget_tag_cloud .tagcloud a,
 .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a,
 .footer-widgets .tzwb-social-icons .social-icons-menu li a:hover {
-	@include background(--button-hover-color);
-	@include color(--button-hover-text-color);
+	@include mixins.background(--button-hover-color);
+	@include mixins.color(--button-hover-text-color);
 }
 
 .footer-widgets .widget_tag_cloud .tagcloud a:hover,
@@ -54,8 +56,8 @@
 .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:active,
 .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-	@include background(--button-color);
-	@include color(--button-text-color);
+	@include mixins.background(--button-color);
+	@include mixins.color(--button-text-color);
 }
 
 @media only screen and (max-width: 80em) {

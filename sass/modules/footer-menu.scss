@@ -1,3 +1,5 @@
+@use "../_mixins";
+
 .footer-navigation {
 	float: right;
 	padding: 2em 0;
@@ -22,10 +24,10 @@
 	display: block;
 	padding: 0.7em 1em;
 	text-decoration: none;
-	@include font-size(14);
-	@include font-family(--navi-font);
-	@include font-weight(--navi-font-weight);
-	@include text-transform(--navi-text-transform);
+	@include mixins.font-size(14);
+	@include mixins.font-family(--navi-font);
+	@include mixins.font-weight(--navi-font-weight);
+	@include mixins.text-transform(--navi-text-transform);
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
