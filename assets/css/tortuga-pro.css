@@ -460,7 +460,7 @@
 --------------------------------------------------------------*/
 .before-header-widget-area,
 .after-header-widget-area,
-.before-footer-widget-area {
+.before-footer-columns-widget-area {
 	margin: 0 auto;
 	max-width: 1320px;
 }
@@ -470,8 +470,20 @@
 	padding: 2rem 2rem 0;
 }
 
-.before-footer-widget-area {
+.before-footer-columns-widget-area {
 	padding: 0 2rem;
+}
+
+.before-footer-widget-area {
+	padding: 1px;
+	background-color: #383838;
+	background-color: var(--footer-widgets-background-color);
+}
+.before-footer-widget-area .widget {
+	margin: 0 auto;
+	max-width: 1320px;
+	background: none;
+	padding-inline: 2rem;
 }
 
 .after-header-widget-area .widget:last-child {
@@ -484,8 +496,12 @@
 		padding: 1.5rem 1.5rem 0;
 	}
 
-	.before-footer-widget-area {
+	.before-footer-columns-widget-area {
 		padding: 0 1.5rem;
+	}
+
+	.before-footer-widget-area .widget {
+		padding-inline: 1.5rem;
 	}
 }
 /*--------------------------------------------------------------
@@ -670,53 +686,63 @@
 	width: 25%;
 }
 
-.footer-widgets .widget {
+.footer-widgets .widget,
+.before-footer-widget-area .widget {
 	border: none;
 	background: none;
 	box-shadow: none;
 	color: #fff;
 	color: var(--footer-widgets-text-color);
 }
-
-.footer-widgets .widget-title {
+.footer-widgets .widget .widget-title,
+.before-footer-widget-area .widget .widget-title {
 	color: #fff;
 	color: var(--footer-widgets-text-color);
 }
-
 .footer-widgets .widget a:link,
-.footer-widgets .widget a:visited {
+.footer-widgets .widget a:visited,
+.before-footer-widget-area .widget a:link,
+.before-footer-widget-area .widget a:visited {
 	color: rgba(255, 255, 255, 0.85);
 	color: var(--footer-widgets-link-color);
 }
-
 .footer-widgets .widget a:hover,
-.footer-widgets .widget a:active {
+.footer-widgets .widget a:active,
+.before-footer-widget-area .widget a:hover,
+.before-footer-widget-area .widget a:active {
 	color: rgba(255, 255, 255, 0.6);
 	color: var(--footer-widgets-link-hover-color);
 }
-
-/* Custom Footer Widgets */
 .footer-widgets .entry-meta,
 .footer-widgets .tzwb-social-icons .social-icons-menu li a,
-.footer-widgets .widget_tag_cloud .tagcloud a {
+.footer-widgets .widget_tag_cloud .tagcloud a,
+.before-footer-widget-area .entry-meta,
+.before-footer-widget-area .tzwb-social-icons .social-icons-menu li a,
+.before-footer-widget-area .widget_tag_cloud .tagcloud a {
 	color: #fff;
 	color: var(--footer-widgets-text-color);
 }
-
 .footer-widgets .widget_tag_cloud .tagcloud a,
 .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a,
-.footer-widgets .tzwb-social-icons .social-icons-menu li a:hover {
+.footer-widgets .tzwb-social-icons .social-icons-menu li a:hover,
+.before-footer-widget-area .widget_tag_cloud .tagcloud a,
+.before-footer-widget-area .tzwb-tabbed-content .tzwb-tabnavi li a,
+.before-footer-widget-area .tzwb-social-icons .social-icons-menu li a:hover {
 	background-color: #303030;
 	background-color: var(--button-hover-color);
 	color: #fff;
 	color: var(--button-hover-text-color);
 }
-
 .footer-widgets .widget_tag_cloud .tagcloud a:hover,
 .footer-widgets .widget_tag_cloud .tagcloud a:active,
 .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 .footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:active,
-.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
+.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
+.before-footer-widget-area .widget_tag_cloud .tagcloud a:hover,
+.before-footer-widget-area .widget_tag_cloud .tagcloud a:active,
+.before-footer-widget-area .tzwb-tabbed-content .tzwb-tabnavi li a:hover,
+.before-footer-widget-area .tzwb-tabbed-content .tzwb-tabnavi li a:active,
+.before-footer-widget-area .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
 	background-color: #dd5533;
 	background-color: var(--button-color);
 	color: #fff;

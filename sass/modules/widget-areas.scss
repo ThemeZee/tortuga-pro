@@ -1,6 +1,8 @@
+@use "../_mixins";
+
 .before-header-widget-area,
 .after-header-widget-area,
-.before-footer-widget-area {
+.before-footer-columns-widget-area {
 	margin: 0 auto;
 	max-width: 1320px;
 }
@@ -10,8 +12,20 @@
 	padding: 2rem 2rem 0;
 }
 
-.before-footer-widget-area {
+.before-footer-columns-widget-area {
 	padding: 0 2rem;
+}
+
+.before-footer-widget-area {
+	padding: 1px;
+	@include mixins.background(--footer-widgets-background-color);
+
+	.widget {
+		margin: 0 auto;
+		max-width: 1320px;
+		background: none;
+		padding-inline: 2rem;
+	}
 }
 
 .after-header-widget-area {
@@ -26,7 +40,13 @@
 		padding: 1.5rem 1.5rem 0;
 	}
 
-	.before-footer-widget-area {
+	.before-footer-columns-widget-area {
 		padding: 0 1.5rem;
+	}
+
+	.before-footer-widget-area {
+		.widget {
+			padding-inline: 1.5rem;
+		}
 	}
 }

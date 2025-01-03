@@ -28,7 +28,7 @@ class Tortuga_Pro_Footer_Widgets {
 		}
 
 		// Display widgets.
-		add_action( 'tortuga_before_footer', array( __CLASS__, 'display_widgets' ) );
+		add_action( 'tortuga_before_footer', array( __CLASS__, 'display_widgets' ), 20 );
 
 	}
 
