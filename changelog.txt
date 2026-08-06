@@ -2,6 +2,10 @@
 Tortuga Pro Changelog
 ===================================
 
+Version 2.2.8
+-----------------------------------
+* added TikTok to social icons menu
+
 Version 2.2.7
 -----------------------------------
 * added Bluesky to social icons menu
